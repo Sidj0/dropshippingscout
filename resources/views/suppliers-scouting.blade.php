@@ -104,6 +104,7 @@
                 <button class="btn-default" style="background: var(--primary-500);
                 border: 1px solid var(--primary-500); color: #1E3F5B; background: #AFB9FA;
                 border-radius: 8px; opacity: 1;">Read More</button>
+                 </a>
             </div>
             
             <div class="right-column">
