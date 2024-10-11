@@ -23,7 +23,7 @@
         <div class="con-left">
             <div class="left-column">
                 <img src="{{asset('./images/tiktok (2).svg')}}" style="margin-bottom: 20px;">
-                <h2 style="font-size: 52px;">TikTok Scanner</h2>
+                <h2 style="font-size: 52px;">TikTrend Scan</h2>
                 <br>
                 <p style="color: #1E3F5B; font-size: 16px; font-weight: 550;">
                     By analyzing search volume, sales data, and social media mentions,
@@ -43,7 +43,7 @@
 
         <section class="unique-section">
             <div class="unique-title-container">
-                <h1 class="unique-title" style="font-size: 52px; font-weight: bold;">Scanners</h1>
+                <h2 class="unique-title" style="font-size: 52px; font-weight: bold;">Scanners</h2>
                 <p class="unique-description" style="font-weight: 550; font-size: 20px;">
                     involves conducting thorough research, analyzing consumer behavior,
                     and staying informed about industry developments.
@@ -93,13 +93,14 @@
         <div class="con-left">
             <div class="left-column">
                 <img src="{{asset('./images/aliexpress-logo.jpg')}}" width="200px" height="45px" style="margin-bottom: 20px;">
-                <h2 style="font-size: 52px;">Product Research</h2>
+                <h2 style="font-size: 52px;">Express Insight Tool</h2>
                 <br>
                 <p style="color: #1E3F5B; font-size: 16px; font-weight: 550;">
                     By analyzing search volume, sales data, and social media mentions,
                     these tools can pinpoint products that are gaining traction in the market.
                 </p>
                 <br>
+                 <a href="{{ route('tools-product.show', ['slug' => 'express-product-insight']) }}">
                 <button class="btn-default" style="background: var(--primary-500);
                 border: 1px solid var(--primary-500); color: #1E3F5B; background: #AFB9FA;
                 border-radius: 8px; opacity: 1;">Read More</button>
@@ -120,7 +121,7 @@
                 <div class="custom-overlay-container">
                     <img src="{{asset('./images/aliexpress-logo.jpg')}}" width="200px" height="45px">
                 </div>
-                <h1 class="custom-heading">Supplier Scouting</h1>
+                <h2 class="custom-heading">Supplier Scout</h2>
                 <p class="custom-text">Drive traffic and sales, ensuring your products are easily discoverable by potential customers.</p>
                 <a href="{{ route('tools-product.show', ['slug' => 'express-supplier-scout-tool']) }}">
                        <button class="btn-default" style="background: var(--primary-500);
