@@ -20,7 +20,7 @@
             <div class="left-column">
               <img src="{{asset('./images/ebay.jpg')}}" alt="ebay" width="118.32px" height="45px" style="margin-bottom: 20px;">
         
-              <h2>eBay Competitor Research</h2>
+              <h2>eBay RivalView </h2>
               
               <br>
               <p style="color: #1E3F5B; font-size: 16px; font-weight: 550;">By analyzing search volume, sales data, and social media <br>
