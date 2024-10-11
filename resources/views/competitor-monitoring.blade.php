@@ -52,7 +52,7 @@
             <div class="custom-overlay-container">
               <img src="{{asset('images/shopify.jpg')}}" alt="Title Image" class="custom-title-img">
             </div>
-            <h1 class="custom-heading">Competitor Research</h1>
+            <h2 class="custom-heading">Shopify Spy</h2>
             <p class="custom-text">Drive traffic and sales, ensuring your products are easily discoverable by potential customers.</p>
             <a href="{{ route('tools-product.show', ['slug' => 'shopify-spy-tool']) }}">
             <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;
@@ -89,7 +89,7 @@
     <div class="custom-overlay-container">
       <img src="{{asset('images/shopify.jpg')}}" alt="Title Image" class="custom-title-img">
     </div>
-    <h1 class="custom-heading">Shopify best competitors</h1>
+    <h2 class="custom-heading">Shopify Store Finder</h2>
     <p class="custom-text">Drive traffic and sales, ensuring your products are easily discoverable by potential customers.</p>
     <a href="{{ route('tools-product.show', ['slug' => 'shopify-store-finder']) }}">
     <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;border: 1px solid var(--primary-500);color: #1E3F5B;background: #AFB9FA 0% 0% no-repeat padding-box;border: 1px solid #AFB9FA; border-radius: 8px; opacity: 1;  width: 200px;height: 46px;">Read More</button>
