@@ -38,7 +38,7 @@
         
           <section class="unique-section">
             <div class="unique-title-container">
-                <h1 class="unique-title" style="font-size: 52px; font-weight: bold;">Product Research</h1>
+                <h2 class="unique-title" style="font-size: 52px; font-weight: bold;">Product Research</h2>
                 <p class="unique-description" style="font-weight: 550;font-size: 16px;">Take your business to the next level by fine-tuning your product <br>
                    offerings and marketing strategies</p>
             </div>
@@ -72,7 +72,7 @@
             <img src="{{asset('images/ProductScouting-eBay.jpeg')}}" alt="Main Image" class="custom-main-img">
           </div>
           <div class="custom-info-section">
-            <h1 class="custom-heading">eBay best items</h1>
+            <h2 class="custom-heading">eBay TopBay Picks</h2>
             <p class="custom-text" style="padding-top:10px">Drive traffic and sales, ensuring your products are easily discoverable by potential customers.</p>
             <a href="{{ route('tools-product.show', ['slug' => 'topbay-picks']) }}">
               <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;border: 1px solid var(--primary-500);color: #1E3F5B;background: #AFB9FA 0% 0% no-repeat padding-box;border: 1px solid #AFB9FA; border-radius: 8px; opacity: 1;  width: 200px;height: 46px;" >Read More</button>
@@ -96,7 +96,7 @@
 <!-- Category Research -->
 <section class="unique-section">
   <div class="unique-title-container" >
-      <h1 class="unique-title" style="font-size: 52px; font-weight: bold;">Category Research</h1>
+      <h2 class="unique-title" style="font-size: 52px; font-weight: bold;">eBay NicheFinder</h2>
       <p class="unique-description" style="font-weight: 550;font-size: 16px;">Take your business to the next level by fine-tuning your product <br>
          offerings and marketing strategies</p>
   </div>
@@ -117,7 +117,7 @@
 
 
 <!-- Title Builder -->
-<h1 class="title" style="margin-top:0px;">Title Builder</h1>
+<h2 class="title" style="margin-top:0px;">TitleMaster</h2>
 <h5 class="title" style="margin-top:20px; font-size: 20px; color: #1E3F5B; font-weight: 550;">Craft compelling product titles that attract more customers and boost your sales.</h5>
 <br>
 <div class="con-left">
