@@ -86,13 +86,14 @@
                 <div class="form-group mb-3">
                     <label for="category" class="form-label">Category</label>
                     <select class="form-control" id="category" name="category" required>
+                         <option value="Dropshipping" {{ $blog->category == 'Dropshipping' ? 'selected' : '' }}>Dropshipping</option>
                          <option value="eBay" {{ $blog->category == 'eBay' ? 'selected' : '' }}>eBay</option>
-                        <option value="Shopify" {{ $blog->category == 'Shopify' ? 'selected' : '' }}>Shopify</option>
-                        <option value="WooCommerce" {{ $blog->category == 'WooCommerce' ? 'selected' : '' }}>WooCommerce</option>
-                        <option value="Aliexpress" {{ $blog->category == 'Aliexpress' ? 'selected' : '' }}>Aliexpress</option>
-                        <option value="Walmart" {{ $blog->category == 'Walmart' ? 'selected' : '' }}>Walmart</option>
-                        <option value="Amazon" {{ $blog->category == 'Amazon' ? 'selected' : '' }}>Amazon</option>
-                        <option value="Tiktook" {{ $blog->category == 'Tiktook' ? 'selected' : '' }}>Tiktook</option>
+                         <option value="Shopify" {{ $blog->category == 'Shopify' ? 'selected' : '' }}>Shopify</option>
+                         <option value="WooCommerce" {{ $blog->category == 'WooCommerce' ? 'selected' : '' }}>WooCommerce</option>
+                         <option value="Aliexpress" {{ $blog->category == 'Aliexpress' ? 'selected' : '' }}>Aliexpress</option>
+                         <option value="Walmart" {{ $blog->category == 'Walmart' ? 'selected' : '' }}>Walmart</option>
+                         <option value="Amazon" {{ $blog->category == 'Amazon' ? 'selected' : '' }}>Amazon</option>
+                         <option value="Tiktook" {{ $blog->category == 'Tiktook' ? 'selected' : '' }}>Tiktook</option>
 
                         <!-- Add more categories as needed -->
                     </select>

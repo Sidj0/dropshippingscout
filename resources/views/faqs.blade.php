@@ -26,9 +26,12 @@
     <div class="options-wrapper">
         <div class="options-container">
             <div class="option" data-filter="all">All</div>
-            <div class="option" data-filter="general">General</div>
-            <div class="option" data-filter="technical">Technical</div>
-            <div class="option" data-filter="payment">Payment</div>
+            <div class="option" data-filter="Get-Started">Get Started</div>
+            <div class="option" data-filter="Pricing-Subscriptions">Pricing and Subscriptions</div>
+            <div class="option" data-filter="Security-Privacy">Security and Privacy</div>
+            <div class="option" data-filter="Support-Assistance">Support and Assistance</div>
+            <div class="option" data-filter="Tool-Features">Tool Features and Usage</div>
+
         </div>
     </div>
 
