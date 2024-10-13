@@ -17,7 +17,7 @@
     <a href="{{ route('blogs.userIndex') }}"><img src="{{ asset('images/left-arrow.svg') }}" class="back-arrow" alt="Back"></a>
     <h1 class="title">{{ $blog->title }}</h1>
     <div class="rowElements">
-        <button class="button-shopify">Shopify</button>
+        <button class="button-shopify">{{ $blog->category }}</button>
         <ul class="info-list">
             <li><span class="date">{{ $blog->publish_date }}</span></li>
             <li><span class="author">By: {{ $blog->author }}</span></li>
