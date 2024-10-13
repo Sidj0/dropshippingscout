@@ -27,10 +27,10 @@
         <div class="options-container">
             <div class="option" data-filter="all">All</div>
             <div class="option" data-filter="Get-Started">Get Started</div>
-            <div class="option" data-filter="Pricing-Subscriptions">Pricing and Subscriptions</div>
-            <div class="option" data-filter="Security-Privacy">Security and Privacy</div>
-            <div class="option" data-filter="Support-Assistance">Support and Assistance</div>
-            <div class="option" data-filter="Tool-Features">Tool Features and Usage</div>
+            <div class="option" data-filter="Pricing-Subscriptions">Pricing & Subscriptions</div>
+            <div class="option" data-filter="Security-Privacy">Security & Privacy</div>
+            <div class="option" data-filter="Support-Assistance">Support & Assistance</div>
+            <div class="option" data-filter="Tool-Features">Tool Features & Usage</div>
 
         </div>
     </div>
