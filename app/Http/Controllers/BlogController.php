@@ -78,7 +78,7 @@ class BlogController extends Controller
         }
 
         // Retrieve all blogs for display
-        $blogs = Blog::orderBy('created_at', 'desc')->limit(3)->get();
+        $blogs = Blog::all();
         return view('blogs.index', compact('blogs'));
     }
 
@@ -151,7 +151,7 @@ class BlogController extends Controller
     {
         // Retrieve all blogs
         $blogs = Blog::whereNotNull('image')
-                 ->whereNull('video_url')
+                 ->whereNull('video_url')->orderBy('created_at', 'desc')
                  ->get();
         
         // Retrieve the page data where 'view_name' equals 'blogs'
