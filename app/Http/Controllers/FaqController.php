@@ -80,7 +80,7 @@ class FaqController extends Controller
         }
 
         $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy','Support-Assistance','Tool-Features']; // Replace with your categories
-        return view('faqs.edit', compact('faq', 'categories'));
+        return view('Faqs.edit', compact('faq', 'categories'));
     }
 
     public function update(Request $request, Faq $faq)
