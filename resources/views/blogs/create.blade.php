@@ -84,10 +84,8 @@
                         <option value="Walmart">Walmart</option>
                         <option value="Amazon">Amazon</option>
                         <option value="Tiktook">Tiktook</option>
-
                     </select>
                 </div>
-
                 <button type="submit" class="btn btn-primary" style="background: cadetblue;">Create Blog</button>
             </form>
         </div>

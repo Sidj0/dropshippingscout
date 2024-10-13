@@ -78,7 +78,7 @@ class BlogController extends Controller
         }
 
         // Retrieve all blogs for display
-        $blogs = Blog::all();
+        $blogs = Blog::orderBy('created_at', 'desc')->limit(3)->get();
         return view('blogs.index', compact('blogs'));
     }
 
