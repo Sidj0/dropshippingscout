@@ -8,44 +8,7 @@
 @section('styles')
     <!-- Custom CSS for this view -->
     <link href="{{ asset('css/faqs.css') }}" rel="stylesheet">
-    <style>
-        .search-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .search-container input[type="text"] {
-            width: 80%;
-            padding: 10px;
-            border-radius: 20px;
-            border: 1px solid #ccc;
-            outline: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-container input[type="text"]:focus {
-            border-color: #007bff;
-            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-        }
-
-        .search-container button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 20px;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-            margin-left: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .search-container button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+   
 @endsection
 
 @section('content')
