@@ -700,10 +700,6 @@ margin-top: -5px;
  
 /* Responsive behavior for smaller screens */
 @media (max-width: 767px) {
-.left-side {
-   flex-direction: column;
-   align-items: flex-start;
-}
 
 .trial-info, .current-plan {
    text-align: left;
@@ -790,11 +786,7 @@ h3{
     border-bottom: 1px solid #e0e0e0;
 }
 
-.left-side {
-    display: flex;
-    align-items: center;
-}
-
+ 
 .pricing-container {
     display: flex;
     flex-direction: column-reverse; /* Places the price above the trial-info */
@@ -838,4 +830,23 @@ h3{
 .new-card-save-btn {
     background-color: #3545d6;
     color: white;
+}
+
+@media (min-width: 768px) {
+.contact-form-box {
+   
+    height: 800px;
+}
+}
+
+@media (max-width: 768px) {
+h3{
+font-size: 15px;
+}
+.trial-info{
+    font-size: 10px;
+}
+.current-plan{
+    font-size: 10px;
+}
 }

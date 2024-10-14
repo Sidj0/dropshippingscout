@@ -135,7 +135,7 @@
                         <!-- Subscription and Usage Section -->
                         <div class="subscription-section">
                             <div class="title-row">
-                                <h3>Subscription and Usage</h3>
+                                <h3>Subscription & Usage</h3>
                                 <div class="toggle-btn">
                                     <button id="monthly-btn" class="toggle-btn-option active">Monthly</button>
                                     <button id="yearly-btn" class="toggle-btn-option">Yearly</button>
@@ -167,7 +167,7 @@
                                         </div>
                                     </div>
                                     <div class="pricing-container">
-                                        <span class="trial-info">More Features/Monthly</span>
+                                        <span class="trial-info">1$ Trial/Monthly</span>
                                         <span class="price">$49.99</span>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@
                                         </div>
                                     </div>
                                     <div class="pricing-container">
-                                        <span class="trial-info">More Features/Monthly</span>
+                                        <span class="trial-info">1$ Trial/Monthly</span>
                                         <span class="price">$74.99</span>
                                     </div>
                                 </div>
