@@ -32,17 +32,19 @@
                         </div>
                     </div>
                 </div>
+                
             
-                <div class="contact-info">
+                <div class="contact-section">
                     <div class="contact-item">
-                        <img src="{{asset('images/email.svg')}}" alt="Email Icon" class="icon">
-                        <span class="contact-text">john.doe@example.com</span>
+                        <span class="contact-label">Email:</span>
+                        <span class="contact-value">john.doe@example.com</span>
                     </div>
                     <div class="contact-item">
-                        <img src="{{asset('images/phone-call.png')}}" alt="Phone Icon" class="icon">
-                        <span class="contact-text">+20123456789</span>
+                        <span class="contact-label">Mobile:</span>
+                        <span class="contact-value">+1 234 567 8901</span>
                     </div>
                 </div>
+                
             </div>
             
             <div class="col-lg-12">

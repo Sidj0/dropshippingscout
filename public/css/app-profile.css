@@ -850,3 +850,54 @@ font-size: 15px;
     font-size: 10px;
 }
 }
+
+.contact-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px;
+ }
+
+.contact-item {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.contact-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-value {
+    color: #555;
+    word-break: break-word; /* To ensure long email addresses break properly */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.9em;
+    }
+
+    .contact-value {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .plan-option .price {
+        font-size: 12px;
+    }
+    .trial-info{
+        display: none;
+    }
+}
