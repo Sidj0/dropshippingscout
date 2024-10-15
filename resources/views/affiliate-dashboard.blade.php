@@ -205,7 +205,7 @@
             <div class="tab" onclick="showSection('marketing-materials')">Marketing Materials</div>
         </div>
 
-        <div class="content Earnings">
+        <div class="content earnings">
             <div class="section-title">Total earning</div>
 
             <div class="cards">
@@ -233,6 +233,7 @@
             </div>
         </div>
 
+
         <div class="content referrals-analytics hidden">
             <div class="section-title">Referrals Analytics</div>
 
@@ -256,9 +257,8 @@
             </div>
  
         </div>
-    </div>
 
-    <div class="container marketing-materials hidden">
+    <div class="content marketing-materials hidden">
         <div class="section-title">Organic Traffic</div>
         <div class="traffic-cards">
             <div class="card">
@@ -303,6 +303,7 @@
             </div>
         </div>
     </div>
+    </div>
 
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -339,21 +340,21 @@
             }
         });
     </script>
-      <script>
+    <script>
         function showSection(sectionClass) {
             // Hide all sections
             document.querySelectorAll('.content').forEach(section => {
                 section.classList.add('hidden');
             });
-
+    
             // Show the selected section
             document.querySelector(`.${sectionClass}`).classList.remove('hidden');
-
+    
             // Remove 'active' class from all tabs
             document.querySelectorAll('.tab').forEach(tab => {
                 tab.classList.remove('active');
             });
-
+    
             // Add 'active' class to the selected tab
             document.querySelector(`.tab[onclick="showSection('${sectionClass}')"]`).classList.add('active');
         }
