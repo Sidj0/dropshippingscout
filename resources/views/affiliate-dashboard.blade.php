@@ -4,205 +4,359 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affiliate Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
 
+@font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('../webfonts/Montserrat-Arabic Regular 400.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('../webfonts/Montserrat-Arabic Medium 500.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('../webfonts/Montserrat-Arabic SemiBold 600.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('../webfonts/Montserrat-Arabic Bold 700.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+ body {
+    font-family: 'Montserrat-Arabic';
+    background-color: #f7f9fc;
+    color: #1e3f5b;
+}
+        
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section {
-            margin-bottom: 30px;
-            background: #fff;
-            border-radius: 8px;
+            width: 80%;
+            margin: auto;
             padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
-        .section h2 {
-            margin: 0 0 15px;
-            font-size: 24px;
+        .affiliate-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
-
+        .affiliate-header div {
+            margin: 10px 0;
+        }
+        .active-status {
+            color: rgb(75, 212, 75);
+            font-weight: bold;
+        }
+        .tabs {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #ddd;
+        }
+        .tabs div {
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #1e3f5b;
+        }
+        .tabs div.active {
+            font-weight: bold;
+            border-bottom: 2px solid #007bff;
+        }
+        .content {
+            margin-top: 20px;
+        }
         .cards {
             display: flex;
+            justify-content: space-around;
             flex-wrap: wrap;
-            gap: 20px;
         }
-
         .card {
-            flex: 1;
-            min-width: 200px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            padding: 20px;
+            background: #FAFBFD;
+            padding: 24px 0px;
+            width: 23%;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8%;
+        }
+       
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            .affiliate-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .affiliate-header img {
+                margin-top: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+            .card {
+                padding: 20px;
+            }
+            .tabs div {
+                padding: 10px;
+                text-align: center;
+                width: 100%;
+            }
+            .tabs div.active {
+                border-bottom: none;
+                border-right: 2px solid #007bff;
+            }
         }
 
-        .card h3 {
-            margin: 0 0 10px;
-            font-size: 18px;
-        }
-
-        .card p {
-            font-size: 24px;
-            margin: 0;
-        }
-
-        .chart {
-            height: 200px;
-            background: #ececec;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #777;
-        }
-
-        .marketing-cards {
+        .traffic-cards {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
             gap: 20px;
         }
-
-        .marketing-card {
-            flex: 1 1 calc(25% - 20px);
-            min-width: 200px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
+        .card:hover {
+            transform: translateY(-5px);
         }
-
-        .marketing-card img {
-            max-width: 40px;
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
             margin-bottom: 10px;
         }
-
-        .marketing-card h4 {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-
-        .marketing-card p {
+        .card-description {
             font-size: 14px;
-            color: #666;
+            color: #555;
         }
 
-        @media (max-width: 768px) {
-            .cards, .marketing-cards {
-                flex-direction: column;
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .traffic-cards {
+                justify-content: center;
             }
+            .card {
+                width: 45%;
+            }
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: 90%;
+            }
+        }
+        h3{
+            font-size: medium;
+        }
+
+        .section-title{
+            font-size: medium;
+            font-weight: 500;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Earnings Section -->
-        <div class="section">
-            <h2>Total Earnings</h2>
+        <div class="affiliate-header">
+            <div>
+                <div><strong>Affiliate Status:</strong> <span class="active-status">Active</span></div>
+                <div><strong>Affiliate ID:</strong> 4326789272</div>
+                <div><strong>Referral Link:</strong> <a href="https://dropshippingscout.com/Registration?referrerid=52605" target="_blank">https://dropshippingscout.com/Registration?referrerid=52605</a></div>
+            </div>
+            
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="showSection('earnings')">Earnings</div>
+            <div class="tab" onclick="showSection('referrals-analytics')">Referrals Analytics</div>
+            <div class="tab" onclick="showSection('marketing-materials')">Marketing Materials</div>
+        </div>
+
+        <div class="content Earnings">
+            <div class="section-title">Total earning</div>
+
             <div class="cards">
                 <div class="card">
-                    <h3>Cleared Balance</h3>
+                    <h3>Cleared balance</h3>
                     <p>$0</p>
                 </div>
                 <div class="card">
-                    <h3>Pending Balance</h3>
+                    <h3>Pending balance</h3>
                     <p>$0</p>
                 </div>
                 <div class="card">
-                    <h3>Referred Users</h3>
+                    <h3>Referred users</h3>
                     <p>0</p>
                 </div>
                 <div class="card">
-                    <h3>Commission Earning</h3>
+                    <h3>Commission earning</h3>
                     <p>15%</p>
                 </div>
             </div>
-            <h2>Monthly Commission Insights</h2>
-            <div class="chart">[Line Chart Placeholder]</div>
+
+            <div class="section-title">Monthly commission insights</div>
+            <div class="chart-container">
+                <canvas id="commissionChart"></canvas>
+            </div>
         </div>
 
-        <!-- Referrals Analytics Section -->
-        <div class="section">
-            <h2>Referrals Analytics</h2>
+        <div class="content referrals-analytics hidden">
+            <div class="section-title">Referrals Analytics</div>
+
             <div class="cards">
                 <div class="card">
-                    <h3>Successful Referrals</h3>
+                    <h3>Successful referrals</h3>
                     <p>100</p>
                 </div>
                 <div class="card">
-                    <h3>Non-Paying Referrals</h3>
+                    <h3>Non-paying referrals</h3>
                     <p>20</p>
                 </div>
                 <div class="card">
-                    <h3>Canceled Referrals</h3>
+                    <h3>Canceled referrals</h3>
                     <p>30</p>
                 </div>
                 <div class="card">
-                    <h3>Total Referrals</h3>
+                    <h3>Total referrals</h3>
                     <p>50%</p>
                 </div>
             </div>
+ 
         </div>
+    </div>
 
-        <!-- Marketing Materials Section -->
-        <div class="section">
-            <h2>Organic Traffic</h2>
-            <div class="marketing-cards">
-                <div class="marketing-card">
-                    <img src="https://via.placeholder.com/40" alt="YouTube">
-                    <h4>YouTube</h4>
-                    <p>Create a video tutorial or upload your video to YouTube.</p>
-                </div>
-                <div class="marketing-card">
-                    <img src="https://via.placeholder.com/40" alt="Facebook Group">
-                    <h4>Facebook Group</h4>
-                    <p>Create a Facebook group and share information with followers.</p>
-                </div>
-                <div class="marketing-card">
-                    <img src="https://via.placeholder.com/40" alt="Forums">
-                    <h4>Forums</h4>
-                    <p>Post or comment on forums like Quora and Blackhatworld.</p>
-                </div>
-                <div class="marketing-card">
-                    <img src="https://via.placeholder.com/40" alt="Instagram">
-                    <h4>Instagram</h4>
-                    <p>Share dropshipping info on Instagram.</p>
-                </div>
+    <div class="container marketing-materials hidden">
+        <div class="section-title">Organic Traffic</div>
+        <div class="traffic-cards">
+            <div class="card">
+                <div class="card-icon"><i class="fab fa-youtube"></i></div>
+                <div class="card-title">YouTube</div>
+                <div class="card-description">You can create a video tutorial or training and upload your video to YouTube.</div>
             </div>
-            <h2>Paid Traffic</h2>
-            <div class="marketing-cards">
-                <div class="marketing-card">
-                    <img src="https://via.placeholder.com/40" alt="Facebook Ads">
-                    <h4>Facebook Ads</h4>
-                    <p>Promote DropshippingScout with Facebook video ads.</p>
-                </div>
-                <div class="marketing-card">
-                    <img src="https://via.placeholder.com/40" alt="Google AdWords">
-                    <h4>Google AdWords</h4>
-                    <p>Use targeted keywords to reach potential buyers.</p>
-                </div>
-                <div class="marketing-card">
-                    <img src="https://via.placeholder.com/40" alt="YouTube Ads">
-                    <h4>YouTube Ads</h4>
-                    <p>Utilize YouTube ads to maximize profitability.</p>
-                </div>
-                <div class="marketing-card">
-                    <img src="https://via.placeholder.com/40" alt="Reddit & Quora">
-                    <h4>Reddit & Quora</h4>
-                    <p>Engage in paid promotions on Reddit and Quora.</p>
-                </div>
+            <div class="card">
+                <div class="card-icon"><i class="fab fa-facebook"></i></div>
+                <div class="card-title">Facebook Group</div>
+                <div class="card-description">You can create your own Facebook group and share information with your followers.</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-comments"></i></div>
+                <div class="card-title">Forums</div>
+                <div class="card-description">You can write, post, or comment on questions sharing your affiliate link.</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fab fa-instagram"></i></div>
+                <div class="card-title">Instagram</div>
+                <div class="card-description">You can share dropshippingscout info on your Instagram by sharing sales results or winning products.</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fab fa-youtube"></i></div>
+                <div class="card-title">YouTube</div>
+                <div class="card-description">You can create a video tutorial or training and upload your video to YouTube.</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fab fa-facebook"></i></div>
+                <div class="card-title">Facebook Group</div>
+                <div class="card-description">You can create your own Facebook group and share information with your followers.</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-comments"></i></div>
+                <div class="card-title">Forums</div>
+                <div class="card-description">You can write, post, or comment on questions sharing your affiliate link.</div>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fab fa-instagram"></i></div>
+                <div class="card-title">Instagram</div>
+                <div class="card-description">You can share dropshippingscout info on your Instagram by sharing sales results or winning products.</div>
             </div>
         </div>
     </div>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('commissionChart').getContext('2d');
+        const commissionChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['02/Oct', '03/Oct', '04/Oct', '05/Oct', '06/Oct', '07/Oct', '08/Oct', '09/Oct', '10/Oct'],
+                datasets: [{
+                    label: 'Commission for last month',
+                    data: [10, 50, 30, 60, 40, 50, 20, 10, 5],
+                    borderColor: 'blue',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        display: true
+                    },
+                    y: {
+                        display: true,
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+      <script>
+        function showSection(sectionClass) {
+            // Hide all sections
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            document.querySelector(`.${sectionClass}`).classList.remove('hidden');
+
+            // Remove 'active' class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Add 'active' class to the selected tab
+            document.querySelector(`.tab[onclick="showSection('${sectionClass}')"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
