@@ -9,28 +9,28 @@
 
 @font-face {
     font-family: 'Montserrat-Arabic';
-    src: url('../webfonts/Montserrat-Arabic Regular 400.otf') format('opentype');
+    src: url('{{asset('webfonts/Montserrat-Arabic Regular 400.otf')}}') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Montserrat-Arabic';
-    src: url('../webfonts/Montserrat-Arabic Medium 500.otf') format('opentype');
+    src: url('{{asset('webfonts/Montserrat-Arabic Medium 500.otf')}}') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Montserrat-Arabic';
-    src: url('../webfonts/Montserrat-Arabic SemiBold 600.otf') format('opentype');
+    src: url('{{asset('webfonts/Montserrat-Arabic SemiBold 600.otf')}}') format('opentype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Montserrat-Arabic';
-    src: url('../webfonts/Montserrat-Arabic Bold 700.otf') format('opentype');
+    src: url('{{asset('webfonts/Montserrat-Arabic Bold 700.otf')}}') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
