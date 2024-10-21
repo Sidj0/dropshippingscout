@@ -102,14 +102,14 @@ Route::delete('/admin/tools/{tool}', [toolsController::class, 'destroy'])->name(
 
 // ebay calculator
 Route::post('/calculate-fees', [EbayCalculatorController::class, 'calculate']);
-
-// Dynamic Page Route
- Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');
-
  
  // for 404
  Route::fallback(function () {
     return response()->view('404');
 });
+
+
+// Dynamic Page Route
+Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');
 
 
