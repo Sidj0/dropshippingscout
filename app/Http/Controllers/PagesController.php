@@ -87,12 +87,18 @@ class PagesController extends Controller
     public function show($identifier)
     {
         $page = $this->getPageByIdentifier($identifier);
-        $pricingFaqs = $this->getPricingFaqs();
-
-        if ($page) {
-            return $this->handlePageView($page, $pricingFaqs);
+        
+        // Fetching the FAQs conditionally for specific pages
+        if (in_array($identifier, ['ebay-calculator', 'title-builder'])) {
+            $faqs = $this->getFaqsByPageName($identifier);
+        } else {
+            $faqs = $this->getPricingFaqs();
         }
-
+    
+        if ($page) {
+            return $this->handlePageView($page, $faqs);
+        }
+    
         return $this->handleBlogView($identifier);
     }
 
@@ -109,22 +115,33 @@ class PagesController extends Controller
         return Faq::where('category_name', 'Payment')->get();
     }
 
-    private function handlePageView($page, $pricingFaqs)
-    {
-        if ($page->view_name === 'index') {
-            return $this->loadIndexPage($page);
-        }
-
-        if ($page->view_name === 'pricing') {
-            return view('pricing', ['page' => $page, 'faqs' => $pricingFaqs]);
-        }
-
-        if (view()->exists($page->view_name)) {
-            return view($page->view_name, ['page' => $page]);
-        }
-
-        abort(404, 'View not found');
+    private function handlePageView($page, $faqs)
+{
+    // Handling the view for specific pages like 'ebay-calculator' or 'title-builder'
+    if (in_array($page->view_name, ['ebay-calculator', 'title-builder'])) {
+        return view($page->view_name, ['page' => $page, 'faqs' => $faqs]);
     }
+
+    // Existing logic for handling other pages
+    if ($page->view_name === 'index') {
+        return $this->loadIndexPage($page);
+    }
+
+    if ($page->view_name === 'pricing') {
+        return view('pricing', ['page' => $page, 'faqs' => $faqs]);
+    }
+
+    if (view()->exists($page->view_name)) {
+        return view($page->view_name, ['page' => $page]);
+    }
+
+    abort(404, 'View not found');
+}
+    // New method to get FAQs for 'ebay-calculator' or 'title-builder'
+private function getFaqsByPageName($pageName)
+{
+    return Faq::where('category_name', $pageName)->get();
+}
 
     private function loadIndexPage($page)
     {

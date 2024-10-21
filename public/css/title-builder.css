@@ -22,6 +22,8 @@
   .filter-box label {
     margin-bottom: 5px;
     font-weight: bold;
+    padding-top: 10px;
+    padding-left: 5px;
   }
   
   .filter-box select,
@@ -92,9 +94,21 @@
   
   .filter-row {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       margin-bottom: 20px;
       flex-wrap: wrap;
+      background: white;
+      border-radius: 10px;
   }
-  
+
+  .latest-news{
+    padding: 50px 20px;
+    background: #c3cbfc;
+    border-radius: 24px;
+    opacity: 1;
+    text-align: center;
+    max-width: 90%;
+    width: 100%;
+    box-sizing: border-box;
+  }
   

@@ -8,6 +8,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\toolsController;
 use Illuminate\Support\Facades\Response;
+use App\Http\Controllers\EbayCalculatorController;
+
 
 
 #home page route
@@ -92,6 +94,9 @@ Route::post('/admin/tools', [toolsController::class, 'store'])->name('tools.stor
 Route::get('/admin/tools/{tool}/edit', [toolsController::class, 'edit'])->name('tools.edit');
 Route::put('/admin/tools/{tool}', [toolsController::class, 'update'])->name('tools.update');
 Route::delete('/admin/tools/{tool}', [toolsController::class, 'destroy'])->name('tools.destroy');
+
+// ebay calculator
+Route::post('/calculate-fees', [EbayCalculatorController::class, 'calculate']);
 
 // Dynamic Page Route
  Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');

@@ -256,6 +256,47 @@
       </div>
     </div>
   </div>
+
+  <div class="latest-news" style="max-width: 100%; margin: 40px auto;">
+    <div>
+        <h2>Reach out to suppliers for details on <br>
+          their offerings and pricing.</h2>
+    </div>
+    <div class="button-container">
+      <a href="https://app.dropshippingscout.com/pricing">
+        <button class="btn-default">Start for $1 Trial</button>
+      </a>
+  </div>
+</div>
+
+<div class="faq-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-10 offset-lg-1 col-md-12 offset-md-0">
+              <div class="accordion-title"><h3 class="accordion-MainTitle"></h3></div>
+              <div class="faq-accordion" id="accordion">
+                  @foreach($faqs as $faq)
+                      <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s" data-category="{{ strtolower(str_replace(' ', '-', $faq->category_name)) }}">
+                          <h2 class="accordion-header" id="heading{{ $faq->id }}">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                      data-bs-target="#collapse{{ $faq->id }}" aria-expanded="false" aria-controls="collapse{{ $faq->id }}">
+                                  {{ $faq->question }}
+                              </button>
+                          </h2>
+                          <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $faq->id }}"
+                               data-bs-parent="#accordion">
+                              <div class="accordion-body">
+                                  <p>{{ $faq->answer }}</p>
+                              </div>
+                          </div>
+                      </div>
+                  @endforeach
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
   
   <!-- Include your JavaScript file or script tag here -->
   <script>
@@ -296,7 +337,42 @@
           }
       });
   </script>
-  
+  <script>
+    document.querySelector("button").addEventListener("click", async () => {
+        const data = {
+            itemPrice: document.getElementById("item-price").value,
+            itemCost: document.getElementById("item-cost").value,
+            ebayFee: document.getElementById("ebay-fee").value,
+            shippingCharge: document.getElementById("shipping-charge").value,
+            shippingCost: document.getElementById("shipping-cost").value,
+            promotion: document.getElementById("promotion").value,
+            otherCosts: document.getElementById("other-costs").value,
+        };
+
+        try {
+            const response = await fetch('/api/calculate-fees', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            document.querySelector(".total-profit .ebay-value").innerText = `$${result.totalProfit}`;
+            document.querySelector(".profit-percent .ebay-value").innerText = `${result.profitPercent}%`;
+            document.querySelector(".ebay-fee .ebay-value").innerText = `$${result.ebayFee}`;
+            document.querySelector(".promotion-fee .ebay-value").innerText = `$${result.promotionFee}`;
+            document.querySelector(".total-cost .ebay-value").innerText = `$${result.totalCost}`;
+            document.querySelector(".break-even-profit .ebay-value").innerText = `$${result.breakEvenProfit}`;
+
+        } catch (error) {
+            console.error("Error calculating fees:", error);
+        }
+    });
+</script>
+
  @endsection 
 
 

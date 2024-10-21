@@ -53,7 +53,7 @@ class FaqController extends Controller
             return redirect()->route('Adminlogin')->with('error', 'Access denied.'); 
         }
 
-        $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy','Support-Assistance','Tool-Features']; // Replace with your categories
+        $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy','Support-Assistance','Tool-Features','ebay-calculator','title-builder']; // Replace with your categories
         return view('Faqs.create', compact('categories'));
     }
 
@@ -79,7 +79,7 @@ class FaqController extends Controller
             return redirect()->route('Adminlogin')->with('error', 'Access denied.'); 
         }
 
-        $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy','Support-Assistance','Tool-Features']; // Replace with your categories
+        $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy','Support-Assistance','Tool-Features','ebay-calculator','title-builder']; // Replace with your categories
         return view('Faqs.edit', compact('faq', 'categories'));
     }
 
