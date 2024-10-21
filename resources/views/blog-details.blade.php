@@ -1,10 +1,10 @@
 
 @extends('layouts.master')
 
-@section('title', $page->title)
-@section('meta_description', $page->meta_description)
-@section('meta_keywords', $page->meta_keywords)
-@section('meta_author', $page->meta_author)
+@section('title', $blog->title)
+@section('meta_description', $blog->meta_description)
+@section('meta_keywords', $blog->meta_keywords)
+@section('meta_author', $blog->meta_author)
 
 @section('styles')
     <!-- Custom CSS for this view -->
