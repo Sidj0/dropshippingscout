@@ -1,11 +1,6 @@
  
 @extends('layouts.master')
 
-@section('title', $page->title)
-@section('meta_description', $page->meta_description)
-@section('meta_keywords', $page->meta_keywords)
-@section('meta_author', $page->meta_author)
- 
 @section('content')
 
     <!-- error section start -->

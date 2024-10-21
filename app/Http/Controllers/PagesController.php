@@ -135,7 +135,7 @@ class PagesController extends Controller
         return view($page->view_name, ['page' => $page]);
     }
 
-    abort(404, 'View not found');
+    return view(view: '404');
 }
     // New method to get FAQs for 'ebay-calculator' or 'title-builder'
 private function getFaqsByPageName($pageName)
@@ -157,7 +157,7 @@ private function getFaqsByPageName($pageName)
             return $this->loadBlogDetailsPage($blog);
         }
 
-        abort(404, 'Page or Blog not found');
+       return view(view: '404');
     }
 
     private function loadBlogDetailsPage($blog)
