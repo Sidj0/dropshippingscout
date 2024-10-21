@@ -23,7 +23,7 @@
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
     RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-    # Redirect /public/index or /public to the root without /public
+    # Redirect /public/index or /public to the root
     RewriteCond %{REQUEST_URI} ^/public/index/?$ [NC]
     RewriteRule ^public/index/?$ / [L,R=301]
 
