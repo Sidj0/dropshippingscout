@@ -19,6 +19,24 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
+     # Redirect www to non-www
+     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+     RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+ 
+     # Redirect requests with /public/domainName to root domain
+     RewriteCond %{REQUEST_URI} ^/public/domainName(.*)$ [NC]
+     RewriteRule ^public/domainName(.*)$ /$1 [L,R=301]
+ 
+     # Redirect /index to root without /index
+     RewriteCond %{REQUEST_URI} /index/?$ [NC]
+     RewriteRule ^index/?$ / [L,R=301]
+ 
+     # Handle default Laravel URLs
+     RewriteRule ^index\.php$ - [L]
+     RewriteCond %{REQUEST_FILENAME} !-f
+     RewriteCond %{REQUEST_FILENAME} !-d
+     RewriteRule . /index.php [L]
+
 
 
 </IfModule>

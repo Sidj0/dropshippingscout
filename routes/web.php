@@ -17,6 +17,11 @@ Route::get("/", function(){
     $home_page= new PagesController;
     return $home_page->show('index');
 });
+
+Route::get('/index', function () {
+    return redirect('/');
+});
+
  
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -100,5 +105,11 @@ Route::post('/calculate-fees', [EbayCalculatorController::class, 'calculate']);
 
 // Dynamic Page Route
  Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');
+
+ 
+ // for 404
+ Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
 
 
