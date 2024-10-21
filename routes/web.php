@@ -109,7 +109,7 @@ Route::post('/calculate-fees', [EbayCalculatorController::class, 'calculate']);
  
  // for 404
  Route::fallback(function () {
-    return response()->view('errors.404', [], 404);
+    return response()->view('404', [], 404);
 });
 
 
