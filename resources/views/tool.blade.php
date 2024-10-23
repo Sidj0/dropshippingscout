@@ -77,26 +77,31 @@
 @endif
 
 @if (!empty($page['image_3']))
-<div class="con-left">
- <div class="left-column">
-
-   <h2 style="width: max-content;">{{$page->header_3}}</h2>
-   
-   <br>
-   <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
+  <div class="con-left">
+    <div class="left-column">
+ 
+      <h2>{{$page->header_3}}</h2>
+      
       <br>
-   <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;
-   border: 1px solid var(--primary-500);
-   color: white
-   ;
-   background: #3545D6 0% 0% no-repeat padding-box;
-   border: 1px solid #AFB9FA; border-radius: 8px;font-size: 13px;">start for $1 Trail</button>
- </div>
- <div class="right-column">
-   <img src="{{ asset('storage/' . $page['image_3']) }}" alt="Example Image">
- </div>
-</div>
-@endif
+      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
+         <br>
+      <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;
+      border: 1px solid var(--primary-500);
+      color: white
+      ;
+      background: #3545D6 0% 0% no-repeat padding-box;
+      border: 1px solid #AFB9FA; border-radius: 8px;font-size: 13px;">start for $1 Trail</button>
+      
+      </div>
+    
+    <div class="right-column">
+      <img src="{{ asset('storage/' . $page['image_3']) }}" alt="Example Image">
+    </div>
+
+  </div>
+  @endif
+ 
+ <br>
 
 @if (!empty($page['image_4']))
 <div class="con-left">
