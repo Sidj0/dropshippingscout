@@ -9,6 +9,21 @@
 @section('styles')
     <!-- Custom CSS for this view -->
     <link href="{{asset('css/blog-details.css')}}" rel="stylesheet">
+
+    <style>
+        .table-content {
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break long words to the next line */
+    overflow-wrap: break-word; /* Ensure wrapping for long words */
+    margin-bottom: 10px; /* Optional: Add spacing between list items */
+}
+
+.table-content a {
+    display: inline-block; /* Ensure the link behaves like a block for better wrapping */
+    text-decoration: none; /* Optional: Remove underline from links */
+    color: inherit; /* Inherit text color */
+}
+    </style>
 @endsection
       
 @section('content')
@@ -22,7 +37,7 @@
             <li><span class="date">{{ $blog->publish_date }}</span></li>
             <li><span class="author">By: {{ $blog->author }}</span></li>
             <li>
-                <img id="like-button" src="{{ asset('images/heart.svg') }}" alt="Likes" style="cursor: pointer;">
+                <img id="" src="{{ asset('images/heart.svg') }}" alt="Likes" >
                 <span id="like-count" class="number">{{ $blog->likes }}</span>
             </li>
         </ul>
@@ -41,24 +56,29 @@
     <div class="content-container">
         <div class="content">
             {!! $blog->content !!}
+            <br>
+            like? 
+            <img id="like-button" src="{{ asset('images/heart.svg') }}" alt="Likes" style="cursor: pointer;">
+
         </div>
         <div class="sidebar">
             <div class="social">
                 <ul>
-                    <li><a href="https://www.tiktok.com/@dropshipping.scout"><img src="{{ asset('images/Tiktok.svg') }}" alt=""></a></li> 
+                    <li><a href="https://www.tiktok.com/@dropshipping.scout" target="_blank"><img src="{{ asset('images/Tiktok.svg') }}" alt=""></a></li>
                     {{-- <li><a href="#"><img src="{{ asset('images/Whatsapp.svg') }}" alt=""></a></li> --}}
-                    <li><a href="https://www.linkedin.com/company/dropshipping-scout"><img src="{{ asset('images/Linkedin.svg') }}" alt=""></a></li>
-                    <li><a href="https://www.instagram.com/dropshipping.scout?igsh=bWQ0cWgwOW4zYzl5"><img src="{{ asset('images/Instagram.svg') }}" alt=""></a></li>
-                    <li><a href="https://youtube.com/@dropshipping.scout.?feature=shared"><img src="{{ asset('images/YouTube.svg') }}" alt=""></a></li>
+                    <li><a href="https://www.linkedin.com/company/dropshipping-scout" target="_blank"><img src="{{ asset('images/Linkedin.svg') }}" alt=""></a></li>
+                    <li><a href="https://www.instagram.com/dropshipping.scout?igsh=bWQ0cWgwOW4zYzl5" target="_blank"><img src="{{ asset('images/Instagram.svg') }}" alt=""></a></li>
+                    <li><a href="https://youtube.com/@dropshipping.scout.?feature=shared" target="_blank"><img src="{{ asset('images/YouTube.svg') }}" alt=""></a></li>
                     {{-- <li><a href="#"><img src="{{ asset('images/X.svg') }}" alt=""></a></li> --}}
-                    <li><a href="https://www.facebook.com/dropshipping.scout?mibextid=ZbWKwL"><img src="{{ asset('images/facebook.svg') }}" alt=""></a></li>
+                    <li><a href="https://www.facebook.com/dropshipping.scout?mibextid=ZbWKwL" target="_blank"><img src="{{ asset('images/facebook.svg') }}" alt=""></a></li>
+                    
                 </ul>
             </div>
 
             <h3 style="color: #3545D6;padding-bottom: 0px;padding-top: 15px;font-weight:700" class="table-content">Table of Contents</h3>
             <ul>
                 @foreach($headings as $heading)
-                    <li class="table-content" style="white-space: nowrap;">
+                    <li class="table-content"  >
                         <a href="#{{ $heading['id'] }}" style="padding: 0; margin: 0; display: inline;">
                             {{ $heading['text'] }}
                         </a>
@@ -138,7 +158,7 @@
     const likeButton = document.getElementById('like-button');
     const likeCount = document.getElementById('like-count');
     
-    alert('id: '+blogId);
+    alert('Thanks for the like!');
     fetch(`/blogs/${blogId}/like`, {
         method: 'POST',
         headers: {

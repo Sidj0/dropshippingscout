@@ -9,6 +9,7 @@
 @section('styles')
     <!-- Custom CSS for this view -->
      <link href="{{asset('css/tools.css')}}" rel="stylesheet">
+ 
 @endsection
 
 @section('content')
