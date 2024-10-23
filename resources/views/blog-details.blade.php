@@ -137,7 +137,8 @@
     const blogId = {{ $blog->id }};
     const likeButton = document.getElementById('like-button');
     const likeCount = document.getElementById('like-count');
-
+    
+    alert('id: '+blogId);
     fetch(`/blogs/${blogId}/like`, {
         method: 'POST',
         headers: {

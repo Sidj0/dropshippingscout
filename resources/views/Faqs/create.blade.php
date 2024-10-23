@@ -28,10 +28,42 @@
                         @endforeach
                     </select>
                 </div>
+                <!-- This select menu will be shown only if 'Tool-Features' is selected -->
+<div class="mb-3" id="tool_slug_wrapper" style="display: none;">
+    <label for="tool_slug" class="form-label">Tool Slug</label>
+    <select class="form-control" id="tool_slug" name="tool_slug">
+        <option value="">Select a Tool</option>
+        @foreach($tools as $tool)
+            <option value="{{ $tool->slug }}">{{ $tool->slug }}</option> <!-- Assuming 'name' and 'slug' fields exist in tools table -->
+        @endforeach
+    </select>
+</div>
+                <div class="mb-3">
+                    <label for="section_title" class="form-label">Section Title</label>
+                    <input type="text" class="form-control" id="section_title" name="section_title" placeholder="e.g., General Questions">
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <a href="{{ route('admin.faqs.index') }}" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>
 </div>
-@endsection
+     <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const categorySelect = document.getElementById('category_name');
+        const toolSlugWrapper = document.getElementById('tool_slug_wrapper');
+        
+        // Listen for changes on the category select menu
+        categorySelect.addEventListener('change', function() {
+            // Check if 'Tool-Features' is selected
+            if (this.value === 'Tool-Features') {
+                toolSlugWrapper.style.display = 'block'; // Show the tool slug select
+            } else {
+                toolSlugWrapper.style.display = 'none'; // Hide the tool slug select
+            }
+        });
+    });
+</script>
+
+ @endsection

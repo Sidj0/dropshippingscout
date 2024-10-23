@@ -131,33 +131,30 @@
   
   </div>
 
-  <!-- FAQs Page Start -->
-  <div class="faq-section">
+<!-- FAQs Page Start -->
+<div class="faq-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset-lg-1 col-md-12 offset-md-0">
-                @if($Faq && $Faq->count() > 0)
-                    @foreach($Faq->groupBy('category') as $category => $categoryFaqs)
-                        <div class="accordion-title"><h3 class="accordion-MainTitle">{{ $category }}</h3></div>
-                        <div class="faq-accordion" id="accordion{{ str_replace(' ', '', $category) }}">
-                            @foreach($categoryFaqs as $faq)
-                                <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
-                                    <h2 class="accordion-header" id="heading{{ $faq->id }}">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                @if($Faq->isNotEmpty()) <!-- Check if there are any FAQs -->
+                    <div class="faq-accordion" id="accordionToolFeatures">
+                        @foreach($Faq as $faq)
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
+                                <h2 class="accordion-header" id="heading{{ $faq->id }}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                             data-bs-target="#collapse{{ $faq->id }}" aria-expanded="false" aria-controls="collapse{{ $faq->id }}">
-                                            {{ $faq->question }}
-                                        </button>
-                                    </h2>
-                                    <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $faq->id }}"
-                                        data-bs-parent="#accordion{{ str_replace(' ', '', $category) }}">
-                                        <div class="accordion-body">
-                                            <p>{{ $faq->answer }}</p>
-                                        </div>
+                                        {{ $faq->question }}
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $faq->id }}"
+                                     data-bs-parent="#accordionToolFeatures">
+                                    <div class="accordion-body">
+                                        <p>{{ $faq->answer }}</p>
                                     </div>
                                 </div>
-                            @endforeach
-                        </div>
-                    @endforeach
+                            </div>
+                        @endforeach
+                    </div>
                 @else
                     <p style="text-align: center">No FAQs available at the moment.</p>
                 @endif
@@ -165,8 +162,9 @@
         </div>
     </div>
 </div>
-
 <!-- FAQs Page End -->
+
+
 </div>
     </div>
 

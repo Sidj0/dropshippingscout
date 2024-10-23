@@ -19,8 +19,8 @@ class FaqController extends Controller
     public function userIndex()
     {
         // Retrieve all FAQs
-        $faqs = Faq::all();
-        
+         $faqs = Faq::orderBy('section_title')->get();
+
         // Retrieve the page data where 'view_name' equals 'faqs'
         $page = Page::where('view_name', 'faqs')->first();
     
@@ -52,10 +52,15 @@ class FaqController extends Controller
         if (!$this->isAdmin()) {
             return redirect()->route('Adminlogin')->with('error', 'Access denied.'); 
         }
-
-        $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy','Support-Assistance','Tool-Features','ebay-calculator','title-builder']; // Replace with your categories
-        return view('Faqs.create', compact('categories'));
+    
+        $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy', 'Support-Assistance', 'Tool-Features', 'ebay-calculator', 'title-builder'];
+    
+        // Fetch tools from the tools table
+        $tools = \App\Models\Tool::all(); // Assuming you have a Tool model
+        
+        return view('Faqs.create', compact('categories', 'tools'));
     }
+    
 
     public function store(Request $request)
     {
@@ -67,6 +72,8 @@ class FaqController extends Controller
             'question' => 'required',
             'answer' => 'required',
             'category_name' => 'required|string',
+            'section_title' => 'nullable|string'
+
         ]);
 
         Faq::create($request->all());
@@ -76,12 +83,18 @@ class FaqController extends Controller
     public function edit(Faq $faq)
     {
         if (!$this->isAdmin()) {
-            return redirect()->route('Adminlogin')->with('error', 'Access denied.'); 
+            return redirect()->route('Adminlogin')->with('error', 'Access denied.');
         }
-
-        $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy','Support-Assistance','Tool-Features','ebay-calculator','title-builder']; // Replace with your categories
-        return view('Faqs.edit', compact('faq', 'categories'));
+    
+        $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy', 'Support-Assistance', 'Tool-Features', 'ebay-calculator', 'title-builder'];
+    
+        // Fetch tools from the tools table
+        $tools = \App\Models\Tool::all();
+    
+        return view('Faqs.edit', compact('faq', 'categories', 'tools'));
     }
+    
+    
 
     public function update(Request $request, Faq $faq)
     {
@@ -93,6 +106,8 @@ class FaqController extends Controller
             'question' => 'required',
             'answer' => 'required',
             'category_name' => 'required|string',
+            'section_title' => 'nullable|string'
+
         ]);
 
         $faq->update($request->all());

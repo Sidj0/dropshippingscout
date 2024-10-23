@@ -35,9 +35,10 @@ class toolsController extends Controller
         // Fetch the page using the slug
         $page = tool::where('slug', $slug)->firstOrFail();
 
-         // Retrieve the faq data where 'category_name' equals 'tool'
-         $Faq = Faq::where('category_name', 'tool')->first();
-    
+        $Faq = Faq::where('category_name', 'Tool-Features')
+        ->where('tool_slug', $slug) 
+        ->get();  // Fetch all matching FAQs
+
 
         // Pass the page data to the view
         return view('tool', compact('page','Faq'));
