@@ -48,7 +48,7 @@
                     <select class="form-control" id="tool_slug" name="tool_slug">
                         <option value="">Select a Tool</option>
                         @foreach($tools as $tool)
-                            <option value="{{ $tool->slug }}" {{ $faq->tool_slug == $tool->slug ? 'selected' : '' }}>{{ $tool->name }}</option>
+                            <option value="{{ $tool->slug }}" {{ $faq->tool_slug == $tool->slug ? 'selected' : '' }}>{{ $tool->slug }}</option>
                         @endforeach
                     </select>
                 </div>

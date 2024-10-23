@@ -317,32 +317,33 @@ p {
 .latest-news {
 background: none !important;
 }
+
 .options-wrapper {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding-bottom: 15px;
-    }
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 15px;
+}
 
-    .options-container {
-        margin-top: 20px;
-        background-color: #E3E7FC;
-        padding: 10px;
-        border-radius: 10px;
-        display: inline-flex;
-        justify-content: center;
-    }
+.options-container {
+  margin-top: 20px;
+  background-color: #cdd1fa;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+}
 
-    .option {
-        margin: 0 10px;
-        padding: 10px 25px;
-        border-radius: 30px;
-        cursor: pointer;
-        font-weight: 500;
-        font-size: 18px;
-        cursor: pointer;
-    }
-    .option.selected {
+.option {
+  margin: 0 10px;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+}
+.option.selected {
 background-color: #1E3F5B;
 color: white;
 }
@@ -953,38 +954,6 @@ margin-left: 8px;
     padding: 0px 0px 0px; 
 }
 
-.options-container {
-  display: flex;
-  gap: 15px;
-  padding: 20px;
-}
-
-.option {
-  background-color: #fff;
-  padding: 15px 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 16px;
-  font-weight: bold;
-  color: #1E3F5B;
-  text-align: center;
-}
-
-/* Shadow on hover */
-.option:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
-  transform: translateY(-3px);
-}
-
-/* For the selected and active option */
-.option.selected.active {
-  background-color: #C2F750;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
-  color: #1E3F5B;
-}
 .service-content-title a {
   background-color: #8ab3d5;
 }
