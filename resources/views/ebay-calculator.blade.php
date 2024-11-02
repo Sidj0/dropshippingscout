@@ -366,7 +366,7 @@
     function updateUI(profit, profitPercentage, totalEbayFees, totalCost) {
         // Update UI elements with calculated values
         document.querySelector('.ebay-column .ebay-value:nth-child(2)').textContent = `$${profit.toFixed(2)}`;
-        document.querySelector('.ebay-column .ebay-value:nth-child(4)').textContent = `${profitPercentage.toFixed(2)}%`;
+        document.querySelector('.ebay-column .ebay-value:nth-child(3)').textContent = `${profitPercentage.toFixed(2)}%`;
         document.querySelector('.ebay-middle-column .ebay-property:nth-child(4) .ebay-value').textContent = `$${totalEbayFees.toFixed(2)}`;
         document.querySelector('.ebay-middle-section .ebay-property:nth-child(8) .ebay-value').textContent = `$${totalCost.toFixed(2)}`;
     }
