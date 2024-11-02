@@ -44,7 +44,7 @@
         <section class="unique-section">
             <div class="unique-title-container">
                 <h2 class="unique-title" style="font-size: 52px; font-weight: bold;">Scanners</h2>
-                <p class="unique-description" style="font-weight: 550; font-size: 20px;">
+                <p style="color: #1E3F5B; font-size: 16px; font-weight: 550;">
                     involves conducting thorough research, analyzing consumer behavior,
                     and staying informed about industry developments.
                 </p>
