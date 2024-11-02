@@ -94,7 +94,7 @@
       <div class="ebay-header">Your Profit</div>
       <div class="ebay-property">
         <span>Total Profit:</span>
-        <span class="ebay-value">$0.30</span>
+        <span class="ebay-value">$0.00</span>
       </div>
       <div class="ebay-property">
         <span>Profit %:</span>
@@ -110,11 +110,11 @@
           <div class="ebay-header">Profit & Fees Breakdown</div>
           <div class="ebay-property">
             <span>Sold Price:</span>
-            <span class="ebay-value">$0.30</span>
+            <span class="ebay-value">$0.00</span>
           </div>
           <div class="ebay-property">
             <span>Final Value Fee:</span>
-            <span class="ebay-value">$0.30</span>
+            <span class="ebay-value">$0.00</span>
           </div>
           <div class="ebay-property">
             <span>Fixed Transaction Fee:</span>
