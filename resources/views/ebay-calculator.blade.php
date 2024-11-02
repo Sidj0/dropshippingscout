@@ -19,7 +19,7 @@
     <p style="text-align: center;">Delve into the flexibility and customization oure services offer to help your product succeed.</p>
 
     <div class="search-container">
-        <input type="text" placeholder="Check Fees By Item ID">
+        <input id="itemIdInput" type="text" placeholder="Check Fees By Item ID">
         <button>Search</button>
     </div>
 
