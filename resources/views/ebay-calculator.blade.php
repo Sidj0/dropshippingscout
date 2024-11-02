@@ -12,80 +12,6 @@
     <link href="{{asset('css/faqs.css')}}" rel="stylesheet">
     <link href="{{asset('css/ebay-calculator.css')}}" rel="stylesheet">
 
- 
-<style>
-  .ebay-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding-bottom: 60px;
-  }
-
-  .ebay-column {
-    flex: 2;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #E2E7FB;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .ebay-middle-column {
-    flex: 4;
-    background-color: #EDEFFC;
-  }
-
-  .ebay-middle-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .ebay-middle-section {
-    flex: 1;
-    padding: 20px;
-  }
-
-  .divider {
-    width: 1px;
-    background-color: #ccc;
-    margin: 0 10px;
-  }
-
-  .ebay-header {
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-  }
-
-  .ebay-property {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-
-  .ebay-value {
-    color: #32CD32; /* Light green color */
-  }
-
-  /* Responsive styling */
-  @media (max-width: 768px) {
-    .ebay-container {
-      flex-direction: column;
-    }
-    .ebay-middle-column {
-      flex: 1;
-    }
-    .ebay-middle-container {
-      flex-direction: column;
-    }
-    .divider {
-      display: none;
-    }
-  }
-</style>
  @endsection
 
 @section('content')
@@ -102,16 +28,15 @@
           <!-- First row of filters -->
           <div class="filter-box">
               <label for="marketplace">MarketPlace</label>
-              <select id="marketplace">
-                  <option value="ebay">ebay.com</option>
+              <select id="marketplaceSelect" onchange="populateCategories()">
+                <option value="">Select a Marketplace</option>
               </select>
           </div>
           <div class="filter-box">
               <label for="category">Category</label>
-              <select id="category">
-                  <option value="" disabled selected>Select Category</option>
-                  <!-- Add categories here -->
-              </select>
+              <select id="categorySelect">
+                <option value="">Select a Category</option>
+             </select>
           </div>
           <div class="filter-box">
               <label for="item-price">Item Sold Price</label>
@@ -297,6 +222,53 @@
   </div>
 </div>
 
+
+
+<script>
+// Initialize marketplaces data
+let marketplacesData = [];
+
+// Load marketplaces and populate the marketplace dropdown
+async function initMarketplaces() {
+    marketplacesData = await loadMarketplaces();
+    const marketplaceSelect = document.getElementById('marketplaceSelect');
+    
+    if (marketplacesData) {
+        marketplacesData.marketplaces.forEach((marketplace) => {
+            const option = document.createElement('option');
+            option.value = marketplace.id;
+            option.textContent = marketplace.name;
+            marketplaceSelect.appendChild(option);
+        });
+    }
+}
+
+// Populate categories based on the selected marketplace
+function populateCategories() {
+    const marketplaceSelect = document.getElementById('marketplaceSelect');
+    const categorySelect = document.getElementById('categorySelect');
+    const selectedMarketplaceId = marketplaceSelect.value;
+
+    // Clear the category dropdown
+    categorySelect.innerHTML = '<option value="">Select a Category</option>';
+    
+    if (selectedMarketplaceId) {
+        const selectedMarketplace = marketplacesData.marketplaces.find(marketplace => marketplace.id == selectedMarketplaceId);
+
+        if (selectedMarketplace && selectedMarketplace.categories) {
+            selectedMarketplace.categories.forEach((category) => {
+                const option = document.createElement('option');
+                option.value = category.id;
+                option.textContent = category.name;
+                categorySelect.appendChild(option);
+            });
+        }
+    }
+}
+
+// Initialize marketplaces when the page loads
+window.onload = initMarketplaces;
+</script>
   
   <!-- Include your JavaScript file or script tag here -->
   <script>
@@ -337,41 +309,7 @@
           }
       });
   </script>
-  <script>
-    document.querySelector("button").addEventListener("click", async () => {
-        const data = {
-            itemPrice: document.getElementById("item-price").value,
-            itemCost: document.getElementById("item-cost").value,
-            ebayFee: document.getElementById("ebay-fee").value,
-            shippingCharge: document.getElementById("shipping-charge").value,
-            shippingCost: document.getElementById("shipping-cost").value,
-            promotion: document.getElementById("promotion").value,
-            otherCosts: document.getElementById("other-costs").value,
-        };
-
-        try {
-            const response = await fetch('/api/calculate-fees', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            const result = await response.json();
-
-            document.querySelector(".total-profit .ebay-value").innerText = `$${result.totalProfit}`;
-            document.querySelector(".profit-percent .ebay-value").innerText = `${result.profitPercent}%`;
-            document.querySelector(".ebay-fee .ebay-value").innerText = `$${result.ebayFee}`;
-            document.querySelector(".promotion-fee .ebay-value").innerText = `$${result.promotionFee}`;
-            document.querySelector(".total-cost .ebay-value").innerText = `$${result.totalCost}`;
-            document.querySelector(".break-even-profit .ebay-value").innerText = `$${result.breakEvenProfit}`;
-
-        } catch (error) {
-            console.error("Error calculating fees:", error);
-        }
-    });
-</script>
+  
 
  @endsection 
 
