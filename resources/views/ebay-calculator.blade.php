@@ -323,7 +323,7 @@
   
 <!-- Add this within your script section or a separate JS file -->
 <script>
-  document.getElementById('calculateButton').addEventListener('click', performCalculation);
+document.querySelector('.search-container button').addEventListener('click', performCalculation);
 
 async function performCalculation() {
     // Capture input values
