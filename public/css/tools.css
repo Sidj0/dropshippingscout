@@ -610,8 +610,7 @@ body {
     }
   
     .right-column img {
-        max-width: 300px; /* Set a maximum width for the image */
-        height: auto; /* Maintain aspect ratio */
+         height: auto; /* Maintain aspect ratio */
         flex-shrink: 0; /* Prevent the image from shrinking */
     }
   
