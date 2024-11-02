@@ -178,3 +178,9 @@
       display: none;
     }
   }
+
+  @media (max-width: 768px) {
+    .latest-news h2{
+  font-size: 20px;
+}
+  }
