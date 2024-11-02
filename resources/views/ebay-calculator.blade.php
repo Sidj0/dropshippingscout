@@ -142,7 +142,7 @@
           <div class="ebay-header">Other Costs</div>
           <div class="ebay-property">
             <span>Item Cost:</span>
-            <span class="ebay-value">$0.30</span>
+            <span class="ebay-value">$0.00</span>
           </div>
           <div class="ebay-property">
             <span>Shipping Cost:</span>
@@ -169,7 +169,7 @@
       <div class="ebay-header"></div>
       <div class="ebay-property">
         <span>Break Even Profit:</span>
-        <span class="ebay-value">$0.30</span>
+        <span class="ebay-value">$0.00</span>
       </div>
       <div class="ebay-property">
         <span>Profit Margin:</span>
@@ -177,7 +177,7 @@
       </div>
       <div class="ebay-property">
         <span>Total Profit:</span>
-        <span class="ebay-value">$0.30</span>
+        <span class="ebay-value">$0.00</span>
       </div>
     </div>
   </div>
