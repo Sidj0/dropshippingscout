@@ -182,7 +182,7 @@
     </div>
   </div>
 
-  <div class="latest-news" style="max-width: 100%; margin: 40px auto;">
+  <div class="latest-news" style="max-width: 80%; margin: 40px auto;">
     <div>
         <h2>Reach out to suppliers for details on <br>
           their offerings and pricing.</h2>
