@@ -9,6 +9,32 @@
 @section('styles')
     <!-- Custom CSS for this view -->
      <link href="{{asset('css/tools.css')}}" rel="stylesheet">
+
+     <style>
+       .con-left {
+      display: flex; /* Use flexbox to align the columns */
+      align-items: flex-start; /* Align items to the top */
+      margin-bottom: 20px; /* Add some space between sections */
+  }
+  .left-column,
+  .right-column {
+      flex: 1; /* Allow columns to take equal space */
+      padding: 10px; /* Add some padding */
+  }
+  .right-column img {
+      max-width: 300px; /* Set a fixed max-width for the image */
+      height: auto; /* Maintain aspect ratio */
+  }
+  .btn-default {
+      background: #3545D6;
+      border: 1px solid #AFB9FA;
+      border-radius: 8px;
+      font-size: 13px;
+      color: white;
+      padding: 10px 15px; /* Add some padding for better button size */
+      cursor: pointer; /* Change cursor to pointer on hover */
+  }
+     </style>
  
 @endsection
 
