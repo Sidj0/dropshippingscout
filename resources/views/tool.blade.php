@@ -11,28 +11,47 @@
      <link href="{{asset('css/tools.css')}}" rel="stylesheet">
 
      <style>
-       .con-left {
-      display: flex; /* Use flexbox to align the columns */
-      align-items: flex-start; /* Align items to the top */
-      margin-bottom: 20px; /* Add some space between sections */
+.con-left {
+      display: flex; /* Use flexbox for layout */
+      align-items: flex-start; /* Align items at the start */
+      margin-bottom: 20px; /* Add space between sections */
   }
+  
   .left-column,
   .right-column {
       flex: 1; /* Allow columns to take equal space */
       padding: 10px; /* Add some padding */
   }
-  .right-column img {
-      max-width: 300px; /* Set a fixed max-width for the image */
-      height: auto; /* Maintain aspect ratio */
+
+  .left-column {
+      max-width: 50%; /* Restrict width of left column to 50% */
   }
+
+  .right-column img {
+      max-width: 300px; /* Set a maximum width for the image */
+      height: auto; /* Maintain aspect ratio */
+      flex-shrink: 0; /* Prevent the image from shrinking */
+  }
+
   .btn-default {
       background: #3545D6;
       border: 1px solid #AFB9FA;
       border-radius: 8px;
       font-size: 13px;
       color: white;
-      padding: 10px 15px; /* Add some padding for better button size */
+      padding: 10px 15px; /* Add some padding for button */
       cursor: pointer; /* Change cursor to pointer on hover */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .con-left {
+          flex-direction: column; /* Stack columns on smaller screens */
+      }
+      .left-column,
+      .right-column {
+          max-width: 100%; /* Allow full width on smaller screens */
+      }
   }
      </style>
  
@@ -48,110 +67,79 @@
 @if (!empty($page['image_1']))
   <div class="con-left">
     <div class="left-column">
- 
       <h2>{{$page->header_1}}</h2>
-      
       <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_1}}</p>
-         <br>
-      <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;
-      border: 1px solid var(--primary-500);
-      color: white
-      ;
-      background: #3545D6 0% 0% no-repeat padding-box;
-      border: 1px solid #AFB9FA; border-radius: 8px;font-size: 13px;">start for $1 Trail</button>
-      
-      <p style="color: #1E3F5B; font-size: 13px; font-weight: 550;padding-top:10px;width: max-content;">
-       
+      <br>
+      <button class="btn-default">start for $1 Trial</button>
+      <p style="color: #1E3F5B; font-size: 13px; font-weight: 550; padding-top: 10px; width: max-content;">
         <img src="{{asset('images/verified.png')}}" style="max-width: 35px"/>
-        
-        Trusted by 200.000 entrepreneurs like you</p>
-
-      </div>
+        Trusted by 200.000 entrepreneurs like you
+      </p>
+    </div>
     
     <div class="right-column">
       <img src="{{ asset('storage/' . $page['image_1']) }}" alt="Example Image">
     </div>
-
   </div>
-  @endif
- 
- <br>
+@endif
 
- @if (!empty($page['image_2']))
- <div class="con-left">
+<br>
+
+@if (!empty($page['image_2']))
+  <div class="con-left">
     <div class="right-column">
-        <img src="{{ asset('storage/' . $page['image_2']) }}" alt="Example Image">
+      <img src="{{ asset('storage/' . $page['image_2']) }}" alt="Example Image">
     </div>
 
     <div class="left-column">
-        <h2 style="width: max-content;">{{$page->header_2}}</h2>
-        <br>
-        <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">
-            {{$page->paragraph_2}}
-        </p>
-        <br>
-      <a href="https://app.dropshippingscout.com/pricing">  <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;
-            border: 1px solid var(--primary-500);
-            color: white;
-            background: #3545D6 0% 0% no-repeat padding-box;
-            border: 1px solid #AFB9FA; border-radius: 8px; font-size: 13px;">
-            start for $1 Trial
-        </button>
-    </a>
+      <h2 style="width: max-content;">{{$page->header_2}}</h2>
+      <br>
+      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">
+        {{$page->paragraph_2}}
+      </p>
+      <br>
+      <a href="https://app.dropshippingscout.com/pricing">
+        <button class="btn-default">start for $1 Trial</button>
+      </a>
     </div>
-</div>
+  </div>
 @endif
 
 @if (!empty($page['image_3']))
   <div class="con-left">
     <div class="left-column">
- 
       <h2>{{$page->header_3}}</h2>
-      
       <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
-         <br>
-      <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;
-      border: 1px solid var(--primary-500);
-      color: white
-      ;
-      background: #3545D6 0% 0% no-repeat padding-box;
-      border: 1px solid #AFB9FA; border-radius: 8px;font-size: 13px;">start for $1 Trail</button>
-      
-      </div>
+      <br>
+      <button class="btn-default">start for $1 Trial</button>
+    </div>
     
     <div class="right-column">
       <img src="{{ asset('storage/' . $page['image_3']) }}" alt="Example Image">
     </div>
-
   </div>
-  @endif
- 
- <br>
+@endif
+
+<br>
 
 @if (!empty($page['image_4']))
-<div class="con-left">
-<div class="right-column">
-    <img src="{{ asset('storage/' . $page['image_4']) }}" alt="Example Image">
-</div>
+  <div class="con-left">
+    <div class="right-column">
+      <img src="{{ asset('storage/' . $page['image_4']) }}" alt="Example Image">
+    </div>
 
-<div class="left-column">
-    <h2 style="width: max-content;">{{$page->header_4}}</h2>
-    <br>
-    <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">
+    <div class="left-column">
+      <h2 style="width: max-content;">{{$page->header_4}}</h2>
+      <br>
+      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">
         {{$page->paragraph_4}}
-    </p>
-    <br>
-    <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;
-        border: 1px solid var(--primary-500);
-        color: white;
-        background: #3545D6 0% 0% no-repeat padding-box;
-        border: 1px solid #AFB9FA; border-radius: 8px; font-size: 13px;">
-        start for $1 Trial
-    </button>
-</div>
-</div>
+      </p>
+      <br>
+      <button class="btn-default">start for $1 Trial</button>
+    </div>
+  </div>
 @endif
 
     <div class="container faqHead" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
