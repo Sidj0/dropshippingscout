@@ -114,7 +114,7 @@
             </div>
           <div class="ebay-property">
             <span>Final Value Fee:</span>
-            <span id="final-value-fee" class="ebay-value">$0.00</span>
+            <span id="total-ebay-fees" class="ebay-value">$0.00</span>
             </div>
           <div class="ebay-property">
             <span>Fixed Transaction Fee:</span>
@@ -142,19 +142,19 @@
           <div class="ebay-header">Other Costs</div>
           <div class="ebay-property">
             <span>Item Cost:</span>
-            <span id="item-cost" class="ebay-value">$0.00</span>
+            <span id="item-cost-value" class="ebay-value">$0.00</span>
             </div>
           <div class="ebay-property">
             <span>Shipping Cost:</span>
-            <span id="shipping-cost" class="ebay-value">0.00%</span>
+            <span id="shipping-cost-value" class="ebay-value">$0.00</span>
             </div>
           <div class="ebay-property">
             <span>Other Costs:</span>
-            <span id="other-costs" class="ebay-value">0.00%</span>
+            <span id="other-costs-value" class="ebay-value">$0.00</span>
             </div>
           <div class="ebay-property">
             <span>Total Cost:</span>
-            <span id="total-cost" class="ebay-value">0.00%</span>
+            <span id="total-cost" class="ebay-value">$0.00</span>
             </div>
           <div class="ebay-property">
             <span>Total Cost %:</span>
@@ -328,14 +328,14 @@ document.querySelector('.search-container button').addEventListener('click', per
 async function performCalculation() {
     // Capture input values
     const itemId = document.getElementById('itemIdInput').value;
-    const marketplaceKey = document.getElementById('marketplaceSelect').value;
-    const category = document.getElementById('categorySelect').value;
-    const soldPrice = parseFloat(document.getElementById('item-price').value) || 0;
-    const itemCost = parseFloat(document.getElementById('item-cost').value) || 0;
-    const ebayFee = parseFloat(document.getElementById('ebay-fee').value) || 0;
+        const marketplaceKey = document.getElementById('marketplaceSelect').value;
+        const category = document.getElementById('categorySelect').value;
+        const soldPrice = parseFloat(document.getElementById('item-price').value) || 0;
+        const itemCost = parseFloat(document.getElementById('item-cost').value) || 0;
+        const ebayFee = parseFloat(document.getElementById('ebay-fee').value) || 0;
 
     // Optional inputs if "More Options" is clicked
-    const shippingCharge = parseFloat(document.getElementById('shipping-charge').value) || 0;
+    const shippingCharge = parseFloat(document.getElementById('shipping-charge').value)
     const shippingCost = parseFloat(document.getElementById('shipping-cost').value) || 0;
     const promotion = parseFloat(document.getElementById('promotion').value) || 0;
     const otherCosts = parseFloat(document.getElementById('other-costs').value) || 0;
