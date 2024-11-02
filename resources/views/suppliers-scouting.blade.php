@@ -16,7 +16,7 @@
     <div class="container">
         <h1 class="title" style="margin-top:0px;">Suppliers Scouting</h1>
         <h5 class="title" style="margin-top:20px; font-size: 20px; color: #1E3F5B; font-weight: 550;">
-            actively searching for new and innovative products that have the potential to disrupt the market.
+            Actively searching for new and innovative products that have the potential to disrupt the market.
         </h5>
         <br>
 
@@ -45,7 +45,7 @@
             <div class="unique-title-container">
                 <h2 class="unique-title" style="font-size: 52px; font-weight: bold;">Scanners</h2>
                 <p style="color: #1E3F5B; font-size: 16px; font-weight: 550;">
-                    involves conducting thorough research, analyzing consumer behavior,
+                    Involves conducting thorough research, analyzing consumer behavior,
                     and staying informed about industry developments.
                 </p>
             </div>
@@ -54,7 +54,7 @@
                     <div class="unique-rectangle">
                         <img src="{{asset('./images/aliexpress-logo.jpg')}}" alt="Small Title Image" class="unique-small-image">
                         <img src="{{asset('images/AliExpress-Scanner.jpeg')}}" alt="Main Image" class="unique-main-image">
-                        <p class="unique-text">identify niche markets or customer segments that are not being targeted</p>
+                        <p class="unique-text">Identify niche markets or customer segments that are not being targeted</p>
                         <a href="{{ route('tools-product.show', ['slug' => 'express-scan-tool']) }}"> <button class="unique-read-more">Read More</button> </a>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                     <div class="unique-rectangle">
                         <img src="{{asset('./images/walmart.jpg')}}" alt="Small Title Image" class="unique-small-image">
                         <img src="{{asset('images/Walmart-Scanner.jpeg')}}" alt="Main Image" class="unique-main-image">
-                        <p class="unique-text">scouting efforts can lead to increased revenue streams and business growth.</p>
+                        <p class="unique-text">Scouting efforts can lead to increased revenue streams and business growth.</p>
                         <a href="{{ route('tools-product.show', ['slug' => 'walmart-watch-tool']) }}"><button class="unique-read-more">Read More</button> </a>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     <div class="unique-rectangle">
                         <img src="{{asset('./images/amazon-logo.jpg')}}" alt="Small Title Image" class="unique-small-image">
                         <img src="{{asset('images/Amazon-Scanner.jpeg')}}" alt="Main Image" class="unique-main-image">
-                        <p class="unique-text">start scouting for products, clearly define your business goals and objectives.</p>
+                        <p class="unique-text">Start scouting for products, clearly define your business goals and objectives.</p>
                         <a href="{{ route('tools-product.show', ['slug' => 'amazon-scanner']) }}">  <button class="unique-read-more">Read More</button> </a>
                     </div>
                 </div>
