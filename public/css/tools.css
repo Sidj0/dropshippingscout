@@ -622,7 +622,6 @@ body {
         color: white;
         padding: 10px 15px; /* Add some padding for button */
         cursor: pointer; /* Change cursor to pointer on hover */
-        margin-top: 15px; /* Add margin to separate from other content */
     }
   
     /* Responsive adjustments */
@@ -633,8 +632,5 @@ body {
         .left-column,
         .right-column {
             max-width: 100%; /* Allow full width on smaller screens */
-        }
-        .btn-default {
-            align-self: flex-start; /* Align the button to the start */
         }
     }
