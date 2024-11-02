@@ -417,6 +417,6 @@ header.main-header .header-sticky.hide {
 
 @media (max-width: 768px) {
 body{
-    zoom: 90%;
+    zoom: 85%;
 }
 }
