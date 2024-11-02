@@ -76,8 +76,8 @@
           </div>
           <div class="filter-box">
             <label for="other-costs">Seller Status</label>
-            <input type="number" id="other-costs" placeholder="1">
-        </div>
+            <input type="number" id="seller-status" placeholder="1"> <!-- Updated ID -->
+            </div>
       </div>
   
       <!-- More Options Link -->
@@ -348,21 +348,19 @@ async function performCalculation() {
     const profitPercentage = (profit / soldPrice) * 100;
 
     // Update the profit display values
-    document.getElementById('totalProfit').textContent = `$${profit.toFixed(2)}`;
-    document.getElementById('profitPercentage').textContent = `${profitPercentage.toFixed(2)}%`;
+    document.getElementById('total-profit').textContent = `$${profit.toFixed(2)}`;
+    document.getElementById('profit-percent').textContent = `${profitPercentage.toFixed(2)}%`;
 
     // Update fee breakdown values
-    document.getElementById('soldPrice').textContent = `$${soldPrice.toFixed(2)}`;
-    document.getElementById('totalEbayFees').textContent = `$${totalEbayFees.toFixed(2)}`;
-    document.getElementById('fixedTransactionFee').textContent = `${ebayFee}%`;
-    document.getElementById('promotionFees').textContent = `${promotion}%`;
-    document.getElementById('promotionFeesValue').textContent = `$${promotionFees.toFixed(2)}`;
-    document.getElementById('totalEbayFeesPercentage').textContent = `${((totalEbayFees / soldPrice) * 100).toFixed(2)}%`;
+    document.getElementById('sold-price').textContent = `$${soldPrice.toFixed(2)}`;
+    document.getElementById('total-ebay-fees').textContent = `$${totalEbayFees.toFixed(2)}`;
+    document.getElementById('transaction-fee-percent').textContent = `${ebayFee}%`;
+    document.getElementById('promotion-fee').textContent = `${promotion}%`;
+    document.getElementById('other-costs-value').textContent = `$${otherCosts.toFixed(2)}`;
 
     // Update other costs section values
-    document.getElementById('itemCostValue').textContent = `$${itemCost.toFixed(2)}`;
+    document.getElementById('item-cost').textContent = `$${itemCost.toFixed(2)}`;
     document.getElementById('shippingCostValue').textContent = `$${shippingCost.toFixed(2)}`;
-    document.getElementById('otherCostsValue').textContent = `$${otherCosts.toFixed(2)}`;
     document.getElementById('totalCostsValue').textContent = `$${totalCosts.toFixed(2)}`;
     document.getElementById('totalCostsPercentage').textContent = `${((totalCosts / soldPrice) * 100).toFixed(2)}%`;
 
@@ -370,7 +368,7 @@ async function performCalculation() {
     const breakEvenProfit = soldPrice - totalCosts;
     const profitMargin = profitPercentage.toFixed(2);
     
-    document.getElementById('breakEvenProfit').textContent = `$${breakEvenProfit.toFixed(2)}`;
+    document.getElementById('breakEvenProfit').textContent = `$${breakEvenProfit >= 0 ? breakEvenProfit.toFixed(2) : '0.00'}`;
     document.getElementById('profitMargin').textContent = `${profitMargin}%`;
 }
 
@@ -388,7 +386,6 @@ async function fetchFeesByItemId(itemId) {
         console.error('Failed to fetch fees:', error);
     }
 }
-
 </script>
 
  @endsection 
