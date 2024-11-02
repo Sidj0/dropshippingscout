@@ -408,7 +408,7 @@ header.main-header .header-sticky.active {
 }
 
 header.main-header .header-sticky.hide {
-    padding: 0px 0;
+    padding: 15px 0;
 }
 
 .navbar {
