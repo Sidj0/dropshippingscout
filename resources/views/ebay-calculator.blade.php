@@ -321,6 +321,56 @@
       });
   </script>
   
+<!-- Add this within your script section or a separate JS file -->
+<script>
+    document.querySelector('.search-container button').addEventListener('click', performCalculation);
+
+    async function performCalculation() {
+        // Capture input values
+        const itemId = document.querySelector('.search-container input').value;
+        const marketplaceKey = document.getElementById('marketplaceSelect').value;
+        const category = document.getElementById('categorySelect').value;
+        const soldPrice = parseFloat(document.getElementById('item-price').value) || 0;
+        const itemCost = parseFloat(document.getElementById('item-cost').value) || 0;
+        const ebayFeePercentage = parseFloat(document.getElementById('ebay-fee').value) || 0;
+        const shippingCharge = parseFloat(document.getElementById('shipping-charge').value) || 0;
+        const shippingCost = parseFloat(document.getElementById('shipping-cost').value) || 0;
+        const promotionPercentage = parseFloat(document.getElementById('promotion').value) || 0;
+        const otherCosts = parseFloat(document.getElementById('other-costs').value) || 0;
+
+        // Ensure a marketplace and required fields are selected
+        if (!marketplaceKey || !soldPrice || !itemCost) {
+            alert('Please select a marketplace and enter required values for the calculation.');
+            return;
+        }
+
+        // Retrieve marketplace data for fee calculations
+        const marketplace = marketplacesData[marketplaceKey];
+        if (!marketplace) {
+            alert('Selected marketplace data not available.');
+            return;
+        }
+
+        // Calculate eBay fees, promotion fees, total costs, and profit
+        const ebayFee = (soldPrice * ebayFeePercentage) / 100;
+        const promotionFee = (soldPrice * promotionPercentage) / 100;
+        const totalCost = itemCost + ebayFee + shippingCost + promotionFee + otherCosts;
+        const totalEbayFees = ebayFee + promotionFee;
+        const profit = soldPrice - totalCost - shippingCharge;
+        const profitPercentage = (profit / soldPrice) * 100;
+
+        // Display calculated values
+        updateUI(profit, profitPercentage, totalEbayFees, totalCost);
+    }
+
+    function updateUI(profit, profitPercentage, totalEbayFees, totalCost) {
+        // Update UI elements with calculated values
+        document.querySelector('.ebay-column .ebay-value:nth-child(2)').textContent = `$${profit.toFixed(2)}`;
+        document.querySelector('.ebay-column .ebay-value:nth-child(4)').textContent = `${profitPercentage.toFixed(2)}%`;
+        document.querySelector('.ebay-middle-column .ebay-property:nth-child(4) .ebay-value').textContent = `$${totalEbayFees.toFixed(2)}`;
+        document.querySelector('.ebay-middle-section .ebay-property:nth-child(8) .ebay-value').textContent = `$${totalCost.toFixed(2)}`;
+    }
+</script>
 
  @endsection 
 
