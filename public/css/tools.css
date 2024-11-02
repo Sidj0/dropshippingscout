@@ -585,3 +585,45 @@ body {
         .latest-news{
           background-color: #c3cbfc;
       }
+
+      .con-left {
+        display: flex; /* Use flexbox for layout */
+        align-items: flex-start; /* Align items at the start */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+    
+    .left-column,
+    .right-column {
+        flex: 1; /* Allow columns to take equal space */
+        padding: 10px; /* Add some padding */
+    }
+  
+    .left-column {
+        max-width: 50%; /* Restrict width of left column to 50% */
+    }
+  
+    .right-column img {
+         height: auto; /* Maintain aspect ratio */
+        flex-shrink: 0; /* Prevent the image from shrinking */
+    }
+  
+    .btn-default {
+        background: #3545D6;
+        border: 1px solid #AFB9FA;
+        border-radius: 8px;
+        font-size: 13px;
+        color: white;
+        padding: 10px 15px; /* Add some padding for button */
+        cursor: pointer; /* Change cursor to pointer on hover */
+    }
+  
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .con-left {
+            flex-direction: column; /* Stack columns on smaller screens */
+        }
+        .left-column,
+        .right-column {
+            max-width: 100%; /* Allow full width on smaller screens */
+        }
+    }
