@@ -94,12 +94,12 @@
       <div class="ebay-header">Your Profit</div>
       <div class="ebay-property">
         <span>Total Profit:</span>
-        <span class="ebay-value">$0.00</span>
-      </div>
+        <span id="total-profit" class="ebay-value">$0.00</span>
+        </div>
       <div class="ebay-property">
         <span>Profit %:</span>
-        <span class="ebay-value">0.00%</span>
-      </div>
+        <span id="profit-percent" class="ebay-value">0.00%</span>
+        </div>
     </div>
 
     <!-- Middle Column with Two Sections -->
@@ -110,28 +110,28 @@
           <div class="ebay-header">Profit & Fees Breakdown</div>
           <div class="ebay-property">
             <span>Sold Price:</span>
-            <span class="ebay-value">$0.00</span>
-          </div>
+            <span id="sold-price" class="ebay-value">$0.00</span>
+            </div>
           <div class="ebay-property">
             <span>Final Value Fee:</span>
-            <span class="ebay-value">$0.00</span>
-          </div>
+            <span id="final-value-fee" class="ebay-value">$0.00</span>
+            </div>
           <div class="ebay-property">
             <span>Fixed Transaction Fee:</span>
-            <span class="ebay-value">0.00%</span>
-          </div>
+            <span id="transaction-fee-percent" class="ebay-value">0.00%</span>
+            </div>
           <div class="ebay-property">
             <span>Promotion Fees:</span>
-            <span class="ebay-value">0.00%</span>
-          </div>
+            <span id="promotion-fee" class="ebay-value">0.00%</span>
+            </div>
           <div class="ebay-property">
             <span>Total eBay Fees:</span>
-            <span class="ebay-value">0.00%</span>
-          </div>
+            <span id="total-ebay-fees" class="ebay-value">0.00%</span>
+            </div>
           <div class="ebay-property">
             <span>Total eBay Fees %:</span>
-            <span class="ebay-value">0.00%</span>
-          </div>
+            <span id="total-ebay-fees-percent" class="ebay-value">0.00%</span>
+            </div>
         </div>
 
         <!-- Divider Line -->
@@ -142,24 +142,24 @@
           <div class="ebay-header">Other Costs</div>
           <div class="ebay-property">
             <span>Item Cost:</span>
-            <span class="ebay-value">$0.00</span>
-          </div>
+            <span id="item-cost" class="ebay-value">$0.00</span>
+            </div>
           <div class="ebay-property">
             <span>Shipping Cost:</span>
-            <span class="ebay-value">0.00%</span>
-          </div>
+            <span id="shipping-cost" class="ebay-value">0.00%</span>
+            </div>
           <div class="ebay-property">
             <span>Other Costs:</span>
-            <span class="ebay-value">0.00%</span>
-          </div>
+            <span id="other-costs" class="ebay-value">0.00%</span>
+            </div>
           <div class="ebay-property">
             <span>Total Cost:</span>
-            <span class="ebay-value">0.00%</span>
-          </div>
+            <span id="total-cost" class="ebay-value">0.00%</span>
+            </div>
           <div class="ebay-property">
             <span>Total Cost %:</span>
-            <span class="ebay-value">0.00%</span>
-          </div>
+            <span id="total-cost-percent" class="ebay-value">0.00%</span>
+            </div>
         </div>
       </div>
     </div>
@@ -169,16 +169,16 @@
       <div class="ebay-header"></div>
       <div class="ebay-property">
         <span>Break Even Profit:</span>
-        <span class="ebay-value">$0.00</span>
-      </div>
+        <span id="break-even-profit" class="ebay-value">$0.00</span>
+        </div>
       <div class="ebay-property">
         <span>Profit Margin:</span>
-        <span class="ebay-value">0.00%</span>
-      </div>
+        <span id="profit-margin" class="ebay-value">0.00%</span>
+        </div>
       <div class="ebay-property">
         <span>Total Profit:</span>
-        <span class="ebay-value">$0.00</span>
-      </div>
+        <span id="final-total-profit" class="ebay-value">$0.00</span>
+        </div>
     </div>
   </div>
 
@@ -323,11 +323,11 @@
   
 <!-- Add this within your script section or a separate JS file -->
 <script>
-  document.querySelector('.search-container button').addEventListener('click', performCalculation);
+  document.getElementById('calculateButton').addEventListener('click', performCalculation);
 
 async function performCalculation() {
     // Capture input values
-    const itemId = document.querySelector('.search-container input').value;
+    const itemId = document.getElementById('itemIdInput').value;
     const marketplaceKey = document.getElementById('marketplaceSelect').value;
     const category = document.getElementById('categorySelect').value;
     const soldPrice = parseFloat(document.getElementById('item-price').value) || 0;
@@ -345,30 +345,33 @@ async function performCalculation() {
     const promotionFees = soldPrice * (promotion / 100);
     const totalCosts = itemCost + shippingCost + otherCosts + totalEbayFees + promotionFees;
     const profit = soldPrice - totalCosts;
+    const profitPercentage = (profit / soldPrice) * 100;
 
     // Update the profit display values
-    document.querySelector('.ebay-column:nth-child(1) .ebay-value:nth-child(2)').textContent = `$${profit.toFixed(2)}`;
-    //document.querySelector('.ebay-column:nth-child(1) .ebay-value:nth-child(3)').textContent = `${((profit / soldPrice) * 100).toFixed(2)}%`;
+    document.getElementById('totalProfit').textContent = `$${profit.toFixed(2)}`;
+    document.getElementById('profitPercentage').textContent = `${profitPercentage.toFixed(2)}%`;
 
     // Update fee breakdown values
-    document.querySelector('.ebay-middle-section .ebay-property:nth-child(2) .ebay-value').textContent = `$${soldPrice.toFixed(2)}`;
-    document.querySelector('.ebay-middle-section .ebay-property:nth-child(3) .ebay-value').textContent = `$${totalEbayFees.toFixed(2)}`;
-    document.querySelector('.ebay-middle-section .ebay-property:nth-child(4) .ebay-value').textContent = `${ebayFee}%`;
-    document.querySelector('.ebay-middle-section .ebay-property:nth-child(5) .ebay-value').textContent = `${promotion}%`;
-    document.querySelector('.ebay-middle-section .ebay-property:nth-child(6) .ebay-value').textContent = `$${totalEbayFees.toFixed(2)}`;
+    document.getElementById('soldPrice').textContent = `$${soldPrice.toFixed(2)}`;
+    document.getElementById('totalEbayFees').textContent = `$${totalEbayFees.toFixed(2)}`;
+    document.getElementById('fixedTransactionFee').textContent = `${ebayFee}%`;
+    document.getElementById('promotionFees').textContent = `${promotion}%`;
+    document.getElementById('promotionFeesValue').textContent = `$${promotionFees.toFixed(2)}`;
+    document.getElementById('totalEbayFeesPercentage').textContent = `${((totalEbayFees / soldPrice) * 100).toFixed(2)}%`;
 
-    // Additional values for other costs section
-    document.querySelector('.ebay-middle-section:nth-child(2) .ebay-property:nth-child(2) .ebay-value').textContent = `$${itemCost.toFixed(2)}`;
-    document.querySelector('.ebay-middle-section:nth-child(2) .ebay-property:nth-child(3) .ebay-value').textContent = `$${shippingCost.toFixed(2)}`;
-    document.querySelector('.ebay-middle-section:nth-child(2) .ebay-property:nth-child(4) .ebay-value').textContent = `$${otherCosts.toFixed(2)}`;
-    document.querySelector('.ebay-middle-section:nth-child(2) .ebay-property:nth-child(5) .ebay-value').textContent = `$${totalCosts.toFixed(2)}`;
+    // Update other costs section values
+    document.getElementById('itemCostValue').textContent = `$${itemCost.toFixed(2)}`;
+    document.getElementById('shippingCostValue').textContent = `$${shippingCost.toFixed(2)}`;
+    document.getElementById('otherCostsValue').textContent = `$${otherCosts.toFixed(2)}`;
+    document.getElementById('totalCostsValue').textContent = `$${totalCosts.toFixed(2)}`;
+    document.getElementById('totalCostsPercentage').textContent = `${((totalCosts / soldPrice) * 100).toFixed(2)}%`;
 
     // Display break-even and profit margin calculations
     const breakEvenProfit = soldPrice - totalCosts;
-    const profitMargin = ((profit / soldPrice) * 100).toFixed(2);
+    const profitMargin = profitPercentage.toFixed(2);
     
-    document.querySelector('.ebay-column:nth-child(3) .ebay-property:nth-child(2) .ebay-value').textContent = `$${breakEvenProfit.toFixed(2)}`;
-    document.querySelector('.ebay-column:nth-child(3) .ebay-property:nth-child(3) .ebay-value').textContent = `${profitMargin}%`;
+    document.getElementById('breakEvenProfit').textContent = `$${breakEvenProfit.toFixed(2)}`;
+    document.getElementById('profitMargin').textContent = `${profitMargin}%`;
 }
 
 // Optional: function to fetch fees by item ID if item ID is used
