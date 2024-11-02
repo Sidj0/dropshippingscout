@@ -348,7 +348,7 @@ async function performCalculation() {
 
     // Update the profit display values
     document.querySelector('.ebay-column:nth-child(1) .ebay-value:nth-child(2)').textContent = `$${profit.toFixed(2)}`;
-    document.querySelector('.ebay-column:nth-child(1) .ebay-value:nth-child(3)').textContent = `${((profit / soldPrice) * 100).toFixed(2)}%`;
+    //document.querySelector('.ebay-column:nth-child(1) .ebay-value:nth-child(3)').textContent = `${((profit / soldPrice) * 100).toFixed(2)}%`;
 
     // Update fee breakdown values
     document.querySelector('.ebay-middle-section .ebay-property:nth-child(2) .ebay-value').textContent = `$${soldPrice.toFixed(2)}`;
