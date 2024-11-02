@@ -223,52 +223,68 @@
 </div>
 
 
-
 <script>
-// Initialize marketplaces data
-let marketplacesData = [];
-
-// Load marketplaces and populate the marketplace dropdown
-async function initMarketplaces() {
-    marketplacesData = await loadMarketplaces();
-    const marketplaceSelect = document.getElementById('marketplaceSelect');
-    
-    if (marketplacesData) {
-        marketplacesData.marketplaces.forEach((marketplace) => {
-            const option = document.createElement('option');
-            option.value = marketplace.id;
-            option.textContent = marketplace.name;
-            marketplaceSelect.appendChild(option);
-        });
+    // Load the JSON file
+    async function loadMarketplaces() {
+        try {
+            const response = await fetch('/storage/marketplaces.json');
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            console.log(data);  // Output the marketplaces data to the console
+            return data;
+        } catch (error) {
+            console.error('Failed to load marketplaces:', error);
+        }
     }
-}
 
-// Populate categories based on the selected marketplace
-function populateCategories() {
-    const marketplaceSelect = document.getElementById('marketplaceSelect');
-    const categorySelect = document.getElementById('categorySelect');
-    const selectedMarketplaceId = marketplaceSelect.value;
+    // Initialize marketplaces data
+    let marketplacesData = [];
 
-    // Clear the category dropdown
-    categorySelect.innerHTML = '<option value="">Select a Category</option>';
-    
-    if (selectedMarketplaceId) {
-        const selectedMarketplace = marketplacesData.marketplaces.find(marketplace => marketplace.id == selectedMarketplaceId);
-
-        if (selectedMarketplace && selectedMarketplace.categories) {
-            selectedMarketplace.categories.forEach((category) => {
+    // Load marketplaces and populate the marketplace dropdown
+    async function initMarketplaces() {
+        marketplacesData = await loadMarketplaces();
+        const marketplaceSelect = document.getElementById('marketplaceSelect');
+        
+        if (marketplacesData) {
+            marketplacesData.marketplaces.forEach((marketplace) => {
                 const option = document.createElement('option');
-                option.value = category.id;
-                option.textContent = category.name;
-                categorySelect.appendChild(option);
+                option.value = marketplace.id;
+                option.textContent = marketplace.name;
+                marketplaceSelect.appendChild(option);
             });
         }
     }
-}
 
-// Initialize marketplaces when the page loads
-window.onload = initMarketplaces;
-</script>
+    // Populate categories based on the selected marketplace
+    function populateCategories() {
+        const marketplaceSelect = document.getElementById('marketplaceSelect');
+        const categorySelect = document.getElementById('categorySelect');
+        const selectedMarketplaceId = marketplaceSelect.value;
+
+        // Clear the category dropdown
+        categorySelect.innerHTML = '<option value="">Select a Category</option>';
+        
+        if (selectedMarketplaceId) {
+            const selectedMarketplace = marketplacesData.marketplaces.find(marketplace => marketplace.id == selectedMarketplaceId);
+
+            if (selectedMarketplace && selectedMarketplace.categories) {
+                selectedMarketplace.categories.forEach((category) => {
+                    const option = document.createElement('option');
+                    option.value = category.id;
+                    option.textContent = category.name;
+                    categorySelect.appendChild(option);
+                });
+            }
+        }
+    }
+
+    // Initialize marketplaces when the page loads
+    window.onload = initMarketplaces;
+    </script>
   
   <!-- Include your JavaScript file or script tag here -->
   <script>
