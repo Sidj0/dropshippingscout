@@ -222,17 +222,14 @@
   </div>
 </div>
 
-
 <script>
     // Load the JSON file
     async function loadMarketplaces() {
         try {
-            const response = await fetch('/storage/marketplaces.json');
-            
+            const response = await fetch('/storage/marketplaces.json');  // Make sure this path is correct
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            
             const data = await response.json();
             console.log(data);  // Output the marketplaces data to the console
             return data;
@@ -242,20 +239,20 @@
     }
 
     // Initialize marketplaces data
-    let marketplacesData = [];
+    let marketplacesData = {};
 
     // Load marketplaces and populate the marketplace dropdown
     async function initMarketplaces() {
         marketplacesData = await loadMarketplaces();
         const marketplaceSelect = document.getElementById('marketplaceSelect');
-        
+
         if (marketplacesData) {
-            marketplacesData.marketplaces.forEach((marketplace) => {
+            for (const [key, marketplace] of Object.entries(marketplacesData)) {
                 const option = document.createElement('option');
-                option.value = marketplace.id;
+                option.value = key;
                 option.textContent = marketplace.name;
                 marketplaceSelect.appendChild(option);
-            });
+            }
         }
     }
 
@@ -263,22 +260,20 @@
     function populateCategories() {
         const marketplaceSelect = document.getElementById('marketplaceSelect');
         const categorySelect = document.getElementById('categorySelect');
-        const selectedMarketplaceId = marketplaceSelect.value;
+        const selectedMarketplaceKey = marketplaceSelect.value;
 
         // Clear the category dropdown
         categorySelect.innerHTML = '<option value="">Select a Category</option>';
-        
-        if (selectedMarketplaceId) {
-            const selectedMarketplace = marketplacesData.marketplaces.find(marketplace => marketplace.id == selectedMarketplaceId);
 
-            if (selectedMarketplace && selectedMarketplace.categories) {
-                selectedMarketplace.categories.forEach((category) => {
-                    const option = document.createElement('option');
-                    option.value = category.id;
-                    option.textContent = category.name;
-                    categorySelect.appendChild(option);
-                });
-            }
+        if (selectedMarketplaceKey && marketplacesData[selectedMarketplaceKey]) {
+            const categories = marketplacesData[selectedMarketplaceKey].categories;
+
+            categories.forEach((category) => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categorySelect.appendChild(option);
+            });
         }
     }
 
