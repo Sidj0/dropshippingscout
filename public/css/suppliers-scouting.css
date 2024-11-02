@@ -535,6 +535,9 @@ body {
           padding-bottom: 10px;
         }
 
+        .latest-news{
+          background-color: #c3cbfc !important;
+        }
         
 /* Mobile view styles */
 @media (max-width: 768px) {
