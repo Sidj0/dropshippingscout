@@ -381,6 +381,8 @@ p {
   font-weight: bold;
   color: #1E3F5B;
   margin: 0;
+  padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 /* Styles for the paragraph text */
@@ -555,5 +557,8 @@ body {
 
   .right-column {
       order: 1; /* Keep the image on top */
+  }
+  .custom-info-section{
+text-align: center;
   }
 }
