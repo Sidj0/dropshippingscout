@@ -17,7 +17,6 @@
 <h1 class="title" style="margin-top:0px;">{{$page->content_header}}</h1>
 <h5  class="title" style="margin-top:20px ; font-size: 20px; color: #1E3F5B; font-weight: 550;">{{$page->content_subheader}}</h5>
 <br>
-
 @if (!empty($page['image_1']))
   <div class="con-left">
     <div class="left-column">
