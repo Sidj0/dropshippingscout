@@ -173,17 +173,14 @@ font-size: 16px;
     color: #FCFDFF;
     cursor: pointer;
 }
-/* Mobile layout */
+/* Adjustments for smaller screens */
 @media (max-width: 768px) {
-    .options-container {
-        flex-direction: column;
-        align-items: center;
+    .options-wrapper {
+        overflow-x: auto; /* Ensure wrapper can scroll horizontally */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
-    
-    .option {
-        width: 100%;
-        max-width: 300px;
-        margin-bottom: 10px;
-        padding: 10px;
+
+    .options-container {
+        flex-direction: row;
     }
 }
