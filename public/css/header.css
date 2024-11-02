@@ -414,3 +414,9 @@ header.main-header .header-sticky.hide {
 .navbar {
      padding: 0px 0; 
 }
+
+@media (max-width: 768px) {
+body{
+    zoom: 90%;
+}
+}
