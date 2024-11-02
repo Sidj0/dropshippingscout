@@ -534,3 +534,19 @@ body {
           padding-top: 10px;
           padding-bottom: 10px;
         }
+
+        
+/* Mobile view styles */
+@media (max-width: 768px) {
+  .con-left {
+      flex-direction: column; /* Stack vertically on mobile */
+  }
+
+  .left-column {
+      order: 2; /* Move the left column below the image */
+  }
+
+  .right-column {
+      order: 1; /* Keep the image on top */
+  }
+}
