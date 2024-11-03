@@ -50,11 +50,49 @@
         <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="ebay-pages">
-        <a class="dropdown-link" href="#">Product Research</a>
-        <a class="dropdown-link" href="#">Competitor Research</a>
-        <a class="dropdown-link" href="#">Category Research</a>
-        <a class="dropdown-link" href="#">Best eBay Items</a>
-        <a class="dropdown-link" href="#">Title Builder</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-product-insight']) }}">Product Insight</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'topbay-picks']) }}">TopBay Picks</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-niche-finder-tool']) }}">NicheFinder</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-title-master']) }}">Title Master</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-rivalview-tool']) }}">RivalView</a>
+    </div>
+
+        <!-- Amazon Section -->
+    <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'Amazon-pages')">
+        <img src="{{ asset('images/Registration/amazon.svg') }}" alt="Amazon Logo" class="icon"> 
+        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+    </a>
+    <div class="pages-list" style="display: none;" id="Amazon-pages">
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'amazon-scanner']) }}">Amazon Scanner</a>
+    </div>
+
+     <!-- Walmart Section -->
+     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'Walmart-pages')">
+        <img src="{{ asset('images/Registration/walMart.svg') }}" alt="Walmart Logo" class="icon"> 
+        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+    </a>
+    <div class="pages-list" style="display: none;" id="Walmart-pages">
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'walmart-watch-tool']) }}">Walmart Watch</a>
+    </div>
+
+     <!-- AliExpress Section -->
+     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'AliExpress-pages')">
+        <img src="{{ asset('images/Registration/aliExpress.svg') }}" alt="AliExpress Logo" class="icon"> 
+        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+    </a>
+    <div class="pages-list" style="display: none;" id="AliExpress-pages">
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-finder-tool']) }}">Express Finder</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-scan-tool']) }}">Express Scan</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-supplier-scout-tool']) }}">Supplier Scout</a>
+    </div>
+
+     <!-- tiktook Section -->
+     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'tiktook-pages')">
+        <img src="{{ asset('images/tiktok_shop.png') }}" alt="tiktook Logo" class="icon"> 
+        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+    </a>
+    <div class="pages-list" style="display: none;" id="tiktook-pages">
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'tiktrend-scan-tool']) }}">Tiktook Scanner</a>
     </div>
 
     <!-- Shopify Section -->
@@ -63,9 +101,9 @@
         <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="shopify-pages">
-        <a class="dropdown-link" href="#">Product Research</a>
-        <a class="dropdown-link" href="#">Competitor Research</a>
-        <a class="dropdown-link" href="#">Best Competitor</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-insight']) }}">Shopify Insight</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-spy-tool']) }}">Shopify Spy</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-store-finder']) }}">Shopify Store Finder</a>
     </div>
 </li>
 

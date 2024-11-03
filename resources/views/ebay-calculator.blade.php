@@ -381,7 +381,7 @@ async function fetchFeesByItemId(itemId) {
         const data = await response.json();
 
         // Update the UI with data based on the response
-        console.log(data);  // For debugging, log the data
+      //  console.log(data);  // For debugging, log the data
         return data;
     } catch (error) {
         console.error('Failed to fetch fees:', error);
