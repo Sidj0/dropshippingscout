@@ -328,14 +328,14 @@ document.querySelector('.search-container button').addEventListener('click', per
 async function performCalculation() {
     // Capture input values
     const itemId = document.getElementById('itemIdInput').value;
-        const marketplaceKey = document.getElementById('marketplaceSelect').value;
-        const category = document.getElementById('categorySelect').value;
-        const soldPrice = parseFloat(document.getElementById('item-price').value) || 0;
-        const itemCost = parseFloat(document.getElementById('item-cost').value) || 0;
-        const ebayFee = parseFloat(document.getElementById('ebay-fee').value) || 0;
+    const marketplaceKey = document.getElementById('marketplaceSelect').value;
+    const category = document.getElementById('categorySelect').value;
+    const soldPrice = parseFloat(document.getElementById('item-price').value) || 0;
+    const itemCost = parseFloat(document.getElementById('item-cost').value) || 0;
+    const ebayFee = parseFloat(document.getElementById('ebay-fee').value) || 0;
 
     // Optional inputs if "More Options" is clicked
-    const shippingCharge = parseFloat(document.getElementById('shipping-charge').value)
+    const shippingCharge = parseFloat(document.getElementById('shipping-charge').value) || 0;
     const shippingCost = parseFloat(document.getElementById('shipping-cost').value) || 0;
     const promotion = parseFloat(document.getElementById('promotion').value) || 0;
     const otherCosts = parseFloat(document.getElementById('other-costs').value) || 0;
@@ -359,18 +359,19 @@ async function performCalculation() {
     document.getElementById('other-costs-value').textContent = `$${otherCosts.toFixed(2)}`;
 
     // Update other costs section values
-    document.getElementById('item-cost').textContent = `$${itemCost.toFixed(2)}`;
-    document.getElementById('shippingCostValue').textContent = `$${shippingCost.toFixed(2)}`;
-    document.getElementById('totalCostsValue').textContent = `$${totalCosts.toFixed(2)}`;
-    document.getElementById('totalCostsPercentage').textContent = `${((totalCosts / soldPrice) * 100).toFixed(2)}%`;
+    document.getElementById('item-cost-value').textContent = `$${itemCost.toFixed(2)}`;
+    document.getElementById('shipping-cost-value').textContent = `$${shippingCost.toFixed(2)}`;
+    document.getElementById('total-cost').textContent = `$${totalCosts.toFixed(2)}`;
+    document.getElementById('total-cost-percent').textContent = `${((totalCosts / soldPrice) * 100).toFixed(2)}%`;
 
     // Display break-even and profit margin calculations
     const breakEvenProfit = soldPrice - totalCosts;
     const profitMargin = profitPercentage.toFixed(2);
-    
-    document.getElementById('breakEvenProfit').textContent = `$${breakEvenProfit >= 0 ? breakEvenProfit.toFixed(2) : '0.00'}`;
-    document.getElementById('profitMargin').textContent = `${profitMargin}%`;
+
+    document.getElementById('break-even-profit').textContent = `$${breakEvenProfit >= 0 ? breakEvenProfit.toFixed(2) : '0.00'}`;
+    document.getElementById('profit-margin').textContent = `${profitMargin}%`;
 }
+
 
 // Optional: function to fetch fees by item ID if item ID is used
 async function fetchFeesByItemId(itemId) {
