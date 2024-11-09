@@ -186,6 +186,11 @@ class BlogController extends Controller
    {
        // Find the blog by slug
        $blog = Blog::where('slug', $slug)->firstOrFail();
+
+               // If the blog does not exist, return the custom 404 view
+               if (!$blog) {
+                abort(404); // This will trigger the custom 404 view in resources/views/errors/404.blade.php
+            }
    
        // Extract headings from the content
        $dom = new \DOMDocument();
