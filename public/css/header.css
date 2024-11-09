@@ -158,6 +158,7 @@ padding-left: 30px; /* Adjust this value to increase or decrease the space */
 .icon {
     margin-left: 5px;
     vertical-align: middle;
+    width: 70px !important;
 }
 
 .resource-item {
