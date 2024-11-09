@@ -97,7 +97,7 @@
 
     <!-- Shopify Section -->
     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'shopify-pages')">
-        <img src="{{ asset('images/Registration/shopify.svg'') }}" alt="Shopify Logo" class="icon">
+        <img src="{{ asset('images/Registration/shopify.svg') }}" alt="Shopify Logo" class="icon">
         <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="shopify-pages">
