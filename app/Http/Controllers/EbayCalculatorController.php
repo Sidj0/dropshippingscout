@@ -1,65 +1,43 @@
 <?php
 
-// EbayCalculatorController.php
-use Illuminate\Support\Facades\Http;
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
 
 class EbayCalculatorController extends Controller
 {
     public function calculate(Request $request)
     {
-        $itemId = $request->input('item_id');
+        // Retrieve input values
+        $itemPrice = $request->input('itemPrice');
+        $itemCost = $request->input('itemCost');
+        $ebayFeePercent = $request->input('ebayFee');
+        $shippingCharge = $request->input('shippingCharge') ?? 0;
+        $shippingCost = $request->input('shippingCost') ?? 0;
+        $promotionPercent = $request->input('promotion') ?? 0;
+        $otherCosts = $request->input('otherCosts') ?? 0;
 
-        // Call the eBay Browse API through RapidAPI to validate and fetch item data
-        $response = Http::withHeaders([
-            'X-RapidAPI-Host' => 'ebay-browse.p.rapidapi.com',
-            'X-RapidAPI-Key' => env('RAPIDAPI_KEY'), // Store your RapidAPI key in .env
-        ])->get("https://ebay-browse.p.rapidapi.com/item/v1/$itemId");
+        // Calculations
+        $ebayFee = $itemPrice * ($ebayFeePercent / 100);
+        $promotionFee = $itemPrice * ($promotionPercent / 100);
+        $totalFees = $ebayFee + $promotionFee;
+        
+        $totalCost = $itemCost + $shippingCost + $otherCosts;
+        $totalRevenue = $itemPrice + $shippingCharge;
+        
+        $profit = $totalRevenue - $totalFees - $totalCost;
+        $profitPercent = $totalRevenue > 0 ? ($profit / $totalRevenue) * 100 : 0;
+        $breakEvenProfit = $totalCost + $totalFees;
 
-        if ($response->failed()) {
-            return response()->json(['error' => 'Invalid Item ID or failed to retrieve item data.']);
-        }
-
-        $itemData = $response->json();
-
-        // Extract necessary data for calculations
-        $price = $itemData['price']['value'];
-        $category = $itemData['category']['categoryId'];
-        $marketplace = $itemData['marketplaceId'];
-
-        // Proceed with fee calculations
-        $calculatedFees = $this->calculateFees($price, $category, $marketplace);
-
-        return response()->json($calculatedFees);
-    }
-
-    public function calculateFeesWithAlgopix($price, $itemCost, $shippingCost, $marketplace)
-    {
-        $response = Http::withHeaders([
-            'X-RapidAPI-Host' => 'algopix-market-research.p.rapidapi.com',
-            'X-RapidAPI-Key' => env('RAPIDAPI_KEY'),
-        ])->post("https://algopix-market-research.p.rapidapi.com/fees", [
-            'price' => $price,
-            'cost' => $itemCost,
-            'shipping' => $shippingCost,
-            'marketplace' => $marketplace,
+        // Prepare response
+        return response()->json([
+            'totalProfit' => number_format($profit, 2),
+            'profitPercent' => number_format($profitPercent, 2),
+            'ebayFee' => number_format($ebayFee, 2),
+            'promotionFee' => number_format($promotionFee, 2),
+            'totalFees' => number_format($totalFees, 2),
+            'totalCost' => number_format($totalCost, 2),
+            'breakEvenProfit' => number_format($breakEvenProfit, 2),
         ]);
-    
-        if ($response->failed()) {
-            return ['error' => 'Failed to retrieve fee data from Algopix'];
-        }
-    
-        return $response->json();  // Contains fee and profit breakdown from Algopix
-    }
-    
-
-    private function getMarketplaceFeePercent($marketplace, $category)
-    {
-        // Example of predefined fee percentages
-        $fees = [
-            'EBAY_US' => ['default' => 12, 'electronics' => 8],
-            'EBAY_UK' => ['default' => 10, 'fashion' => 7],
-        ];
-
-        return $fees[$marketplace][$category] ?? $fees[$marketplace]['default'];
     }
 }

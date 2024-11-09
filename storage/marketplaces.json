@@ -1,41 +1,14 @@
 {
-    "ebay_us": {
-        "name": "eBay US",
-        "final_value_fee": 10,
-        "fixed_fee": 0.3,
-        "promotion_fee": 2,
-        "categories": [
-            "Electronics",
-            "Fashion",
-            "Home & Garden",
-            "Toys & Hobbies",
-            "Motors"
-        ]
+    "ebay_com": {
+        "name": "eBay.com",
+        "fee_percentage": 10,
+        "categories": ["Electronics", "Fashion", "Home", "Toys"],
+        "fixed_transaction_fee": 0.30
     },
     "ebay_uk": {
         "name": "eBay UK",
-        "final_value_fee": 12,
-        "fixed_fee": 0.35,
-        "promotion_fee": 1.5,
-        "categories": [
-            "Electronics",
-            "Clothing & Accessories",
-            "Home & Garden",
-            "Sporting Goods",
-            "Collectibles"
-        ]
-    },
-    "ebay_au": {
-        "name": "eBay Australia",
-        "final_value_fee": 11,
-        "fixed_fee": 0.25,
-        "promotion_fee": 1.8,
-        "categories": [
-            "Electronics",
-            "Health & Beauty",
-            "Home & Garden",
-            "Toys & Games",
-            "Automotive"
-        ]
+        "fee_percentage": 8,
+        "categories": ["Electronics", "Fashion", "Home"],
+        "fixed_transaction_fee": 0.25
     }
 }

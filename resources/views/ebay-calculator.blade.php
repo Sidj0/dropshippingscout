@@ -235,6 +235,7 @@
             return data;
         } catch (error) {
             console.error('Failed to load marketplaces:', error);
+            alert('Failed to load marketplaces. Please try again later.'); // Display an alert to the user if there's an error
         }
     }
 
@@ -254,6 +255,9 @@
                 marketplaceSelect.appendChild(option);
             }
         }
+
+        // Populate categories after loading the marketplaces
+        populateCategories();
     }
 
     // Populate categories based on the selected marketplace
@@ -277,97 +281,73 @@
         }
     }
 
+    document.querySelector('.search-container button').addEventListener('click', performCalculation);
+
+    async function performCalculation() {
+        // Capture input values
+        const itemId = document.getElementById('itemIdInput').value.trim(); // Get itemId and remove leading/trailing spaces
+        const marketplaceKey = document.getElementById('marketplaceSelect').value;
+        const category = document.getElementById('categorySelect').value;
+        const soldPrice = parseFloat(document.getElementById('item-price').value) || 0;
+        const itemCost = parseFloat(document.getElementById('item-cost').value) || 0;
+        const ebayFee = parseFloat(document.getElementById('ebay-fee').value) || 0;
+
+        // Optional inputs if "More Options" is clicked
+        const shippingCharge = parseFloat(document.getElementById('shipping-charge').value) || 0;
+        const shippingCost = parseFloat(document.getElementById('shipping-cost').value) || 0;
+        const promotion = parseFloat(document.getElementById('promotion').value) || 0;
+        const otherCosts = parseFloat(document.getElementById('other-costs').value) || 0;
+
+        // Validate itemId - should be alphanumeric and between 5 and 20 characters
+        if (!itemId) {
+            alert('Item ID is required.');
+            return; // Stop the calculation if itemId is empty
+        }
+        if (!/^[a-zA-Z0-9]{5,20}$/.test(itemId)) {  // Regular expression for alphanumeric and length check
+            alert('Item ID must be alphanumeric and between 5 and 20 characters long.');
+            return; // Stop the calculation if itemId does not match the pattern
+        }
+
+        // Calculate eBay fees and profit
+        const totalEbayFees = soldPrice * (ebayFee / 100);
+        const promotionFees = soldPrice * (promotion / 100);
+        const totalCosts = itemCost + shippingCost + otherCosts + totalEbayFees + promotionFees;
+        const profit = soldPrice - totalCosts;
+        const profitPercentage = (profit / soldPrice) * 100;
+
+        // Update the profit display values
+        document.getElementById('total-profit').textContent = `$${profit.toFixed(2)}`;
+        document.getElementById('profit-percent').textContent = `${profitPercentage.toFixed(2)}%`;
+
+        // Update fee breakdown values
+        document.getElementById('sold-price').textContent = `$${soldPrice.toFixed(2)}`;
+        document.getElementById('total-ebay-fees').textContent = `$${totalEbayFees.toFixed(2)}`;
+        document.getElementById('transaction-fee-percent').textContent = `${ebayFee}%`;
+        document.getElementById('promotion-fee').textContent = `${promotion}%`;
+        document.getElementById('other-costs-value').textContent = `$${otherCosts.toFixed(2)}`;
+
+        // Update other costs section values
+        document.getElementById('item-cost-value').textContent = `$${itemCost.toFixed(2)}`;
+        document.getElementById('shipping-cost-value').textContent = `$${shippingCost.toFixed(2)}`;
+        document.getElementById('total-cost').textContent = `$${totalCosts.toFixed(2)}`;
+        document.getElementById('total-cost-percent').textContent = `${((totalCosts / soldPrice) * 100).toFixed(2)}%`;
+
+        // Display break-even and profit margin calculations
+        const breakEvenProfit = soldPrice - totalCosts;
+        const profitMargin = profitPercentage.toFixed(2);
+
+        document.getElementById('break-even-profit').textContent = `$${breakEvenProfit >= 0 ? breakEvenProfit.toFixed(2) : '0.00'}`;
+        document.getElementById('profit-margin').textContent = `${profitMargin}%`;
+    }
+
+    // Update categories when the marketplace is changed
+    document.getElementById('marketplaceSelect').addEventListener('change', populateCategories);
+
     // Initialize marketplaces when the page loads
     window.onload = initMarketplaces;
-    </script>
-  
-  <!-- Include your JavaScript file or script tag here -->
-  <script>
-      document.getElementById('more-options-link').addEventListener('click', function() {
-          var secondRow = document.getElementById('second-filter-row');
-          var linkText = this; // Reference to the "More Options" link
-          var arrow = linkText.querySelector('.arrow');
-  
-          // Show or hide the second row
-          if (secondRow.style.display === 'none' || secondRow.style.display === '') {
-              // Show the second row
-              secondRow.style.display = 'flex'; // or 'block' based on your layout preference
-  
-              // Move the "More Options" link below the second row
-              var filterContainer = document.querySelector('.filter-container');
-              filterContainer.appendChild(linkText.parentNode); // Append it after the second row
-  
-              // Change arrow direction
-              arrow.classList.remove('down');
-              arrow.classList.add('up');
-  
-              // Change the text to "Less Options"
-              linkText.innerHTML = 'Less Options <span class="arrow up"></span>';
-          } else {
-              // Hide the second row
-              secondRow.style.display = 'none';
-  
-              // Move the "More Options" link back to its original position
-              var filterContainer = document.querySelector('.filter-container');
-              filterContainer.insertBefore(linkText.parentNode, secondRow); // Insert before second row
-  
-              // Reset arrow direction
-              arrow.classList.remove('up');
-              arrow.classList.add('down');
-  
-              // Change the text back to "More Options"
-              linkText.innerHTML = 'More Options <span class="arrow down"></span>';
-          }
-      });
-  </script>
-  
-<!-- Add this within your script section or a separate JS file -->
-<script>
-document.querySelector('.search-container button').addEventListener('click', performCalculation);
-
-async function performCalculation() {
-    const itemId = document.getElementById('itemIdInput').value;
-
-    // Perform the request to your Laravel backend
-    const response = await fetch('/ebay-calculate', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        },
-        body: JSON.stringify({ item_id: itemId })
-    });
-
-    const result = await response.json();
-
-    if (result.error) {
-        alert(result.error);
-    } else {
-        // Display the results in your calculator UI
-        document.getElementById('sold-price').textContent = `$${result.price}`;
-        document.getElementById('total-ebay-fees').textContent = `$${result.ebay_fee.toFixed(2)}`;
-        document.getElementById('total-profit').textContent = `$${result.profit.toFixed(2)}`;
-        document.getElementById('profit-percent').textContent = `${((result.profit / result.price) * 100).toFixed(2)}%`;
-    }
-}
-
-
-
-// Optional: function to fetch fees by item ID if item ID is used
-async function fetchFeesByItemId(itemId) {
-    try {
-        // Example fetch call - adjust the URL and parameters as needed
-        const response = await fetch(`/api/ebay-fees/${itemId}`);
-        const data = await response.json();
-
-        // Update the UI with data based on the response
-      //  console.log(data);  // For debugging, log the data
-        return data;
-    } catch (error) {
-        console.error('Failed to fetch fees:', error);
-    }
-}
 </script>
+
+
 
  @endsection 
 
