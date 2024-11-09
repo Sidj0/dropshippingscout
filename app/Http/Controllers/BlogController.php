@@ -189,7 +189,7 @@ class BlogController extends Controller
 
                // If the blog does not exist, return the custom 404 view
                if (!$blog) {
-                abort(404); // This will trigger the custom 404 view in resources/views/errors/404.blade.php
+                return view(view: '404');
             }
    
        // Extract headings from the content
