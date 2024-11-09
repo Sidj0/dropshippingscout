@@ -101,7 +101,8 @@ Route::put('/admin/tools/{tool}', [toolsController::class, 'update'])->name('too
 Route::delete('/admin/tools/{tool}', [toolsController::class, 'destroy'])->name('tools.destroy');
 
 // ebay calculator
-Route::post('/calculate-fees', [EbayCalculatorController::class, 'calculate']);
+Route::post('/ebay-calculate', [EbayCalculatorController::class, 'calculate']);
+
  
 // Dynamic Page Route
 Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');

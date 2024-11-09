@@ -326,51 +326,31 @@
 document.querySelector('.search-container button').addEventListener('click', performCalculation);
 
 async function performCalculation() {
-    // Capture input values
     const itemId = document.getElementById('itemIdInput').value;
-    const marketplaceKey = document.getElementById('marketplaceSelect').value;
-    const category = document.getElementById('categorySelect').value;
-    const soldPrice = parseFloat(document.getElementById('item-price').value) || 0;
-    const itemCost = parseFloat(document.getElementById('item-cost').value) || 0;
-    const ebayFee = parseFloat(document.getElementById('ebay-fee').value) || 0;
 
-    // Optional inputs if "More Options" is clicked
-    const shippingCharge = parseFloat(document.getElementById('shipping-charge').value) || 0;
-    const shippingCost = parseFloat(document.getElementById('shipping-cost').value) || 0;
-    const promotion = parseFloat(document.getElementById('promotion').value) || 0;
-    const otherCosts = parseFloat(document.getElementById('other-costs').value) || 0;
+    // Perform the request to your Laravel backend
+    const response = await fetch('/ebay-calculate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify({ item_id: itemId })
+    });
 
-    // Calculate eBay fees and profit
-    const totalEbayFees = soldPrice * (ebayFee / 100);
-    const promotionFees = soldPrice * (promotion / 100);
-    const totalCosts = itemCost + shippingCost + otherCosts + totalEbayFees + promotionFees;
-    const profit = soldPrice - totalCosts;
-    const profitPercentage = (profit / soldPrice) * 100;
+    const result = await response.json();
 
-    // Update the profit display values
-    document.getElementById('total-profit').textContent = `$${profit.toFixed(2)}`;
-    document.getElementById('profit-percent').textContent = `${profitPercentage.toFixed(2)}%`;
-
-    // Update fee breakdown values
-    document.getElementById('sold-price').textContent = `$${soldPrice.toFixed(2)}`;
-    document.getElementById('total-ebay-fees').textContent = `$${totalEbayFees.toFixed(2)}`;
-    document.getElementById('transaction-fee-percent').textContent = `${ebayFee}%`;
-    document.getElementById('promotion-fee').textContent = `${promotion}%`;
-    document.getElementById('other-costs-value').textContent = `$${otherCosts.toFixed(2)}`;
-
-    // Update other costs section values
-    document.getElementById('item-cost-value').textContent = `$${itemCost.toFixed(2)}`;
-    document.getElementById('shipping-cost-value').textContent = `$${shippingCost.toFixed(2)}`;
-    document.getElementById('total-cost').textContent = `$${totalCosts.toFixed(2)}`;
-    document.getElementById('total-cost-percent').textContent = `${((totalCosts / soldPrice) * 100).toFixed(2)}%`;
-
-    // Display break-even and profit margin calculations
-    const breakEvenProfit = soldPrice - totalCosts;
-    const profitMargin = profitPercentage.toFixed(2);
-
-    document.getElementById('break-even-profit').textContent = `$${breakEvenProfit >= 0 ? breakEvenProfit.toFixed(2) : '0.00'}`;
-    document.getElementById('profit-margin').textContent = `${profitMargin}%`;
+    if (result.error) {
+        alert(result.error);
+    } else {
+        // Display the results in your calculator UI
+        document.getElementById('sold-price').textContent = `$${result.price}`;
+        document.getElementById('total-ebay-fees').textContent = `$${result.ebay_fee.toFixed(2)}`;
+        document.getElementById('total-profit').textContent = `$${result.profit.toFixed(2)}`;
+        document.getElementById('profit-percent').textContent = `${((result.profit / result.price) * 100).toFixed(2)}%`;
+    }
 }
+
 
 
 // Optional: function to fetch fees by item ID if item ID is used
