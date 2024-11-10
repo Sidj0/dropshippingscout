@@ -73,7 +73,7 @@
               <label for="marketplace">Title Combine 
                   <i class="fas fa-question-circle" title="Select the marketplace for your product."></i>
               </label>
-              <input type="text" id="item-price" placeholder="Click On Keyword to combine your title" style="width:100%>
+              <input type="text" id="item-price" placeholder="Click On Keyword to combine your title" style="width:100%">
           </div>
        </div>
     </div>   
