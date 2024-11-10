@@ -24,7 +24,7 @@ class toolsController extends Controller
         }
         
         // Fetch all tools from the database
-        $tools = Tool::all();
+        $tools = tool::all();
 
         // Pass tools data to the index view
         return view('tools.index', compact('tools'));
