@@ -210,6 +210,21 @@
 .pagination span:hover {
   color: #1E3F5B;
 }
+/* Outer container to center the results section */
+.main-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.results-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px; /* Set max-width to limit the width of the content */
+  width: 100%;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

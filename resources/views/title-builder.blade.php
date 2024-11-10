@@ -80,7 +80,7 @@
 
 
     <!-- results section -->
-     
+    <div class="main-container">
     <div class="results-container">
     <!-- Long Tail Keywords Section -->
     <div class="results-section">
@@ -156,7 +156,7 @@
       </div>
     </div>
   </div>
-
+</div>
 
     <!-- end of results section -->
 
