@@ -78,6 +78,88 @@
        </div>
     </div>   
 
+
+    <!-- results section -->
+     
+    <div class="results-container">
+    <!-- Long Tail Keywords Section -->
+    <div class="results-section">
+      <div class="section-header">
+        <h2>Long Tail Keywords</h2>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <i class="search-icon">🔍</i>
+        </div>
+      </div>
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Average Searches</th>
+            <th>Competition Level</th>
+            <th>Sales</th>
+            <th></th> <!-- Empty header for Copy icon column -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample row data -->
+          <tr>
+            <td>Example Keyword</td>
+            <td>1000</td>
+            <td>High</td>
+            <td>200</td>
+            <td><i class="copy-icon">📋</i></td>
+          </tr>
+          <!-- More rows as needed -->
+        </tbody>
+      </table>
+      <div class="pagination">
+        <span>&laquo;</span>
+        <span>1 of 5 pages</span>
+        <span>&raquo;</span>
+      </div>
+    </div>
+
+    <!-- Generic Keywords Section -->
+    <div class="results-section">
+      <div class="section-header">
+        <h2>Generic Keywords</h2>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <i class="search-icon">🔍</i>
+        </div>
+      </div>
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Competition Level</th>
+            <th>Sales</th>
+            <th></th> <!-- Empty header for Copy icon column -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample row data -->
+          <tr>
+            <td>Sample Keyword</td>
+            <td>Low</td>
+            <td>150</td>
+            <td><i class="copy-icon">📋</i></td>
+          </tr>
+          <!-- More rows as needed -->
+        </tbody>
+      </table>
+      <div class="pagination">
+        <span>&laquo;</span>
+        <span>1 of 3 pages</span>
+        <span>&raquo;</span>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- end of results section -->
+
     <div class="latest-news" style="max-width: 100%; margin: 40px auto;">
         <div>
             <h2>Reach out to suppliers for details on <br>
