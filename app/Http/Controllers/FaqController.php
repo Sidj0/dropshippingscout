@@ -56,7 +56,7 @@ class FaqController extends Controller
         $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy', 'Support-Assistance', 'Tool-Features', 'ebay-calculator', 'title-builder'];
     
         // Fetch tools from the tools table
-        $tools = \App\Models\Tool::all(); // Assuming you have a Tool model
+        $tools = \App\Models\tool::all(); // Assuming you have a Tool model
         
         return view('Faqs.create', compact('categories', 'tools'));
     }
