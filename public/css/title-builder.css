@@ -225,6 +225,34 @@
   width: 100%;
 }
 
+th{
+  font-size: 13px;
+}
+/* Container for input with icon */
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding-right: 30px; /* Add padding to make space for the icon */
+  padding-left: 10px;
+}
+
+.copy-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  cursor: pointer;
+}
+
+.copy-icon:hover {
+  color: #1E3F5B;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

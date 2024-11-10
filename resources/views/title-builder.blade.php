@@ -67,16 +67,20 @@
 
 
     <div class="filter-container">
-      <div class="filter-row">
-          <!-- First row of filters -->
-          <div class="filter-box"  style="width:95%">
-              <label for="marketplace">Title Combine 
-                  <i class="fas fa-question-circle" title="Select the marketplace for your product."></i>
-              </label>
-              <input type="text" id="item-price" placeholder="Click On Keyword to combine your title">
-          </div>
-       </div>
-    </div>   
+  <div class="filter-row">
+    <!-- First row of filters -->
+    <div class="filter-box" style="width: 95%;">
+      <label for="marketplace">Title Combine 
+        <i class="fas fa-question-circle" title="Select the marketplace for your product."></i>
+      </label>
+      <div class="input-with-icon">
+        <input type="text" id="item-price" placeholder="Click On Keyword to combine your title">
+        <i class="fas fa-copy copy-icon" title="Copy"></i>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 
 
     <!-- results section -->
