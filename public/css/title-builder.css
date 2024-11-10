@@ -145,7 +145,7 @@
 
 .section-header h2 {
   color: #1E3F5B;
-  font-size: 1.2em;
+  font-size: 15px;
 }
 
 .search-bar {
@@ -153,7 +153,7 @@
   align-items: center;
   background-color: #F5F5F5;
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .search-bar input {
