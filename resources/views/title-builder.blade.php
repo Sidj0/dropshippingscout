@@ -65,6 +65,19 @@
       </div>
     </div>
 
+
+    <div class="filter-container">
+      <div class="filter-row">
+          <!-- First row of filters -->
+          <div class="filter-box">
+              <label for="marketplace">Title Combine 
+                  <i class="fas fa-question-circle" title="Select the marketplace for your product."></i>
+              </label>
+              <input type="text" id="item-price" placeholder="Click On Keyword to combine your title" style="width:100%>
+          </div>
+       </div>
+    </div>   
+
     <div class="latest-news" style="max-width: 100%; margin: 40px auto;">
         <div>
             <h2>Reach out to suppliers for details on <br>

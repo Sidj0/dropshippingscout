@@ -107,8 +107,14 @@
     border-radius: 24px;
     opacity: 1;
     text-align: center;
-    max-width: 90%;
-    width: 100%;
+    max-width: 80% !important;
     box-sizing: border-box;
   }
   
+  @media (max-width: 768px) {
+   
+    .latest-news h2{
+      font-size: 20px;
+    }
+      
+  }
