@@ -89,7 +89,7 @@ class FaqController extends Controller
         $categories = ['Get-Started', 'Pricing-Subscriptions', 'Security-Privacy', 'Support-Assistance', 'Tool-Features', 'ebay-calculator', 'title-builder'];
     
         // Fetch tools from the tools table
-        $tools = \App\Models\Tool::all();
+        $tools = \App\Models\tool::all();
     
         return view('Faqs.edit', compact('faq', 'categories', 'tools'));
     }
