@@ -423,58 +423,25 @@ body{
 }
 
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .dropdown.toolsItem {
-        max-height: 80vh; /* Limit the dropdown height */
-        overflow-y: auto; /* Enable scrolling */
-        padding: 10px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
+/* Make the dropdown scrollable on mobile screens */
+@media screen and (max-width: 768px) {
+    .toolsItem {
+        max-height: 400px; /* Adjust this value as needed */
+        overflow-y: auto;
+        scrollbar-width: thin; /* For Firefox */
+        scrollbar-color: #ccc transparent; /* For Firefox */
     }
 
-    .dropdown-section {
-        margin-bottom: 15px;
+    .toolsItem::-webkit-scrollbar {
+        width: 6px; /* For Chrome, Safari, and Edge */
     }
 
-    .dropdown-section h6 {
-        font-size: 14px;
-        color: #333;
-        margin: 10px 0 5px;
-    }
-
-    .dropdown-section a {
-        display: block;
-        font-size: 13px;
-        color: #1E3F5B;
-        padding: 5px 10px;
+    .toolsItem::-webkit-scrollbar-thumb {
+        background: #ccc;
         border-radius: 4px;
-        text-decoration: none;
     }
 
-    .dropdown-section a:hover {
-        background-color: #f0f4f8;
-    }
-
-    .pages-list {
-        padding-left: 15px;
-    }
-
-    .tools-arrow {
-        float: right;
-        font-size: 12px;
-        transition: transform 0.3s ease;
-    }
-
-    .toggle-section.active .tools-arrow {
-        transform: rotate(90deg); /* Rotate arrow when active */
-    }
-
-    .icon {
-        width: 16px;
-        height: 16px;
-        margin-right: 5px;
+    .toolsItem::-webkit-scrollbar-track {
+        background: transparent;
     }
 }

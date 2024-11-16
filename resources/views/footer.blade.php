@@ -111,26 +111,4 @@
     }
 });
 
-// Toggle visibility of sections on mobile
-function toggleVisibility(event, sectionId) {
-    event.preventDefault();
-    const section = document.getElementById(sectionId);
-
-    // Close other open sections
-    document.querySelectorAll('.pages-list').forEach((el) => {
-        if (el !== section) {
-            el.style.display = 'none';
-        }
-    });
-
-    // Toggle the current section
-    if (section.style.display === 'block') {
-        section.style.display = 'none';
-        event.target.classList.remove('active');
-    } else {
-        section.style.display = 'block';
-        event.target.classList.add('active');
-    }
-}
-
 </script>
