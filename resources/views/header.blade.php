@@ -36,9 +36,9 @@
                                         <p>Find your fellow competitors, identify the unique selling proposition of your product.</p></a>
                                       
                                     <h6>Explore Our Free Tools</h6>
-                                    <a href="{{url('ebay-calculator')}}"><h6>Product Scouting</h6>
+                                    <a href="{{url('ebay-calculator')}}"> 
                                     <p>Ebay Calculator</p></a>
-                                    <a href="{{url('title-builder')}}"><h6>Product Scouting</h6>
+                                    <a href="{{url('title-builder')}}"> 
                                     <p>Title Builder</p></a>
                                    
                                     </li>
