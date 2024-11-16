@@ -114,8 +114,8 @@
 <li class="dropdown-section right-section">
 <h6 style="color: #A5A7AA; font-size: 11px;">Free Tools</h6>
 
-<a class="dropdown-link" href="{{url('ebay-claculator'}}">Ebay Calculator</a>
-<a class="dropdown-link" href="{{url('title-builder'}}">Title Builder</a>
+<a class="dropdown-link" href="{{url('ebay-claculator')}}">Ebay Calculator</a>
+<a class="dropdown-link" href="{{url('title-builder')}}">Title Builder</a>
 
 </li>
 
