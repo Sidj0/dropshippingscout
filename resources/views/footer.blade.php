@@ -111,13 +111,26 @@
     }
 });
 
-function toggleVisibility(event, id) {
+// Toggle visibility of sections on mobile
+function toggleVisibility(event, sectionId) {
     event.preventDefault();
-    const submenu = document.getElementById(id);
-    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-    const arrow = event.target.querySelector('.tools-arrow');
-    if (arrow) {
-        arrow.classList.toggle('open');
+    const section = document.getElementById(sectionId);
+
+    // Close other open sections
+    document.querySelectorAll('.pages-list').forEach((el) => {
+        if (el !== section) {
+            el.style.display = 'none';
+        }
+    });
+
+    // Toggle the current section
+    if (section.style.display === 'block') {
+        section.style.display = 'none';
+        event.target.classList.remove('active');
+    } else {
+        section.style.display = 'block';
+        event.target.classList.add('active');
     }
 }
+
 </script>
