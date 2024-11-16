@@ -402,12 +402,6 @@ display: none; /* Hides the paragraph element */
     top: 0;
 }
 
-header.main-header .header-sticky.active {
-    position: sticky !important;
-    z-index: 1000;
-    top: 0;
-}
-
 header.main-header .header-sticky.hide {
     padding: 15px 0;
 }
@@ -420,71 +414,4 @@ header.main-header .header-sticky.hide {
 body{
     zoom: 85%;
 }
-}
-
-
-/* Mobile Header Adjustments */
-@media screen and (max-width: 768px) {
-    .header-sticky {
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .navbar-nav {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 0 10px;
-        background: #FFFFFF; /* Maintain design consistency */
-        border-radius: 8px;
-    }
-
-    .navbar-nav::-webkit-scrollbar {
-        display: none; /* Hide scrollbar for better UX */
-    }
-
-    .nav-item {
-        flex: 0 0 auto; /* Prevent items from shrinking */
-    }
-
-    .dropdown {
-        display: none; /* Initially hide dropdowns */
-        position: absolute;
-        left: 0;
-        right: 0;
-        background: #fff;
-        border: 1px solid #E3E7FC;
-        border-radius: 8px;
-        z-index: 1000;
-    }
-
-    .nav-item.open .dropdown {
-        display: block; /* Show dropdown when active */
-    }
-
-    .pages-list {
-        display: none;
-    }
-
-    .pages-list.visible {
-        display: block;
-    }
-
-    .magicButtons {
-        margin-top: 10px; /* Separate buttons for better readability */
-        text-align: center;
-    }
-
-    .navbar-toggle {
-        display: block;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        z-index: 1001;
-    }
-
-    .responsive-menu {
-        display: none;
-    }
 }
