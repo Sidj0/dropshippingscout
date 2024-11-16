@@ -105,6 +105,18 @@
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-spy-tool']) }}">Shopify Spy</a>
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-store-finder']) }}">Shopify Store Finder</a>
     </div>
+   
+
+
+
+</li>
+
+<li class="dropdown-section right-section">
+<h6 style="color: #A5A7AA; font-size: 11px;">Free Tools</h6>
+
+<a class="dropdown-link" href="{{url('ebay-claculator'}}">Ebay Calculator</a>
+<a class="dropdown-link" href="{{url('title-builder'}}">Title Builder</a>
+
 </li>
 
 
