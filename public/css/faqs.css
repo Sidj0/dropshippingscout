@@ -182,10 +182,14 @@ inline-size: -webkit-fill-available;
     .options-wrapper {
         overflow-x: auto; /* Ensure wrapper can scroll horizontally */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        display: -webkit-box;
     }
 
     .options-container {
         flex-direction: row;
+    }
+    .option{
+        padding: 7px;
     }
 }
 .faq-section {
