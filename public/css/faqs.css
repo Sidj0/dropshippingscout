@@ -149,13 +149,13 @@
 @media (max-width: 768px) {
 
 .header{
-	font-size: 30px;
+	font-size: 22px;
 }
 .accordion-MainTitle{
-	font-size: 20px;
+	font-size: 18px;
 }
 .accordion-header .accordion-button.collapsed {
-font-size: 16px;
+font-size: 15px !important;
 
 }
 

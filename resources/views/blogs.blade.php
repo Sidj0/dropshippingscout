@@ -23,9 +23,9 @@
 <div class="options-wrapper">
     <div class="options-container">
         <div class="option">All</div>
+        <div class="option">DropShipping</div>
         <div class="option">eBay</div>
         <div class="option">Shopify</div>
-        <div class="option">Woocommerce</div>
         <div class="option">Aliexpress</div>
         <div class="option">Walmart</div>
         <div class="option">Amazon</div>
