@@ -111,4 +111,36 @@
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Enable dropdown toggling for mobile
+    document.querySelectorAll(".toggle-section").forEach(function (toggle) {
+        toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            const sectionId = toggle.getAttribute("onclick").match(/'(.*?)'/)[1];
+            const section = document.getElementById(sectionId);
+
+            if (section) {
+                section.classList.toggle("visible"); // Toggle visibility
+            }
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest(".nav-item")) {
+            document.querySelectorAll(".pages-list").forEach(function (list) {
+                list.classList.remove("visible");
+            });
+        }
+    });
+
+    // Toggle main menu for mobile
+    const toggleMenu = document.querySelector(".navbar-toggle");
+    const responsiveMenu = document.querySelector(".responsive-menu");
+    toggleMenu.addEventListener("click", function () {
+        responsiveMenu.classList.toggle("open");
+    });
+});
+
+
 </script>
