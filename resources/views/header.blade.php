@@ -35,14 +35,11 @@
                                         <a href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'suppliers-scouting')->first()->slug]) }}"><h6>Suppliers Scouting</h6>
                                         <p>Find your fellow competitors, identify the unique selling proposition of your product.</p></a>
                                       
-                                    <a href="#"><h6>Free Tools</h6>
-                                        <p>Explore our free tools.</p></a>
-
-
-<a class="dropdown-link" href="{{url('ebay-calculator')}}">Ebay Calculator</a>
-<a class="dropdown-link" href="{{url('title-builder')}}">Title Builder</a>
-
-                                    
+                                    <h6>Explore Our Free Tools</h6>
+                                    <a href="{{url('ebay-calculator')}}"><h6>Product Scouting</h6>
+                                    <p>Ebay Calculator</p></a>
+                                    <a href="{{url('title-builder')}}"><h6>Product Scouting</h6>
+                                    <p>Title Builder</p></a>
                                    
                                     </li>
 <!-- Right Section -->
