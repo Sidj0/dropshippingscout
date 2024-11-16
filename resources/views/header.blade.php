@@ -23,97 +23,107 @@
                         <ul class="navbar-nav mr-auto" id="menu" style="background: #FFFFFF; border: 1px solid #E3E7FC; border-radius: 31px;">
                             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                             
-                            <!-- Tools Dropdown Start -->
-                            <li class="nav-item submenu"><a class="nav-link" href="#">Tools</a>
-                                <ul class="dropdown toolsItem">
-                                    <!-- Left Section -->
-                                    <li class="dropdown-section left-section">
-                                        <a href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'product-scouting')->first()->slug]) }}"><h6>Product Scouting</h6>
-                                        <p>Find your fellow competitors, identify the unique selling proposition of your product.</p></a>
-                                        <a href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'competitor-monitoring')->first()->slug]) }}"><h6>Competitor Monitoring</h6>
-                                        <p>Find your fellow competitors, identify the unique selling proposition of your product.</p></a>
-                                        <a href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'suppliers-scouting')->first()->slug]) }}"><h6>Suppliers Scouting</h6>
-                                        <p>Find your fellow competitors, identify the unique selling proposition of your product.</p></a>
-                                      
-                                <h6 style="color: #A5A7AA; font-size: 11px;">Free Tools</h6>
-                                <a href="{{url('ebay-calculator')}}"><h6>Ebay Calculator</h6></a>
-                                <a href="{{url('title-builder')}}"><h6>Title Builder</h6></a>
-                                   
-                                    </li>
-<!-- Right Section -->
-<li class="dropdown-section right-section">
-    <h6 style="color: #A5A7AA; font-size: 11px;">Paid Tools</h6>
+<!-- Tools Dropdown Start -->
+<li class="nav-item submenu">
+    <a class="nav-link" href="#">Tools</a>
+    <ul class="dropdown toolsItem">
+        <!-- Free Tools Section -->
+        <li class="dropdown-section">
+            <h6 class="section-title">Free Tools</h6>
+            <div class="scrollable-section">
+                <a href="{{url('ebay-calculator')}}" class="dropdown-item">Ebay Calculator</a>
+                <a href="{{url('title-builder')}}" class="dropdown-item">Title Builder</a>
+            </div>
+        </li>
 
-    <!-- eBay Section -->
-    <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'ebay-pages')">
-        <img src="{{ asset('images/Registration/ebay.svg') }}" alt="eBay Logo" class="icon"> 
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
-    </a>
-    <div class="pages-list" style="display: none;" id="ebay-pages">
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-product-insight']) }}">Product Insight</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'topbay-picks']) }}">TopBay Picks</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-niche-finder-tool']) }}">NicheFinder</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-title-master']) }}">Title Master</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-rivalview-tool']) }}">RivalView</a>
-    </div>
+        <!-- Paid Tools Section -->
+        <li class="dropdown-section">
+            <h6 class="section-title">Paid Tools</h6>
+            <div class="scrollable-section">
+                <!-- eBay Section -->
+                <div class="dropdown-group">
+                    <a href="#" class="dropdown-toggle" onclick="toggleVisibility(event, 'ebay-pages')">
+                        <img src="{{ asset('images/Registration/ebay.svg') }}" alt="eBay Logo" class="icon">
+                        eBay Tools
+                        <span class="tools-arrow">&#9660;</span>
+                    </a>
+                    <div class="submenu-list" id="ebay-pages">
+                        <a href="{{ route('tools-product.show', ['slug' => 'express-product-insight']) }}">Product Insight</a>
+                        <a href="{{ route('tools-product.show', ['slug' => 'topbay-picks']) }}">TopBay Picks</a>
+                        <a href="{{ route('tools-product.show', ['slug' => 'ebay-niche-finder-tool']) }}">NicheFinder</a>
+                        <a href="{{ route('tools-product.show', ['slug' => 'ebay-title-master']) }}">Title Master</a>
+                        <a href="{{ route('tools-product.show', ['slug' => 'ebay-rivalview-tool']) }}">RivalView</a>
+                    </div>
+                </div>
 
-        <!-- Amazon Section -->
-    <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'Amazon-pages')">
-        <img src="{{ asset('images/Registration/amazon.svg') }}" alt="Amazon Logo" class="icon"> 
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
-    </a>
-    <div class="pages-list" style="display: none;" id="Amazon-pages">
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'amazon-scanner']) }}">Amazon Scanner</a>
-    </div>
+                <!-- Amazon Section -->
+                <div class="dropdown-group">
+                    <a href="#" class="dropdown-toggle" onclick="toggleVisibility(event, 'Amazon-pages')">
+                        <img src="{{ asset('images/Registration/amazon.svg') }}" alt="Amazon Logo" class="icon">
+                        Amazon Tools
+                        <span class="tools-arrow">&#9660;</span>
+                    </a>
+                    <div class="submenu-list" id="Amazon-pages">
+                        <a href="{{ route('tools-product.show', ['slug' => 'amazon-scanner']) }}">Amazon Scanner</a>
+                    </div>
+                </div>
 
-     <!-- Walmart Section -->
-     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'Walmart-pages')">
-        <img src="{{ asset('images/Registration/walMart.svg') }}" alt="Walmart Logo" class="icon"> 
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
-    </a>
-    <div class="pages-list" style="display: none;" id="Walmart-pages">
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'walmart-watch-tool']) }}">Walmart Watch</a>
-    </div>
+                <!-- Walmart Section -->
+                <div class="dropdown-group">
+                    <a href="#" class="dropdown-toggle" onclick="toggleVisibility(event, 'Walmart-pages')">
+                        <img src="{{ asset('images/Registration/walMart.svg') }}" alt="Walmart Logo" class="icon">
+                        Walmart Tools
+                        <span class="tools-arrow">&#9660;</span>
+                    </a>
+                    <div class="submenu-list" id="Walmart-pages">
+                        <a href="{{ route('tools-product.show', ['slug' => 'walmart-watch-tool']) }}">Walmart Watch</a>
+                    </div>
+                </div>
 
-     <!-- AliExpress Section -->
-     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'AliExpress-pages')">
-        <img src="{{ asset('images/Registration/aliExpress.svg') }}" alt="AliExpress Logo" class="icon"> 
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
-    </a>
-    <div class="pages-list" style="display: none;" id="AliExpress-pages">
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-finder-tool']) }}">Express Finder</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-scan-tool']) }}">Express Scan</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-supplier-scout-tool']) }}">Supplier Scout</a>
-    </div>
+                <!-- AliExpress Section -->
+                <div class="dropdown-group">
+                    <a href="#" class="dropdown-toggle" onclick="toggleVisibility(event, 'AliExpress-pages')">
+                        <img src="{{ asset('images/Registration/aliExpress.svg') }}" alt="AliExpress Logo" class="icon">
+                        AliExpress Tools
+                        <span class="tools-arrow">&#9660;</span>
+                    </a>
+                    <div class="submenu-list" id="AliExpress-pages">
+                        <a href="{{ route('tools-product.show', ['slug' => 'express-finder-tool']) }}">Express Finder</a>
+                        <a href="{{ route('tools-product.show', ['slug' => 'express-scan-tool']) }}">Express Scan</a>
+                        <a href="{{ route('tools-product.show', ['slug' => 'express-supplier-scout-tool']) }}">Supplier Scout</a>
+                    </div>
+                </div>
 
-     <!-- tiktook Section -->
-     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'tiktook-pages')">
-        <img src="{{ asset('images/tiktok_shop.png') }}" alt="tiktook Logo" class="icon"> 
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
-    </a>
-    <div class="pages-list" style="display: none;" id="tiktook-pages">
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'tiktrend-scan-tool']) }}">Tiktook Scanner</a>
-    </div>
+                <!-- TikTok Section -->
+                <div class="dropdown-group">
+                    <a href="#" class="dropdown-toggle" onclick="toggleVisibility(event, 'tiktook-pages')">
+                        <img src="{{ asset('images/tiktok_shop.png') }}" alt="TikTok Logo" class="icon">
+                        TikTok Tools
+                        <span class="tools-arrow">&#9660;</span>
+                    </a>
+                    <div class="submenu-list" id="tiktook-pages">
+                        <a href="{{ route('tools-product.show', ['slug' => 'tiktrend-scan-tool']) }}">TikTok Scanner</a>
+                    </div>
+                </div>
 
-    <!-- Shopify Section -->
-    <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'shopify-pages')">
-        <img src="{{ asset('images/Registration/shopify.svg') }}" alt="Shopify Logo" class="icon">
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
-    </a>
-    <div class="pages-list" style="display: none;" id="shopify-pages">
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-insight']) }}">Shopify Insight</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-spy-tool']) }}">Shopify Spy</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-store-finder']) }}">Shopify Store Finder</a>
-    </div>
-   
-
-
+                <!-- Shopify Section -->
+                <div class="dropdown-group">
+                    <a href="#" class="dropdown-toggle" onclick="toggleVisibility(event, 'shopify-pages')">
+                        <img src="{{ asset('images/Registration/shopify.svg') }}" alt="Shopify Logo" class="icon">
+                        Shopify Tools
+                        <span class="tools-arrow">&#9660;</span>
+                    </a>
+                    <div class="submenu-list" id="shopify-pages">
+                        <a href="{{ route('tools-product.show', ['slug' => 'shopify-insight']) }}">Shopify Insight</a>
+                        <a href="{{ route('tools-product.show', ['slug' => 'shopify-spy-tool']) }}">Shopify Spy</a>
+                        <a href="{{ route('tools-product.show', ['slug' => 'shopify-store-finder']) }}">Shopify Store Finder</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </li>
-
-
-                                </ul>
-                            </li>
-                            <!-- Tools Dropdown End -->
+<!-- Tools Dropdown End -->
 
                             <!-- Resources Dropdown Start -->
                             <li class="nav-item submenu"><a class="nav-link" href="#">Resources</a>

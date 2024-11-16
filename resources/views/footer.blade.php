@@ -111,4 +111,13 @@
     }
 });
 
+function toggleVisibility(event, id) {
+    event.preventDefault();
+    const submenu = document.getElementById(id);
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    const arrow = event.target.querySelector('.tools-arrow');
+    if (arrow) {
+        arrow.classList.toggle('open');
+    }
+}
 </script>
