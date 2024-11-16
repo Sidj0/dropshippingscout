@@ -35,9 +35,14 @@
                                         <a href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'suppliers-scouting')->first()->slug]) }}"><h6>Suppliers Scouting</h6>
                                         <p>Find your fellow competitors, identify the unique selling proposition of your product.</p></a>
                                       
-                                      <!--   <a href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'tool')->first()->slug]) }}"><h6>Free Tools</h6>
+                                    <a href="#"><h6>Free Tools</h6>
                                         <p>Explore our free tools.</p></a>
-                                       -->
+
+
+<a class="dropdown-link" href="{{url('ebay-calculator')}}">Ebay Calculator</a>
+<a class="dropdown-link" href="{{url('title-builder')}}">Title Builder</a>
+
+                                    
                                    
                                     </li>
 <!-- Right Section -->
@@ -106,10 +111,6 @@
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-store-finder']) }}">Shopify Store Finder</a>
     </div>
    
-    <h6 style="color: #A5A7AA; font-size: 11px;">Free Tools</h6>
-
-<a class="dropdown-link" href="{{url('ebay-calculator')}}">Ebay Calculator</a>
-<a class="dropdown-link" href="{{url('title-builder')}}">Title Builder</a>
 
 
 </li>
