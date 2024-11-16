@@ -147,6 +147,9 @@
 
 /* Responsive  */
 @media (max-width: 768px) {
+    .search-container input[type="text"] {
+    width: 285px;
+    }
 
 .header{
 	font-size: 22px;
@@ -156,6 +159,7 @@
 }
 .accordion-header .accordion-button.collapsed {
 font-size: 15px !important;
+inline-size: -webkit-fill-available;
 
 }
 
