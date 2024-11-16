@@ -37,7 +37,7 @@
             </div>
             <div class="right-column">
                 <div class="gradient-circle"></div>
-                <img src="{{asset('images/Banner1-Final0.png')}}" alt="Example Image" class="bannerImg">
+                <img src="{{asset('images/Banner1-Final0_optimized.png')}}" alt="Example Image" class="bannerImg">
             </div>
             
         </div>
