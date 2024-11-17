@@ -147,9 +147,10 @@
                             <li class="nav-item"><a class="nav-link" href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'affiliate')->first()->slug]) }}">Affiliate</a></li>
                           
                             <div class="magicButtons">
-                                <a href="https://app.dropshippingscout.com/pricing">
-                                    <button class="custom-btn btn-12"><span>For 1$!</span><span>Start now</span></button></a>
-                            <a href="https://app.dropshippingscout.com/login"><button class="custom-btn btn-10">login</button></a>
+                        
+                            <a href="https://app.dropshippingscout.com/pricing" class="unique-button">Start Now</a>
+                            <a href="https://app.dropshippingscout.com/login" class="unique-button">Login</a>
+
                            </div>
 
                         </ul>
