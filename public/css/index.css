@@ -618,7 +618,7 @@ max-width: 100%;
 .right-column img {
   position: relative;
   z-index: 1;
-  width: 75%;
+  width: 70%;
   height: auto;
   border-radius: 15px;
 }

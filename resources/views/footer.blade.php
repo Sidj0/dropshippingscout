@@ -66,6 +66,17 @@
                             </div>
                             <!-- Footer Links End -->
                         </div>
+                        <div class="col-lg-2 col-md-4">
+                            <!-- Footer Links Start -->
+                            <div class="footer-links">
+                                <h2>Free Tools</h2>
+                                <ul>
+                                    <li><a href="{{ url('ebay-calculator') }}">Ebay Calculator</a></li>
+                                    <li><a href="{{url('title-builder')}}">Title Builder</a></li>
+                                </ul>
+                            </div>
+                            <!-- Footer Links End -->
+                        </div>
                     </div>
                 </div>
                 <!-- Mega Footer End -->
