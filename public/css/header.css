@@ -415,4 +415,9 @@ header.main-header .header-sticky.hide {
 body{
     zoom: 85%;
 }
+.slicknav_nav a {
+color:white !important;
+}
+
+
 }
