@@ -148,8 +148,8 @@
                           
                             <div class="magicButtons">
                         
-                            <a href="https://app.dropshippingscout.com/pricing" class="unique-button">Start Now</a>
-                            <a href="https://app.dropshippingscout.com/login" class="unique-button">Login</a>
+                            <a href="https://app.dropshippingscout.com/pricing" style="color:white;text-align:center" class="unique-button">Start Now</a>
+                            <a href="https://app.dropshippingscout.com/login" style="color:white;text-align:center" class="unique-button">Login</a>
 
                            </div>
 
