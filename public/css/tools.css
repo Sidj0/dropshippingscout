@@ -637,26 +637,31 @@ body {
             max-width: 100%; /* Allow full width on smaller screens */
         }
     }
-
-    /* Mobile Responsive */
+    /* Mobile-specific styling */
 @media (max-width: 768px) {
-  .content-column {
-    text-align: center; /* Center content on mobile */
+  .con-left {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
   }
 
-  .content-column h2 {
-    font-size: 20px;
+  .left-column > h2 {
+    order: 1; /* Header */
   }
 
-  .content-column p {
-    font-size: 14px;
+  .left-column > p {
+    order: 2; /* Content */
   }
 
-  .content-column img {
-    margin-bottom: 15px;
+  .right-column > img {
+    order: 3; /* Image */
   }
 
-  .content-column .btn-default {
-    width: 100%; /* Full-width button on mobile */
+  .left-column > button {
+    order: 4; /* Button */
+  }
+
+  /* Adjust spacing and alignment if necessary */
+  .con-left * {
+    margin: 10px 0; /* Example spacing */
   }
 }
