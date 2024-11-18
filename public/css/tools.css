@@ -637,3 +637,24 @@ body {
             max-width: 100%; /* Allow full width on smaller screens */
         }
     }
+
+    @media (max-width: 768px) {
+      .con-left {
+        flex-direction: column; /* Stack elements vertically on mobile */
+      }
+    
+      .left-column {
+        order: 2; /* Move text content below the image */
+        text-align: center;
+      }
+    
+      .right-column {
+        order: 1; /* Ensure the image stays on top */
+        text-align: center;
+      }
+    
+      .mobile-btn {
+        display: inline-block; /* Make the button visible */
+        margin-top: 10px;
+      }
+    }
