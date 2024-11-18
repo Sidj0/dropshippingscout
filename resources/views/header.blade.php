@@ -157,8 +157,8 @@
                     </div>
                     <!-- Let’s Start Button Start -->
                     <div class="header-btn d-inline-flex">
-                        <a href="https://app.dropshippingscout.com/login" style="position: relative; display: inline-block; z-index: 1; overflow: hidden; padding: 15px 45px 15px 20px; font-weight: bold; color: #1E3F5B">Login</a>
-                        <a href="https://app.dropshippingscout.com/pricing" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 8px;">Start $1 Trial</a>
+                        <a href="https://app.dropshippingscout.com/login" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 8px; color:white !important; text-align:center">Login</a>
+                        <a href="https://app.dropshippingscout.com/pricing" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 8px; color:white !important; text-align:center">Start $1 Trial</a>
                        
                     </div>
                     <!-- Let’s Start Button End -->
