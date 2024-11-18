@@ -391,7 +391,6 @@ display: none; /* Hides the paragraph element */
   @media (max-width: 768px) {
   .magicButtons{
     display: flex;
-    margin-top: 5px;
   }
   
   }
@@ -415,9 +414,4 @@ header.main-header .header-sticky.hide {
 body{
     zoom: 85%;
 }
-.slicknav_nav a {
-color:white !important;
-}
-
-
 }
