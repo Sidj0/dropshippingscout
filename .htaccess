@@ -26,4 +26,11 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^ index.php [L]
+
+    <Files .env>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+
 </IfModule>
