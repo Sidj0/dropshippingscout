@@ -637,31 +637,32 @@ body {
             max-width: 100%; /* Allow full width on smaller screens */
         }
     }
-    /* Mobile-specific styling */
+    /* Mobile-specific styles */
 @media (max-width: 768px) {
   .con-left {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column; /* Stack items vertically for mobile */
   }
 
-  .left-column > h2 {
-    order: 1; /* Header */
+  /* Reorder for all sections dynamically */
+  .left-column h2 {
+    order: 1; /* Header first */
   }
 
-  .left-column > p {
-    order: 2; /* Content */
+  .left-column p {
+    order: 2; /* Content second */
   }
 
-  .right-column > img {
-    order: 3; /* Image */
+  .right-column img {
+    order: 3; /* Image third */
   }
 
-  .left-column > button {
-    order: 4; /* Button */
+  .left-column button {
+    order: 4; /* Button fourth */
   }
 
-  /* Adjust spacing and alignment if necessary */
-  .con-left * {
-    margin: 10px 0; /* Example spacing */
+  /* Optional: Add consistent spacing for better alignment */
+  .con-left > * {
+    margin: 10px 0; /* Adjust margins as needed */
   }
 }
