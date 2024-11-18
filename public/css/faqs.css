@@ -195,3 +195,42 @@ inline-size: -webkit-fill-available;
 .faq-section {
      padding-top: 40px;
  }
+
+
+ /* General styling for the options container */
+.options-wrapper {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping of options */
+    justify-content: flex-start;
+    gap: 20px; /* Spacing between options */
+}
+
+.option {
+    white-space: nowrap; /* Prevent text from wrapping */
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Styling for mobile devices */
+@media (max-width: 768px) {
+    .options-wrapper {
+        width: 100%; /* Ensure wrapper takes full width */
+        padding: 10px 0; /* Add some padding for better spacing */
+    }
+
+    .options-container {
+        gap: 15px; /* Reduce gap on mobile */
+    }
+
+    .option {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
