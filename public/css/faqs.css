@@ -195,7 +195,9 @@ inline-size: -webkit-fill-available;
 .faq-section {
      padding-top: 40px;
  }
-/* General styling for the options wrapper */
+
+
+ /* General styling for the options wrapper */
 .options-wrapper {
     width: 100%; /* Ensure the wrapper takes the full width */
     overflow: hidden; /* Hide overflow outside of the container */
@@ -206,15 +208,30 @@ inline-size: -webkit-fill-available;
     display: flex;
     flex-wrap: nowrap; /* Prevent wrapping of options */
     gap: 20px; /* Spacing between options */
-    overflow-x: auto; /* Enable horizontal scrolling for the options */
+    overflow-x: scroll; /* Enable horizontal scrolling for the options */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
     scroll-snap-type: x mandatory; /* Optional: snap scrolling for better UX */
+}
+
+/* Show scrollbar on mobile */
+.options-container::-webkit-scrollbar {
+    height: 8px; /* Height of the scrollbar */
+}
+
+.options-container::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Track color */
+}
+
+.options-container::-webkit-scrollbar-thumb {
+    background-color: #1E3F5B; /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
 }
 
 /* Each individual option */
 .option {
     white-space: nowrap; /* Prevent text from wrapping */
     padding: 10px 15px;
+    background-color: #f0f0f0;
     border-radius: 5px;
     cursor: pointer;
     user-select: none;
