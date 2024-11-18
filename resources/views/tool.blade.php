@@ -19,20 +19,11 @@
 <br>
 @if (!empty($page['image_1']))
   <div class="con-left">
-    <div class="left-column">
+    <div class="content-column">
       <h2>{{$page->header_1}}</h2>
-      <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_1}}</p>
-      <br>
-      <button class="btn-default">start for $1 Trial</button>
-      <p style="color: #1E3F5B; font-size: 13px; font-weight: 550; padding-top: 10px; width: max-content;">
-        <img src="{{asset('images/verified.png')}}" style="max-width: 35px"/>
-        Trusted by 200.000 entrepreneurs like you
-      </p>
-    </div>
-    
-    <div class="right-column">
       <img src="{{ asset('storage/' . $page['image_1']) }}" alt="Example Image">
+      <button class="btn-default">start for $1 Trial</button>
     </div>
   </div>
 @endif
@@ -41,17 +32,10 @@
 
 @if (!empty($page['image_2']))
   <div class="con-left">
-    <div class="right-column">
+    <div class="content-column">
+      <h2>{{$page->header_2}}</h2>
+      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_2}}</p>
       <img src="{{ asset('storage/' . $page['image_2']) }}" alt="Example Image">
-    </div>
-
-    <div class="left-column">
-      <h2 style="width: max-content;">{{$page->header_2}}</h2>
-      <br>
-      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">
-        {{$page->paragraph_2}}
-      </p>
-      <br>
       <a href="https://app.dropshippingscout.com/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
@@ -59,18 +43,15 @@
   </div>
 @endif
 
+<br>
+
 @if (!empty($page['image_3']))
   <div class="con-left">
-    <div class="left-column">
+    <div class="content-column">
       <h2>{{$page->header_3}}</h2>
-      <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
-      <br>
-      <button class="btn-default">start for $1 Trial</button>
-    </div>
-    
-    <div class="right-column">
       <img src="{{ asset('storage/' . $page['image_3']) }}" alt="Example Image">
+      <button class="btn-default">start for $1 Trial</button>
     </div>
   </div>
 @endif
@@ -79,21 +60,15 @@
 
 @if (!empty($page['image_4']))
   <div class="con-left">
-    <div class="right-column">
+    <div class="content-column">
+      <h2>{{$page->header_4}}</h2>
+      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_4}}</p>
       <img src="{{ asset('storage/' . $page['image_4']) }}" alt="Example Image">
-    </div>
-
-    <div class="left-column">
-      <h2 style="width: max-content;">{{$page->header_4}}</h2>
-      <br>
-      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">
-        {{$page->paragraph_4}}
-      </p>
-      <br>
       <button class="btn-default">start for $1 Trial</button>
     </div>
   </div>
 @endif
+
 
     <div class="container faqHead" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
 
