@@ -637,3 +637,47 @@ body {
             max-width: 100%; /* Allow full width on smaller screens */
         }
     }
+
+
+    /* Default styles for desktop */
+.con-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+}
+
+.left-column {
+  padding-right: 20px;
+}
+
+.right-column img {
+  width: 100%;
+  height: auto;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .con-left {
+    flex-direction: column; /* Stack the sections vertically */
+  }
+
+  .left-column, 
+  .right-column {
+    flex: none; /* Disable flexbox behavior for mobile */
+    width: 100%; /* Ensure both columns take up full width */
+  }
+
+  .right-column {
+    order: 2; /* Image comes after the text */
+  }
+
+  .left-column {
+    order: 1; /* Header, paragraph, and button come first */
+  }
+}
