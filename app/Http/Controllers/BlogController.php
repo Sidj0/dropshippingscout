@@ -159,8 +159,7 @@ class BlogController extends Controller
     
         // Check if the page data exists to avoid errors
         if (!$page) {
-            // Handle the case where the page data is not found (optional)
-            abort(404, 'Page not found');
+            return response()->view('404', [], 404);
         }
     
         // Pass both blogs and page data to the view
@@ -189,7 +188,7 @@ class BlogController extends Controller
 
                // If the blog does not exist, return the custom 404 view
                if (!$blog) {
-                return view(view: '404');
+                return response()->view('404', [], 404);
             }
    
        // Extract headings from the content
@@ -215,7 +214,7 @@ class BlogController extends Controller
    
        // Check if the page data exists to avoid errors
        if (!$page) {
-           abort(404, 'Page not found');
+        return response()->view('404', [], 404);
        }
    
        // Get related blogs from the same category, excluding the current blog

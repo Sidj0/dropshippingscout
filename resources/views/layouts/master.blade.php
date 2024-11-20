@@ -9,12 +9,25 @@
     })(window,document,'script','dataLayer','GTM-PGTF43WX');</script>
     <!-- End Google Tag Manager -->
     <!-- Meta -->
+    <meta property="og:title" content="DroShipping Scout" />
+    <meta property="og:description" content="Dropshipping Scout is your all-in-one solution for effortless dropshipping" />
+    <meta property="og:image" content="{{ asset('images/logo.svg') }}" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="DropShipping" />
+    <meta property="og:site_name" content="Scout" />
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <!-- Dynamic Meta Tags -->
     <meta name="description" content="@yield('meta_description', 'Default Description')">
     <meta name="keywords" content="@yield('meta_keywords', 'Default Keywords')">
     <meta name="author" content="@yield('meta_author', 'Awaiken')">
+
+    <link rel="alternate" hreflang="en-us" href="{{ url()->current() }}" />
+    <link rel="alternate" hreflang="en-gb" href="{{ url()->current() }}" />
+    <link rel="alternate" hreflang="en-ca" href="{{ url()->current() }}" />
+    <link rel="alternate" hreflang="en-au" href="{{ url()->current() }}" />
+
     <!-- Page Title -->
     <title>@yield('title', 'Scout')</title>
      <!-- Self-referencing canonical tag -->
