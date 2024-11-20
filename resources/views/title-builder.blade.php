@@ -19,7 +19,7 @@
     <p style="text-align: center;">Delve into the flexibility and customization our services offer to help your product succeed.</p>
 
     <div class="search-container">
-        <input type="text" placeholder="Add keyword of your product">
+        <input type="text" placeholder="Add keyword of your product" id="search-term">
         <button id="search-button">Search</button>
     </div>
 
