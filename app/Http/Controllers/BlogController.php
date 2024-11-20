@@ -187,7 +187,7 @@ class BlogController extends Controller
        $blog = Blog::where('slug', $slug)->firstOrFail();
 
                // If the blog does not exist, return the custom 404 view
-               if ($blog) {
+               if (!$blog) {
                 return view('404');
             }
    
