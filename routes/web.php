@@ -10,7 +10,10 @@ use App\Http\Controllers\toolsController;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\EbayCalculatorController;
 
-
+Route::fallback(function () {
+    // Render custom 404 view
+    return response()->view('404', [], 404);
+});
 
 #home page route
 Route::get("/", function(){
