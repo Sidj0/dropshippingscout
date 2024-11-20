@@ -4,6 +4,7 @@
 @section('meta_description', $page->meta_description)
 @section('meta_keywords', $page->meta_keywords)
 @section('meta_author', $page->meta_author)
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 @section('styles')
     <!-- Custom CSS for this view -->
@@ -19,7 +20,7 @@
 
     <div class="search-container">
         <input type="text" placeholder="Add keyword of your product">
-        <button>Search</button>
+        <button id="search-button">Search</button>
     </div>
 
     <div class="filter-container">
@@ -37,8 +38,10 @@
               <label for="category">Shipping Location 
                   <i class="fas fa-question-circle" title="Select the shipping location."></i>
               </label>
-              <select id="category">
-                  <option value="" disabled selected>United States</option>
+              <select id="country-id">
+                  <option value="1" disabled selected>United States</option>
+                  <option value="2" >United Kingdom</option>
+
               </select>
           </div>
 
@@ -203,4 +206,69 @@
             </div>
         </div>
     </div>
+
+<script>
+  document.getElementById('search-button').addEventListener('click', function () {
+    const searchTerm = document.getElementById('search-term').value;
+    const countryId = document.getElementById('country-id').value;
+
+    if (!searchTerm || !countryId) {
+        alert('Please enter a search term and select a country.');
+        return;
+    }
+
+    fetch('/search-title', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+        },
+        body: JSON.stringify({
+            search_term: searchTerm,
+            country_id: countryId,
+        }),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+            } else {
+                renderResults(data);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
+
+function renderResults(data) {
+    // Assume 'data' contains long-tail and generic keywords
+    const longTailTable = document.querySelector('.results-section:nth-child(1) .results-table tbody');
+    const genericTable = document.querySelector('.results-section:nth-child(2) .results-table tbody');
+
+    longTailTable.innerHTML = '';
+    genericTable.innerHTML = '';
+
+    data.long_tail_keywords.forEach(item => {
+        const row = `<tr>
+            <td>${item.keyword}</td>
+            <td>${item.average_searches}</td>
+            <td>${item.competition_level}</td>
+            <td>${item.sales}</td>
+            <td><i class="copy-icon">📋</i></td>
+        </tr>`;
+        longTailTable.insertAdjacentHTML('beforeend', row);
+    });
+
+    data.generic_keywords.forEach(item => {
+        const row = `<tr>
+            <td>${item.keyword}</td>
+            <td>${item.competition_level}</td>
+            <td>${item.sales}</td>
+            <td><i class="copy-icon">📋</i></td>
+        </tr>`;
+        genericTable.insertAdjacentHTML('beforeend', row);
+    });
+}
+
+</script>
+
 @endsection

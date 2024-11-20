@@ -9,6 +9,9 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\toolsController;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\EbayCalculatorController;
+use App\Http\Controllers\TitleBuilderController;
+
+
 
 Route::fallback(function () {
     // Render custom 404 view
@@ -105,6 +108,9 @@ Route::delete('/admin/tools/{tool}', [toolsController::class, 'destroy'])->name(
 
 // ebay calculator
 Route::post('/calculate-fees', [EbayCalculatorController::class, 'calculate']);
+// title builder
+Route::post('/search-title', [TitleBuilderController::class, 'searchTitle'])->name('search-title');
+
  
 // Dynamic Page Route
 Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');
