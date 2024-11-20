@@ -188,7 +188,7 @@ class BlogController extends Controller
 
                // If the blog does not exist, return the custom 404 view
                if (!$blog) {
-                return response()->view('404', [], 404);
+                abort(404); // Laravel's built-in 404 response
             }
    
        // Extract headings from the content

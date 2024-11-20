@@ -48,11 +48,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        // Custom 404 page for ModelNotFoundException
-        if ($exception instanceof ModelNotFoundException) {
-            return response()->view('404', [], Response::HTTP_NOT_FOUND);
+        if ($exception instanceof NotFoundHttpException) {
+            return response()->view('404', [], 404);
         }
-
+    
         return parent::render($request, $exception);
     }
 }
