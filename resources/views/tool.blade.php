@@ -24,7 +24,9 @@
       <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_1}}</p>
       <br>
-      <button class="btn-default">start for $1 Trial</button>
+      <a href="https://app.dropshippingscout.com/pricing">
+        <button class="btn-default">start for $1 Trial</button>
+      </a>
       <p style="color: #1E3F5B; font-size: 13px; font-weight: 550; padding-top: 10px; width: max-content;">
         <img src="{{asset('images/verified.png')}}" style="max-width: 35px"/>
         Trusted by 200.000 entrepreneurs like you
@@ -66,7 +68,9 @@
       <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
       <br>
-      <button class="btn-default">start for $1 Trial</button>
+      <a href="https://app.dropshippingscout.com/pricing">
+        <button class="btn-default">start for $1 Trial</button>
+      </a>
     </div>
     
     <div class="right-column">
@@ -90,7 +94,9 @@
         {{$page->paragraph_4}}
       </p>
       <br>
-      <button class="btn-default">start for $1 Trial</button>
+      <a href="https://app.dropshippingscout.com/pricing">
+        <button class="btn-default">start for $1 Trial</button>
+      </a>
     </div>
   </div>
 @endif
