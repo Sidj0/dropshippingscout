@@ -17,7 +17,7 @@ class PagesController extends Controller
     // Default message if none is provided
     $defaultMessage = 'The page you are looking for does not exist.';
     
-    return response()->view('404', 404);
+    return response()->view('404', [], 404);
 }
 
 
