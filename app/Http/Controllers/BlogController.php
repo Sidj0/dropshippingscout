@@ -184,14 +184,14 @@ class BlogController extends Controller
    public function show($slug)
    {
        // Find the blog by slug
-       $blog = Blog::where('slug', $slug)->firstOrFail();
-
-               // If the blog does not exist, return the custom 404 view
-               if (!$blog) {
-                return response()->view('404', [], 404);
-            }
+       $blog = Blog::where('slug', $slug)->first();
    
-       // Extract headings from the content
+       // If the blog does not exist, return the custom 404 view
+       if (!$blog) {
+           return response()->view('404', [], 404);
+       }
+   
+       // Extract headings from the content (as in your original code)
        $dom = new \DOMDocument();
        @$dom->loadHTML($blog->content); // Suppress warnings with @
        $headings = [];
@@ -209,22 +209,22 @@ class BlogController extends Controller
    
        $blog->content = $dom->saveHTML();
    
-       // Retrieve the page data where 'view_name' equals 'blog-details'
+       // Retrieve the page data
        $page = Page::where('view_name', 'blogs')->first();
    
-       // Check if the page data exists to avoid errors
        if (!$page) {
-        return response()->view('404', [], 404);
+           return response()->view('404', [], 404);
        }
    
-       // Get related blogs from the same category, excluding the current blog
+       // Related blogs
        $relatedBlogs = Blog::where('category', $blog->category)
                            ->where('id', '!=', $blog->id)
-                           ->take(3) // Limit to 3 related blogs (adjust as necessary)
+                           ->take(3)
                            ->get();
    
        return view('blog-details', compact('blog', 'headings', 'page', 'relatedBlogs'));
    }
+   
    
 
 

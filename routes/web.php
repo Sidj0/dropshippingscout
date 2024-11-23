@@ -13,11 +13,6 @@ use App\Http\Controllers\TitleBuilderController;
 
 
 
-Route::fallback(function () {
-    // Render custom 404 view
-    return response()->view('404', [], 404);
-});
-
 #home page route
 Route::get("/", function(){
     $home_page= new PagesController;
@@ -69,6 +64,13 @@ Route::get('/blogs', [BlogController::class, 'userIndex'])->name('blogs.userInde
 Route::get('/tutorial', [BlogController::class, 'userTutorial'])->name('blogs.userTutorial'); // Show all blogs
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 Route::post('/blogs/{id}/like', [BlogController::class, 'like'])->name('blogs.like');
+
+
+Route::fallback(function () {
+    // Render custom 404 view
+    return response()->view('404', [], 404);
+});
+
 
 
 // Admin routes
