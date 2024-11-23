@@ -12,15 +12,6 @@ use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
-    private function renderCustom404($message = null)
-{
-    // Default message if none is provided
-    $defaultMessage = 'The page you are looking for does not exist.';
-    
-    return response()->view('404', [], 404);
-}
-
-
     private function isAdmin()
     {
         return Auth::check() && Auth::user()->is_admin; // Ensure user is authenticated and is an admin
@@ -108,22 +99,15 @@ class PagesController extends Controller
             return $this->handlePageView($page, $faqs);
         }
     
-         // If neither, render the custom 404 page
-        return $this->renderCustom404('The page or blog you are looking for does not exist.');
+        return $this->handleBlogView($identifier);
     }
 
     // Helper methods
     private function getPageByIdentifier($identifier)
     {
-        $page = Page::where('view_name', $identifier)
-        ->orWhere('slug', $identifier)
-        ->first();
-
-    if (!$page) {
-           return $this->renderCustom404('The page you are trying to access does not exist.');
-           }
-
-          return $page;
+        return Page::where('view_name', $identifier)
+                   ->orWhere('slug', $identifier)
+                   ->first();
     }
 
     private function getPricingFaqs()
