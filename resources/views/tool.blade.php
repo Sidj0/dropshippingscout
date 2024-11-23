@@ -17,6 +17,8 @@
 <h1 class="title" style="margin-top:0px;">{{$page->content_header}}</h1>
 <h5  class="title" style="margin-top:20px ; font-size: 20px; color: #1E3F5B; font-weight: 550;">{{$page->content_subheader}}</h5>
 <br>
+<!-- Desktop View Sections -->
+<div class="desktop-view">
 @if (!empty($page['image_1']))
   <div class="con-left">
     <div class="left-column">
@@ -100,6 +102,55 @@
     </div>
   </div>
 @endif
+</div>
+
+
+
+<!-- Mobile View Sections -->
+<div class="mobile-view">
+  @if (!empty($page['image_1']))
+    <div class="mobile-section">
+      <h2>{{$page->header_1}}</h2>
+      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_1}}</p>
+      <img src="{{ asset('storage/' . $page['image_1']) }}" alt="Example Image">
+      <a href="https://app.dropshippingscout.com/pricing">
+        <button class="btn-default">start for $1 Trial</button>
+      </a>
+    </div>
+  @endif
+  @if (!empty($page['image_2']))
+    <div class="mobile-section">
+      <h2>{{$page->header_2}}</h2>
+      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_2}}</p>
+      <img src="{{ asset('storage/' . $page['image_1']) }}" alt="Example Image">
+      <a href="https://app.dropshippingscout.com/pricing">
+        <button class="btn-default">start for $1 Trial</button>
+      </a>
+    </div>
+  @endif
+  @if (!empty($page['image_3']))
+    <div class="mobile-section">
+      <h2>{{$page->header_3}}</h2>
+      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
+      <img src="{{ asset('storage/' . $page['image_1']) }}" alt="Example Image">
+      <a href="https://app.dropshippingscout.com/pricing">
+        <button class="btn-default">start for $1 Trial</button>
+      </a>
+    </div>
+  @endif
+  @if (!empty($page['image_4']))
+    <div class="mobile-section">
+      <h2>{{$page->header_4}}</h2>
+      <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_4}}</p>
+      <img src="{{ asset('storage/' . $page['image_1']) }}" alt="Example Image">
+      <a href="https://app.dropshippingscout.com/pricing">
+        <button class="btn-default">start for $1 Trial</button>
+      </a>
+    </div>
+  @endif
+
+  <!-- Repeat sections 2, 3, and 4 for mobile layout -->
+</div>
 
     <div class="container faqHead" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
 

@@ -661,38 +661,73 @@ body {
   height: auto;
 }
 
-/* General styles for mobile layout */
+/* Mobile styles */
 @media (max-width: 768px) {
   .con-left {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    text-align: center; /* Center-align content for better mobile UX */
+    flex-direction: column; /* Stack the sections vertically */
   }
 
-  .left-column, .right-column {
-    width: 100%; /* Ensure full width for each item */
+  .left-column, 
+  .right-column {
+    flex: none; /* Disable flexbox behavior for mobile */
+    width: 100%; /* Ensure both columns take up full width */
   }
 
-  .left-column h2 {
-    font-size: 18px; /* Adjust font size for mobile */
+  .right-column {
+    order: 2; /* Image comes after the text */
+  }
+
+  .left-column {
+    order: 1; /* Header, paragraph, and button come first */
+  }
+}
+
+/* Hide desktop sections on mobile */
+@media (max-width: 768px) {
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
+  .mobile-section {
+    text-align: center; /* Center-align for better readability */
+    margin: 20px 0;
+  }
+
+  .mobile-section h2 {
+    font-size: 18px;
     margin-bottom: 10px;
   }
 
-  .left-column p {
-    font-size: 14px; /* Smaller font size for readability */
+  .mobile-section p {
+    font-size: 14px;
     margin-bottom: 15px;
   }
 
-  .right-column img {
-    width: 100%; /* Make images responsive */
-    max-width: 100%; 
-    height: auto; 
-    margin-bottom: 15px; /* Add spacing after the image */
+  .mobile-section img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
   }
 
   .btn-default {
     width: auto;
     padding: 10px 20px;
     font-size: 14px;
+  }
+}
+
+/* Hide mobile sections on desktop */
+@media (min-width: 769px) {
+  .mobile-view {
+    display: none;
+  }
+
+  .desktop-view {
+    display: block;
   }
 }
