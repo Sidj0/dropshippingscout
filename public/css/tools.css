@@ -661,23 +661,38 @@ body {
   height: auto;
 }
 
-/* Mobile styles */
+/* General styles for mobile layout */
 @media (max-width: 768px) {
   .con-left {
-    flex-direction: column; /* Stack the sections vertically */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center-align content for better mobile UX */
   }
 
-  .left-column, 
-  .right-column {
-    flex: none; /* Disable flexbox behavior for mobile */
-    width: 100%; /* Ensure both columns take up full width */
+  .left-column, .right-column {
+    width: 100%; /* Ensure full width for each item */
   }
 
-  .right-column {
-    order: 2; /* Image comes after the text */
+  .left-column h2 {
+    font-size: 18px; /* Adjust font size for mobile */
+    margin-bottom: 10px;
   }
 
-  .left-column {
-    order: 1; /* Header, paragraph, and button come first */
+  .left-column p {
+    font-size: 14px; /* Smaller font size for readability */
+    margin-bottom: 15px;
+  }
+
+  .right-column img {
+    width: 100%; /* Make images responsive */
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 15px; /* Add spacing after the image */
+  }
+
+  .btn-default {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }

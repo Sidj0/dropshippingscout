@@ -240,6 +240,7 @@ inline-size: -webkit-fill-available;
 @media (max-width: 768px) {
     .options-wrapper {
         padding: 10px 0; /* Add some padding for better spacing */
+        overflow-x: auto;
     }
 
     .options-container {
