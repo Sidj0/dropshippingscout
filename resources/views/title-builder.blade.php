@@ -39,8 +39,11 @@
                   <i class="fas fa-question-circle" title="Select the shipping location."></i>
               </label>
               <select id="country-id">
-                  <option value="Worldwide" disabled selected>Worldwide</option>
-              </select>
+    <option value="Worldwide" selected>Worldwide</option>
+    <option value="US">United States</option>
+    <option value="GB">United Kingdom</option>
+</select>
+
           </div>
 
           <!-- New filter box for Sales Data Range -->
@@ -206,21 +209,22 @@
     </div>
 
   <script>
-  document.getElementById("search-button").addEventListener("click", async () => {
+ document.getElementById("search-button").addEventListener("click", async () => {
   // Collect input values
-  const keywords = document.getElementById("search-term").value; // Keyword input
+  const keywords = document.getElementById("search-term").value.trim(); // Keyword input
   const locationValue = document.getElementById("country-id").value; // Shipping location
   const rangeValue = document.getElementById("sales-date-range").value; // Date range
-  const negative = document.getElementById("item-price").value; // Exclude phrases
+  const negative = document.getElementById("item-price").value.trim(); // Exclude phrases
 
+  // Map inputs to API parameters
+  const location = locationValue || "Worldwide"; // Default to Worldwide
   const rangeMap = {
     "last_7_days": 7,
     "last_30_days": 30,
-    "this_month": 30, // Example, can customize
-    "last_month": 30, // Example, can customize
+    "this_month": 30, // Example, customize as needed
+    "last_month": 30, // Example, customize as needed
   };
-
-  const range = rangeMap[rangeValue] || 14; // Default to 14 days if none selected
+  const range = rangeMap[rangeValue] || 14; // Default to 14 days
 
   // Validate inputs
   if (!keywords) {
@@ -230,19 +234,28 @@
 
   // Prepare API request
   const apiUrl = `https://app.dropshippingscout.com/api/title-Builder`;
-  const apiKey = "633b70d7-b203-4097-9dac-cf72982df53c"; // Replace with a secure method in production
+  const apiKey = "633b70d7-b203-4097-9dac-cf72982df53c"; // Replace with secure method in production
 
   try {
+    console.log(
+      `${apiUrl}?keywords=${keywords}&location=${location}&range=${range}&negative=${negative}`
+    ); // Debug URL
+
     // Make the API call
-    const response = await fetch(`${apiUrl}?keywords=${keywords}&location=${location}&range=${range}&negative=${negative}`, {
-      method: "GET",
-      headers: {
-        "API-KEY": apiKey,
-      },
-    });
+    const response = await fetch(
+      `${apiUrl}?keywords=${encodeURIComponent(keywords)}&location=${encodeURIComponent(
+        location
+      )}&range=${range}&negative=${encodeURIComponent(negative)}`,
+      {
+        method: "GET",
+        headers: {
+          "API-KEY": apiKey,
+        },
+      }
+    );
 
     if (!response.ok) {
-      throw new Error("Failed to fetch data from the API.");
+      throw new Error(`API Error: ${response.status} - ${response.statusText}`);
     }
 
     const data = await response.json();
@@ -271,12 +284,12 @@
         alert(`Copied: ${keyword}`);
       });
     });
-
   } catch (error) {
     console.error("Error:", error);
-    alert("An error occurred while fetching data. Please try again.");
+    alert(`An error occurred: ${error.message}`);
   }
 });
+
 
 </script>
 
