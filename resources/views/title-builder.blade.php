@@ -99,12 +99,11 @@
           <i class="search-icon">🔍</i>
         </div>
       </div>
-      <table class="results-table">
+      <table class="results-table long-tail-keywords">
         <thead>
           <tr>
             <th>Keyword</th>
             <th>Average Searches</th>
-            <th>Competition Level</th>
             <th>Sales</th>
             <th></th> <!-- Empty header for Copy icon column -->
           </tr>
@@ -128,23 +127,18 @@
           <i class="search-icon">🔍</i>
         </div>
       </div>
-      <table class="results-table">
+      <table class="results-table generic-keywords">
         <thead>
           <tr>
             <th>Keyword</th>
-            <th>Competition Level</th>
+            <th>Average Searches</th>
             <th>Sales</th>
             <th></th> <!-- Empty header for Copy icon column -->
           </tr>
         </thead>
         <tbody>
           <!-- Sample row data -->
-          <tr>
-            <td>Sample Keyword</td>
-            <td>Low</td>
-            <td>150</td>
-            <td><i class="copy-icon">📋</i></td>
-          </tr>
+         
           <!-- More rows as needed -->
         </tbody>
       </table>
@@ -200,7 +194,7 @@
     </div>
 
   <script>
- document.getElementById("search-button").addEventListener("click", async () => {
+document.getElementById("search-button").addEventListener("click", async () => {
   const keywords = document.getElementById("search-term").value.trim();
   const locationValue = document.getElementById("country-id").value;
   const rangeValue = document.getElementById("sales-date-range").value;
@@ -242,6 +236,32 @@
 
     const data = await response.json();
 
+    // Display Provided Keyword Info
+    const providedKeyword = data.result?.providedKeyword || "N/A";
+    const providedKeywordSales = data.result?.providedKeywordsSale || 0;
+    const providedKeywordCompetition = data.result?.providedKeywordsCompetition || "N/A";
+
+    /*document.querySelector(".provided-keyword").innerHTML = `
+      <p><strong>Provided Keyword:</strong> ${providedKeyword}</p>
+      <p><strong>Sales:</strong> ${providedKeywordSales}</p>
+      <p><strong>Competition Level:</strong> ${providedKeywordCompetition}</p>
+    `;*/
+
+    // Populate Generic Keywords Table
+    const genericKeywords = data.result?.genericSingleKeywords || [];
+    const genericTableBody = document.querySelector(".generic-keywords tbody");
+    genericTableBody.innerHTML = ""; // Clear existing rows
+
+    genericKeywords.forEach((keyword) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${keyword.singleKeyWord}</td>
+        <td>${keyword.search}</td>
+        <td>${keyword.sales}</td>
+      `;
+      genericTableBody.appendChild(row);
+    });
+
     // Populate Long Tail Keywords Table
     const longTailKeywords = data.result?.longTailKeywords || [];
     const longTailTableBody = document.querySelector(".long-tail-keywords tbody");
@@ -250,29 +270,13 @@
     longTailKeywords.forEach((keyword) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${keyword.title}</td>
-        <td>${keyword.averageSearches}</td>
-        <td>${keyword.competition}</td>
+        <td>${keyword.key}</td>
+        <td>${keyword.count}</td>
         <td>${keyword.sales}</td>
       `;
       longTailTableBody.appendChild(row);
     });
 
-    // Populate Generic Keywords Table
-    const genericKeywords = data.result?.genericKeywords || [];
-    const genericTableBody = document.querySelector(".generic-keywords tbody");
-    genericTableBody.innerHTML = ""; // Clear existing rows
-
-    genericKeywords.forEach((keyword) => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${keyword.title}</td>
-        <td>${keyword.averageSearches}</td>
-        <td>${keyword.competition}</td>
-        <td>${keyword.sales}</td>
-      `;
-      genericTableBody.appendChild(row);
-    });
   } catch (error) {
     console.error("Error:", error);
     alert(`An error occurred: ${error.message}`);
