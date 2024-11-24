@@ -91,8 +91,8 @@
     <div class="main-container">
     <div class="results-container">
     <!-- Long Tail Keywords Section -->
-    <div class="results-section">
-      <div class="section-header">
+    <div class="results-section long-tail-keywords">
+    <div class="section-header">
         <h2>Long Tail Keywords</h2>
         <div class="search-bar">
           <input type="text" placeholder="Search...">
@@ -110,15 +110,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Sample row data -->
-          <tr>
-            <td>Example Keyword</td>
-            <td>1000</td>
-            <td>High</td>
-            <td>200</td>
-            <td><i class="copy-icon">📋</i></td>
-          </tr>
-          <!-- More rows as needed -->
         </tbody>
       </table>
       <div class="pagination">
@@ -129,8 +120,8 @@
     </div>
 
     <!-- Generic Keywords Section -->
-    <div class="results-section">
-      <div class="section-header">
+    <div class="results-section generic-keywords">
+    <div class="section-header">
         <h2>Generic Keywords</h2>
         <div class="search-bar">
           <input type="text" placeholder="Search...">
@@ -210,38 +201,29 @@
 
   <script>
  document.getElementById("search-button").addEventListener("click", async () => {
-  // Collect input values
-  const keywords = document.getElementById("search-term").value.trim(); // Keyword input
-  const locationValue = document.getElementById("country-id").value; // Shipping location
-  const rangeValue = document.getElementById("sales-date-range").value; // Date range
-  const negative = document.getElementById("item-price").value.trim(); // Exclude phrases
+  const keywords = document.getElementById("search-term").value.trim();
+  const locationValue = document.getElementById("country-id").value;
+  const rangeValue = document.getElementById("sales-date-range").value;
+  const negative = document.getElementById("item-price").value.trim();
 
-  // Map inputs to API parameters
-  const location = locationValue || "Worldwide"; // Default to Worldwide
+  const location = locationValue || "Worldwide";
   const rangeMap = {
     "last_7_days": 7,
     "last_30_days": 30,
-    "this_month": 30, // Example, customize as needed
-    "last_month": 30, // Example, customize as needed
+    "this_month": 30,
+    "last_month": 30,
   };
-  const range = rangeMap[rangeValue] || 14; // Default to 14 days
+  const range = rangeMap[rangeValue] || 14;
 
-  // Validate inputs
   if (!keywords) {
     alert("Please enter a keyword.");
     return;
   }
 
-  // Prepare API request
   const apiUrl = `https://app.dropshippingscout.com/api/title-Builder`;
-  const apiKey = "633b70d7-b203-4097-9dac-cf72982df53c"; // Replace with secure method in production
+  const apiKey = "633b70d7-b203-4097-9dac-cf72982df53c";
 
   try {
-    console.log(
-      `${apiUrl}?keywords=${keywords}&location=${location}&range=${range}&negative=${negative}`
-    ); // Debug URL
-
-    // Make the API call
     const response = await fetch(
       `${apiUrl}?keywords=${encodeURIComponent(keywords)}&location=${encodeURIComponent(
         location
@@ -260,29 +242,36 @@
 
     const data = await response.json();
 
-    // Populate the results table
-    const tableBody = document.querySelector(".results-table tbody");
-    tableBody.innerHTML = ""; // Clear existing rows
+    // Populate Long Tail Keywords Table
+    const longTailKeywords = data.result?.longTailKeywords || [];
+    const longTailTableBody = document.querySelector(".long-tail-keywords tbody");
+    longTailTableBody.innerHTML = ""; // Clear existing rows
 
-    data.keywords.forEach((keyword) => {
+    longTailKeywords.forEach((keyword) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${keyword.text}</td>
-        <td>${keyword.searches}</td>
+        <td>${keyword.name}</td>
+        <td>${keyword.averageSearches}</td>
         <td>${keyword.competition}</td>
         <td>${keyword.sales}</td>
-        <td><i class="copy-icon" data-keyword="${keyword.text}">📋</i></td>
       `;
-      tableBody.appendChild(row);
+      longTailTableBody.appendChild(row);
     });
 
-    // Add functionality to copy icons
-    document.querySelectorAll(".copy-icon").forEach((icon) => {
-      icon.addEventListener("click", (e) => {
-        const keyword = e.target.getAttribute("data-keyword");
-        navigator.clipboard.writeText(keyword);
-        alert(`Copied: ${keyword}`);
-      });
+    // Populate Generic Keywords Table
+    const genericKeywords = data.result?.genericKeywords || [];
+    const genericTableBody = document.querySelector(".generic-keywords tbody");
+    genericTableBody.innerHTML = ""; // Clear existing rows
+
+    genericKeywords.forEach((keyword) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${keyword.name}</td>
+        <td>${keyword.averageSearches}</td>
+        <td>${keyword.competition}</td>
+        <td>${keyword.sales}</td>
+      `;
+      genericTableBody.appendChild(row);
     });
   } catch (error) {
     console.error("Error:", error);
