@@ -250,7 +250,7 @@
     longTailKeywords.forEach((keyword) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${keyword.name}</td>
+        <td>${keyword.title}</td>
         <td>${keyword.averageSearches}</td>
         <td>${keyword.competition}</td>
         <td>${keyword.sales}</td>
@@ -266,7 +266,7 @@
     genericKeywords.forEach((keyword) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${keyword.name}</td>
+        <td>${keyword.title}</td>
         <td>${keyword.averageSearches}</td>
         <td>${keyword.competition}</td>
         <td>${keyword.sales}</td>
