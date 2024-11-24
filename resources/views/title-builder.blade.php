@@ -207,68 +207,72 @@
         </div>
     </div>
 
-<script>
-  document.getElementById('search-button').addEventListener('click', function () {
-    const searchTerm = document.getElementById('search-term').value;
-    const countryId = document.getElementById('country-id').value;
 
-    if (!searchTerm || !countryId) {
-        alert('Please enter a search term and select a country.');
-        return;
+    <script>
+  document.getElementById("search-button").addEventListener("click", async () => {
+    // Collect input values
+    const keywords = document.getElementById("search-term").value;
+    const location = document.getElementById("country-id").value;
+    const range = document.getElementById("sales-date-range").value || "14"; // Default to 14 if not selected
+    const negative = document.getElementById("item-price").value;
+
+    // Validate inputs
+    if (!keywords) {
+      alert("Please enter a keyword.");
+      return;
     }
 
-    fetch('/search-title', {
-        method: 'POST',
+    // Prepare API request
+    const apiUrl = `https://app.dropshippingscout.com/api/title-Builder`;
+    const apiKey = "633b70d7-b203-4097-9dac-cf72982df53c"; // Replace with a secure method in production
+
+    try {
+      // Make the API call
+      const response = await fetch(`${apiUrl}?keywords=${keywords}&location=${location}&range=${range}&negative=${negative}`, {
+        method: "GET",
         headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+          "API-KEY": apiKey,
         },
-        body: JSON.stringify({
-            search_term: searchTerm,
-            country_id: countryId,
-        }),
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.message) {
-                alert(data.message);
-            } else {
-                renderResults(data);
-            }
-        })
-        .catch(error => console.error('Error:', error));
-});
+      });
 
-function renderResults(data) {
-    // Assume 'data' contains long-tail and generic keywords
-    const longTailTable = document.querySelector('.results-section:nth-child(1) .results-table tbody');
-    const genericTable = document.querySelector('.results-section:nth-child(2) .results-table tbody');
+      if (!response.ok) {
+        throw new Error("Failed to fetch data from the API.");
+      }
 
-    longTailTable.innerHTML = '';
-    genericTable.innerHTML = '';
+      const data = await response.json();
 
-    data.long_tail_keywords.forEach(item => {
-        const row = `<tr>
-            <td>${item.keyword}</td>
-            <td>${item.average_searches}</td>
-            <td>${item.competition_level}</td>
-            <td>${item.sales}</td>
-            <td><i class="copy-icon">📋</i></td>
-        </tr>`;
-        longTailTable.insertAdjacentHTML('beforeend', row);
-    });
+      // Populate the results table (Long Tail Keywords example)
+      const tableBody = document.querySelector(".results-table tbody");
+      tableBody.innerHTML = ""; // Clear existing rows
 
-    data.generic_keywords.forEach(item => {
-        const row = `<tr>
-            <td>${item.keyword}</td>
-            <td>${item.competition_level}</td>
-            <td>${item.sales}</td>
-            <td><i class="copy-icon">📋</i></td>
-        </tr>`;
-        genericTable.insertAdjacentHTML('beforeend', row);
-    });
-}
+      data.keywords.forEach((keyword) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${keyword.text}</td>
+          <td>${keyword.searches}</td>
+          <td>${keyword.competition}</td>
+          <td>${keyword.sales}</td>
+          <td><i class="copy-icon" data-keyword="${keyword.text}">📋</i></td>
+        `;
+        tableBody.appendChild(row);
+      });
 
+      // Add functionality to copy icons
+      document.querySelectorAll(".copy-icon").forEach((icon) => {
+        icon.addEventListener("click", (e) => {
+          const keyword = e.target.getAttribute("data-keyword");
+          navigator.clipboard.writeText(keyword);
+          alert(`Copied: ${keyword}`);
+        });
+      });
+
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while fetching data. Please try again.");
+    }
+  });
 </script>
+
+
 
 @endsection
