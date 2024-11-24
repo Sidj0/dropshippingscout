@@ -151,6 +151,11 @@
   </div>
 </div>
 
+<div class="loader-container" id="loader">
+  <div class="loader"></div>
+</div>
+
+
     <!-- end of results section -->
 
     <div class="latest-news" style="max-width: 100%; margin: 40px auto;">
@@ -195,6 +200,9 @@
 
   <script>
 document.getElementById("search-button").addEventListener("click", async () => {
+  const loader = document.getElementById("loader"); // Loader element
+  loader.classList.add("active"); // Show loader
+
   const keywords = document.getElementById("search-term").value.trim();
   const locationValue = document.getElementById("country-id").value;
   const rangeValue = document.getElementById("sales-date-range").value;
@@ -211,6 +219,7 @@ document.getElementById("search-button").addEventListener("click", async () => {
 
   if (!keywords) {
     alert("Please enter a keyword.");
+    loader.classList.remove("active"); // Hide loader
     return;
   }
 
@@ -236,21 +245,20 @@ document.getElementById("search-button").addEventListener("click", async () => {
 
     const data = await response.json();
 
-    // Display Provided Keyword Info
+    // Populate tables and provided keyword details
     const providedKeyword = data.result?.providedKeyword || "N/A";
     const providedKeywordSales = data.result?.providedKeywordsSale || 0;
     const providedKeywordCompetition = data.result?.providedKeywordsCompetition || "N/A";
 
-    /*document.querySelector(".provided-keyword").innerHTML = `
+   /* document.querySelector(".provided-keyword").innerHTML = `
       <p><strong>Provided Keyword:</strong> ${providedKeyword}</p>
       <p><strong>Sales:</strong> ${providedKeywordSales}</p>
       <p><strong>Competition Level:</strong> ${providedKeywordCompetition}</p>
     `;*/
 
-    // Populate Generic Keywords Table
     const genericKeywords = data.result?.genericSingleKeywords || [];
     const genericTableBody = document.querySelector(".generic-keywords tbody");
-    genericTableBody.innerHTML = ""; // Clear existing rows
+    genericTableBody.innerHTML = "";
 
     genericKeywords.forEach((keyword) => {
       const row = document.createElement("tr");
@@ -262,10 +270,9 @@ document.getElementById("search-button").addEventListener("click", async () => {
       genericTableBody.appendChild(row);
     });
 
-    // Populate Long Tail Keywords Table
     const longTailKeywords = data.result?.longTailKeywords || [];
     const longTailTableBody = document.querySelector(".long-tail-keywords tbody");
-    longTailTableBody.innerHTML = ""; // Clear existing rows
+    longTailTableBody.innerHTML = "";
 
     longTailKeywords.forEach((keyword) => {
       const row = document.createElement("tr");
@@ -276,12 +283,14 @@ document.getElementById("search-button").addEventListener("click", async () => {
       `;
       longTailTableBody.appendChild(row);
     });
-
   } catch (error) {
     console.error("Error:", error);
     alert(`An error occurred: ${error.message}`);
+  } finally {
+    loader.classList.remove("active"); // Hide loader
   }
 });
+
 
 
 </script>
