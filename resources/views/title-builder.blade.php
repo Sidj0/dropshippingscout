@@ -111,11 +111,8 @@
         <tbody>
         </tbody>
       </table>
-      <div class="pagination">
-        <span>&laquo;</span>
-        <span>1 of 5 pages</span>
-        <span>&raquo;</span>
-      </div>
+      <div class="pagination-container" id="long-tail-pagination"></div>
+
     </div>
 
     <!-- Generic Keywords Section -->
@@ -142,11 +139,8 @@
           <!-- More rows as needed -->
         </tbody>
       </table>
-      <div class="pagination">
-        <span>&laquo;</span>
-        <span>1 of 3 pages</span>
-        <span>&raquo;</span>
-      </div>
+      <div class="pagination-container" id="generic-pagination"></div>
+
     </div>
   </div>
 </div>
@@ -294,6 +288,115 @@ document.getElementById("search-button").addEventListener("click", async () => {
 
 
 </script>
+
+<script>
+
+/**
+ * Utility function to paginate data and render a table with pagination controls.
+ * @param {Array} data - Array of data to paginate.
+ * @param {string} tableBodySelector - Selector for the table's <tbody>.
+ * @param {string} paginationContainerSelector - Selector for the pagination container.
+ * @param {number} rowsPerPage - Number of rows per page.
+ */
+function paginateTable(data, tableBodySelector, paginationContainerSelector, rowsPerPage = 10) {
+  const tableBody = document.querySelector(tableBodySelector);
+  const paginationContainer = document.querySelector(paginationContainerSelector);
+  let currentPage = 1;
+
+  function renderTable(page) {
+    // Calculate the start and end indices for the rows on the current page
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    // Render rows
+    tableBody.innerHTML = "";
+    const rows = data.slice(start, end);
+    rows.forEach((row) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = Object.values(row)
+        .map((value) => `<td>${value}</td>`)
+        .join("");
+      tableBody.appendChild(tr);
+    });
+
+    // Update pagination controls
+    renderPaginationControls(page);
+  }
+
+  function renderPaginationControls(page) {
+    const totalPages = Math.ceil(data.length / rowsPerPage);
+    paginationContainer.innerHTML = "";
+
+    const paginationList = document.createElement("ul");
+    paginationList.className = "pagination";
+
+    // Previous button
+    const prev = document.createElement("li");
+    prev.textContent = "«";
+    prev.className = page === 1 ? "disabled" : "";
+    prev.addEventListener("click", () => {
+      if (page > 1) renderTable(page - 1);
+    });
+    paginationList.appendChild(prev);
+
+    // Page buttons
+    for (let i = 1; i <= totalPages; i++) {
+      const pageItem = document.createElement("li");
+      pageItem.textContent = i;
+      pageItem.className = page === i ? "active" : "";
+      pageItem.addEventListener("click", () => renderTable(i));
+      paginationList.appendChild(pageItem);
+    }
+
+    // Next button
+    const next = document.createElement("li");
+    next.textContent = "»";
+    next.className = page === totalPages ? "disabled" : "";
+    next.addEventListener("click", () => {
+      if (page < totalPages) renderTable(page + 1);
+    });
+    paginationList.appendChild(next);
+
+    paginationContainer.appendChild(paginationList);
+  }
+
+  // Initial render
+  renderTable(currentPage);
+}
+
+// Example: Populate tables with pagination
+document.getElementById("search-button").addEventListener("click", async () => {
+  // Assume fetchData() is the function that fetches API data
+  const data = await fetchData();
+
+  const longTailKeywords = data.result.longTailKeywords.map((item) => ({
+    Keyword: item.key,
+    Count: item.count,
+    Sales: item.sales,
+  }));
+
+  const genericKeywords = data.result.genericSingleKeywords.map((item) => ({
+    Keyword: item.singleKeyWord,
+    Searches: item.search,
+    Sales: item.sales,
+  }));
+
+  // Paginate tables
+  paginateTable(
+    longTailKeywords,
+    ".long-tail-keywords tbody",
+    "#long-tail-pagination"
+  );
+  paginateTable(
+    genericKeywords,
+    ".generic-keywords tbody",
+    "#generic-pagination"
+  );
+});
+
+
+</script>
+
 
 
 
