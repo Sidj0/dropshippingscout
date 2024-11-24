@@ -39,9 +39,7 @@
                   <i class="fas fa-question-circle" title="Select the shipping location."></i>
               </label>
               <select id="country-id">
-                  <option value="1" disabled selected>United States</option>
-                  <option value="2" >United Kingdom</option>
-
+                  <option value="Worldwide" disabled selected>Worldwide</option>
               </select>
           </div>
 
@@ -207,70 +205,79 @@
         </div>
     </div>
 
-
-    <script>
+  <script>
   document.getElementById("search-button").addEventListener("click", async () => {
-    // Collect input values
-    const keywords = document.getElementById("search-term").value;
-    const location = document.getElementById("country-id").value;
-    const range = document.getElementById("sales-date-range").value || "14"; // Default to 14 if not selected
-    const negative = document.getElementById("item-price").value;
+  // Collect input values
+  const keywords = document.getElementById("search-term").value; // Keyword input
+  const locationValue = document.getElementById("country-id").value; // Shipping location
+  const rangeValue = document.getElementById("sales-date-range").value; // Date range
+  const negative = document.getElementById("item-price").value; // Exclude phrases
 
-    // Validate inputs
-    if (!keywords) {
-      alert("Please enter a keyword.");
-      return;
+  const rangeMap = {
+    "last_7_days": 7,
+    "last_30_days": 30,
+    "this_month": 30, // Example, can customize
+    "last_month": 30, // Example, can customize
+  };
+
+  const range = rangeMap[rangeValue] || 14; // Default to 14 days if none selected
+
+  // Validate inputs
+  if (!keywords) {
+    alert("Please enter a keyword.");
+    return;
+  }
+
+  // Prepare API request
+  const apiUrl = `https://app.dropshippingscout.com/api/title-Builder`;
+  const apiKey = "633b70d7-b203-4097-9dac-cf72982df53c"; // Replace with a secure method in production
+
+  try {
+    // Make the API call
+    const response = await fetch(`${apiUrl}?keywords=${keywords}&location=${location}&range=${range}&negative=${negative}`, {
+      method: "GET",
+      headers: {
+        "API-KEY": apiKey,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch data from the API.");
     }
 
-    // Prepare API request
-    const apiUrl = `https://app.dropshippingscout.com/api/title-Builder`;
-    const apiKey = "633b70d7-b203-4097-9dac-cf72982df53c"; // Replace with a secure method in production
+    const data = await response.json();
 
-    try {
-      // Make the API call
-      const response = await fetch(`${apiUrl}?keywords=${keywords}&location=${location}&range=${range}&negative=${negative}`, {
-        method: "GET",
-        headers: {
-          "API-KEY": apiKey,
-        },
+    // Populate the results table
+    const tableBody = document.querySelector(".results-table tbody");
+    tableBody.innerHTML = ""; // Clear existing rows
+
+    data.keywords.forEach((keyword) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${keyword.text}</td>
+        <td>${keyword.searches}</td>
+        <td>${keyword.competition}</td>
+        <td>${keyword.sales}</td>
+        <td><i class="copy-icon" data-keyword="${keyword.text}">📋</i></td>
+      `;
+      tableBody.appendChild(row);
+    });
+
+    // Add functionality to copy icons
+    document.querySelectorAll(".copy-icon").forEach((icon) => {
+      icon.addEventListener("click", (e) => {
+        const keyword = e.target.getAttribute("data-keyword");
+        navigator.clipboard.writeText(keyword);
+        alert(`Copied: ${keyword}`);
       });
+    });
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch data from the API.");
-      }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("An error occurred while fetching data. Please try again.");
+  }
+});
 
-      const data = await response.json();
-
-      // Populate the results table (Long Tail Keywords example)
-      const tableBody = document.querySelector(".results-table tbody");
-      tableBody.innerHTML = ""; // Clear existing rows
-
-      data.keywords.forEach((keyword) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${keyword.text}</td>
-          <td>${keyword.searches}</td>
-          <td>${keyword.competition}</td>
-          <td>${keyword.sales}</td>
-          <td><i class="copy-icon" data-keyword="${keyword.text}">📋</i></td>
-        `;
-        tableBody.appendChild(row);
-      });
-
-      // Add functionality to copy icons
-      document.querySelectorAll(".copy-icon").forEach((icon) => {
-        icon.addEventListener("click", (e) => {
-          const keyword = e.target.getAttribute("data-keyword");
-          navigator.clipboard.writeText(keyword);
-          alert(`Copied: ${keyword}`);
-        });
-      });
-
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while fetching data. Please try again.");
-    }
-  });
 </script>
 
 
