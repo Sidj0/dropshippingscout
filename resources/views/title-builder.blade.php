@@ -100,23 +100,17 @@
         </div>
       </div>
       <table class="long-tail-keywords">
-        <thead>
-          <tr>
-            <th>Keyword</th>
-            <th>Average Searches</th>
-            <th>Competition Level</th>
-            <th>Sales</th>
-            <th></th> <!-- Empty header for Copy icon column -->
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-      <div class="pagination">
-        <span>&laquo;</span>
-        <span>1 of 5 pages</span>
-        <span>&raquo;</span>
-      </div>
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>Count</th>
+      <th>Sales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Populated dynamically by JavaScript -->
+  </tbody>
+</table>
     </div>
 
     <!-- Generic Keywords Section -->
@@ -129,30 +123,17 @@
         </div>
       </div>
       <table class="generic-keywords">
-      <thead>
-          <tr>
-            <th>Keyword</th>
-            <th>Competition Level</th>
-            <th>Sales</th>
-            <th></th> <!-- Empty header for Copy icon column -->
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Sample row data -->
-          <tr>
-            <td>Sample Keyword</td>
-            <td>Low</td>
-            <td>150</td>
-            <td><i class="copy-icon">📋</i></td>
-          </tr>
-          <!-- More rows as needed -->
-        </tbody>
-      </table>
-      <div class="pagination">
-        <span>&laquo;</span>
-        <span>1 of 3 pages</span>
-        <span>&raquo;</span>
-      </div>
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>Average Searches</th>
+      <th>Sales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Populated dynamically by JavaScript -->
+  </tbody>
+</table>
     </div>
   </div>
 </div>
