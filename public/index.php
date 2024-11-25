@@ -1,5 +1,15 @@
 <?php
 
+$uri= urldecode(
+    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+);
+
+if( preg_match('/public/', $uri) ) {
+	header("HTTP/1.1 404 Not Found");
+	header("Status: 404 Not Found");
+	exit;
+}
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
