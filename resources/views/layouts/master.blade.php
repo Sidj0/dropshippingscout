@@ -9,12 +9,6 @@
     })(window,document,'script','dataLayer','GTM-PGTF43WX');</script>
     <!-- End Google Tag Manager -->
     <!-- Meta -->
-    <meta property="og:title" content="DroShipping Scout" />
-    <meta property="og:description" content="Dropshipping Scout is your all-in-one solution for effortless dropshipping" />
-    <meta property="og:image" content="{{ asset('images/logo.svg') }}" />
-    <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:type" content="DropShipping" />
-    <meta property="og:site_name" content="Scout" />
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
