@@ -10,7 +10,7 @@
     <!-- Meta -->
     <meta property="og:title" content="{{ $blog->title }}" />
     <meta property="og:description" content="{{ $blog->meta_description }}" />
-    <meta property="og:image" content="{{ asset('images/' . $blog->image) }}" />
+    <meta property="og:image" content="{{ asset('storage/' . $blog->image) }}" />
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="DropShippingScout" />
