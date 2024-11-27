@@ -6,6 +6,18 @@
 @section('meta_keywords', $page->meta_keywords)
 @section('meta_author', $page->meta_author)
 
+
+
+@section('meta')
+    <!-- Meta -->
+    <meta property="og:title" content="{{ $page->content_header }}" />
+    <meta property="og:description" content="{{ $page->content_subheader }}" />
+    <meta property="og:image" content="{{ asset('images/' . $page->image_1) }}" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DropShippingScout" />
+@endsection
+
 @section('styles')
     <!-- Custom CSS for this view -->
      <link href="{{asset('css/tools.css')}}" rel="stylesheet">
