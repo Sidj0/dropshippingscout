@@ -6,16 +6,9 @@
 @section('meta_keywords', $blog->meta_keywords)
 @section('meta_author', $blog->meta_author)
 
-@section('meta')
-    <!-- Meta -->
-    <meta property="og:title" content="{{ $blog->title }}" />
-    <meta property="og:description" content="{{ $blog->meta_description }}" />
-    <meta property="og:image" content="{{ asset('storage/' . $blog->image) }}" />
-    <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="DropShippingScout" />
-@endsection
-
+@section('og_title', $blog->title)
+@section('og_description', $blog->meta_description)
+@section('og_image', asset('storage/' . $blog->image))
 
 @section('styles')
     <!-- Custom CSS for this view -->
