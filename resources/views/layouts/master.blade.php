@@ -9,6 +9,14 @@
     })(window,document,'script','dataLayer','GTM-PGTF43WX');</script>
     <!-- End Google Tag Manager -->
     <!-- Meta -->
+     <!-- Open Graph Meta Tags -->
+<meta property="og:title" content="@yield('og_title', 'Default OG Title')" />
+<meta property="og:description" content="@yield('og_description', 'Default OG Description')" />
+<meta property="og:image" content="@yield('og_image', asset('images/default-image.jpg'))" />
+<meta property="og:url" content="{{ url()->current() }}" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DropShippingScout" />
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    

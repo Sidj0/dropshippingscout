@@ -10,6 +10,8 @@
 @section('og_description', $blog->meta_description)
 @section('og_image', asset('storage/' . $blog->image))
 
+
+
 @section('styles')
     <!-- Custom CSS for this view -->
     <link href="{{asset('css/blog-details.css')}}" rel="stylesheet">
