@@ -19,7 +19,7 @@
 
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Dynamic Meta Tags -->
     <meta name="description" content="@yield('meta_description', 'Default Description')">
     <meta name="keywords" content="@yield('meta_keywords', 'Default Keywords')">
@@ -82,17 +82,17 @@
     @include('footer')
 
 
- 
+ @yield('script')
 <script>
-    
+
 function toggleVisibility(event, id) {
     event.preventDefault();
-    
+
     const element = document.getElementById(id);
     const arrow = event.currentTarget.querySelector('.arrow');
 
     console.log(`Toggling visibility for: ${id}`); // Debugging
-    
+
     // Check the current display state
     if (window.getComputedStyle(element).display === "none") {
         // Show the dropdown
@@ -106,8 +106,8 @@ function toggleVisibility(event, id) {
 }
 
 </script>
-          
-           
+
+
 <!-- Scripts -->
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 <!-- Jquery Library File -->
@@ -117,7 +117,7 @@ function toggleVisibility(event, id) {
 <!-- Validator js file -->
 <script src="{{asset('js/validator.min.js')}}"></script>
 <!-- SlickNav js file -->
-<script src="{{asset('js/jquery.slicknav.js')}}"></script> 
+<script src="{{asset('js/jquery.slicknav.js')}}"></script>
 <!-- Counter js file -->
 <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
 <script src="{{asset('js/jquery.counterup.min.js')}}"></script>
