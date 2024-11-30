@@ -5,9 +5,7 @@
 
 @section('content')
 <header class="mt-2">
-    @include('includes.dashboard.mobile')
     <h2>Ebay calcaulator</h2>
-    @include('includes.dashboard.header')
 
 </header>
 <div class="container-fluid">
