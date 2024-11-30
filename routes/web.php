@@ -114,12 +114,6 @@ Route::post('/calculate-fees', [EbayCalculatorController::class, 'calculate']);
 Route::post('/search-title', [TitleBuilderController::class, 'searchTitle'])->name('search-title');
 
 
-// Dynamic Page Route
-Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');
-
-
-
-
 // Ebay calculator
 Route::group(['prefix'=>'calculator'], function() {
     Route::get('/' , [EbayCalculatorController::class, 'index']);
@@ -139,3 +133,9 @@ Route::group(['prefix'=>'calculator'], function() {
     Route::post('fr', [EbayCalculatorController::class, 'frFees'])->name('calculator.fr.search');
     Route::post('it', [EbayCalculatorController::class, 'itFees'])->name('calculator.it.search');
 });
+
+
+
+
+// Dynamic Page Route
+Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');
