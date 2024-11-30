@@ -23,13 +23,13 @@ Route::get('/index', function () {
     return redirect('/');
 });
 
- 
+
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('pages', PagesController::class);
 });
 
-// sitemap 
+// sitemap
 Route::get('/sitemap.xml', function() {
     return Response::file(public_path('sitemap.xml'), [
         'Content-Type' => 'application/xml'
@@ -113,8 +113,29 @@ Route::post('/calculate-fees', [EbayCalculatorController::class, 'calculate']);
 // title builder
 Route::post('/search-title', [TitleBuilderController::class, 'searchTitle'])->name('search-title');
 
- 
+
 // Dynamic Page Route
 Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');
 
 
+
+
+// Ebay calculator
+Route::group(['prefix'=>'calculator'], function() {
+    Route::get('/' , [EbayCalculatorController::class, 'index']);
+    Route::get('usa' , [EbayCalculatorController::class, 'index'])->name('calculator.index');
+    Route::get('uk', [EbayCalculatorController::class, 'uk'])->name('calculator.uk');
+    Route::get('au', [EbayCalculatorController::class, 'au'])->name('calculator.au');
+    Route::get('ca', [EbayCalculatorController::class, 'ca'])->name('calculator.ca');
+    Route::get('de', [EbayCalculatorController::class, 'de'])->name('calculator.de');
+    Route::get('fr', [EbayCalculatorController::class, 'fr'])->name('calculator.fr');
+    Route::get('it', [EbayCalculatorController::class, 'it'])->name('calculator.it');
+
+    Route::post('usa', [EbayCalculatorController::class, 'calculateFees'])->name('calculator.calculateFees');
+    Route::post('uk', [EbayCalculatorController::class, 'ukFees'])->name('calculator.uk.search');
+    Route::post('au', [EbayCalculatorController::class, 'auFees'])->name('calculator.au.search');
+    Route::post('ca', [EbayCalculatorController::class, 'caFees'])->name('calculator.ca.search');
+    Route::post('de', [EbayCalculatorController::class, 'deFees'])->name('calculator.de.search');
+    Route::post('fr', [EbayCalculatorController::class, 'frFees'])->name('calculator.fr.search');
+    Route::post('it', [EbayCalculatorController::class, 'itFees'])->name('calculator.it.search');
+});
