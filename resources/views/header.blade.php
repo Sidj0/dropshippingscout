@@ -22,7 +22,7 @@
                     <div class="nav-menu-wrapper">
                         <ul class="navbar-nav mr-auto" id="menu" style="background: #FFFFFF; border: 1px solid #E3E7FC; border-radius: 31px;">
                             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
-                            
+
                             <!-- Tools Dropdown Start -->
                             <li class="nav-item submenu"><a class="nav-link" href="#">Tools</a>
                                 <ul class="dropdown toolsItem">
@@ -34,12 +34,12 @@
                                         <p>Find your fellow competitors, identify the unique selling proposition of your product.</p></a>
                                         <a href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'suppliers-scouting')->first()->slug]) }}"><h6>Suppliers Scouting</h6>
                                         <p>Find your fellow competitors, identify the unique selling proposition of your product.</p></a>
-                                   
-                                                
+
+
                                 <h6 style="color: #A5A7AA; font-size: 11px;">Free Tools</h6>
                                 <a href="{{url('ebay-calculator')}}"><h6>Ebay Calculator</h6></a>
                                 <a href="{{url('title-builder')}}"><h6>Title Builder</h6></a>
-                                   
+
                                     </li>
 <!-- Right Section -->
 <li class="dropdown-section right-section">
@@ -47,7 +47,7 @@
 
     <!-- eBay Section -->
     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'ebay-pages')">
-        <img src="{{ asset('images/Registration/ebay.svg') }}" alt="eBay Logo" class="icon"> 
+        <img src="{{ asset('images/Registration/ebay.svg') }}" alt="eBay Logo" class="icon">
         <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="ebay-pages">
@@ -60,7 +60,7 @@
 
         <!-- Amazon Section -->
     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'Amazon-pages')">
-        <img src="{{ asset('images/Registration/amazon.svg') }}" alt="Amazon Logo" class="icon"> 
+        <img src="{{ asset('images/Registration/amazon.svg') }}" alt="Amazon Logo" class="icon">
         <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="Amazon-pages">
@@ -69,7 +69,7 @@
 
      <!-- Walmart Section -->
      <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'Walmart-pages')">
-        <img src="{{ asset('images/Registration/walMart.svg') }}" alt="Walmart Logo" class="icon"> 
+        <img src="{{ asset('images/Registration/walMart.svg') }}" alt="Walmart Logo" class="icon">
         <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="Walmart-pages">
@@ -78,7 +78,7 @@
 
      <!-- AliExpress Section -->
      <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'AliExpress-pages')">
-        <img src="{{ asset('images/Registration/aliExpress.svg') }}" alt="AliExpress Logo" class="icon"> 
+        <img src="{{ asset('images/Registration/aliExpress.svg') }}" alt="AliExpress Logo" class="icon">
         <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="AliExpress-pages">
@@ -89,7 +89,7 @@
 
      <!-- tiktook Section -->
      <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'tiktook-pages')">
-        <img src="{{ asset('images/tiktok_shop.png') }}" alt="tiktook Logo" class="icon"> 
+        <img src="{{ asset('images/tiktok_shop.png') }}" alt="tiktook Logo" class="icon">
         <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="tiktook-pages">
@@ -126,7 +126,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                       
+
 
                                         <a href="{{ url('faqs') }}" class="resource-link">
                                             <div class="resource-item">
@@ -138,16 +138,16 @@
                                             </div>
                                         </a>
                                     </li>
-                                    
+
                                 </ul>
                             </li>
                             <!-- Resources Dropdown End -->
 
                             <li class="nav-item"><a class="nav-link" href="https://app.dropshippingscout.com/pricing">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'affiliate')->first()->slug]) }}">Affiliate</a></li>
-                          
+
                             <div class="magicButtons">
-                        
+
                             <a href="https://app.dropshippingscout.com/pricing" style="color:white;text-align:center" class="unique-button">Start Now</a>
                             <a href="https://app.dropshippingscout.com/login" style="color:white;text-align:center" class="unique-button">Login</a>
 
@@ -159,7 +159,7 @@
                     <div class="header-btn d-inline-flex">
                         <a href="https://app.dropshippingscout.com/login">Login</a>
                         <a href="https://app.dropshippingscout.com/pricing" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 8px; color:white !important; text-align:center">Start $1 Trial</a>
-                       
+
                     </div>
                     <!-- Let’s Start Button End -->
                 </div>
@@ -171,6 +171,3 @@
         <div class="responsive-menu"></div>
     </div>
 </header>
-
-</body>
-</html>
