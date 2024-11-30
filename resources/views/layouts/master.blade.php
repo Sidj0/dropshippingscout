@@ -82,7 +82,7 @@
     @include('footer')
 
 
- @yield('script')
+@yield('script')
 <script>
 
 function toggleVisibility(event, id) {
