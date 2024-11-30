@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.master')
 @section('title','ebay fees calcaulator')
 
 @section('style')

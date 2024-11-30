@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 
 @section('title', $blog->title)
@@ -31,7 +30,7 @@
 }
     </style>
 @endsection
-      
+
 @section('content')
 
 <div class="container">
@@ -48,7 +47,7 @@
             </li>
         </ul>
     </div>
-    
+
 
              @if ($blog->video_url)
                 <iframe width="100%" height="415" src="https://www.youtube.com/embed/{{ \Str::after($blog->video_url, 'v=') }}" frameborder="0" allowfullscreen></iframe>
@@ -57,13 +56,13 @@
                     <img src="{{ asset('storage/' .$blog->image) }}" alt="{{ $blog->title }}">
                 </a>
             @endif
-         
+
 
     <div class="content-container">
         <div class="content">
             {!! $blog->content !!}
             <br>
-            like? 
+            like?
             <img id="like-button" src="{{ asset('images/heart.svg') }}" alt="Likes" style="cursor: pointer;">
 
         </div>
@@ -77,7 +76,7 @@
                     <li><a href="https://youtube.com/@dropshipping.scout.?feature=shared" target="_blank"><img src="{{ asset('images/YouTube.svg') }}" alt=""></a></li>
                     {{-- <li><a href="#"><img src="{{ asset('images/X.svg') }}" alt=""></a></li> --}}
                     <li><a href="https://www.facebook.com/dropshipping.scout?mibextid=ZbWKwL" target="_blank"><img src="{{ asset('images/facebook.svg') }}" alt=""></a></li>
-                    
+
                 </ul>
             </div>
 
@@ -91,8 +90,8 @@
                     </li>
                 @endforeach
             </ul>
-            
-            
+
+
         </div>
     </div>
 
@@ -134,11 +133,11 @@
 
                     <!-- Blog Content Start -->
                     <div class="post-item-body">
-                                                
+
                           <a href="{{ route('blogs.show', $blog->slug) }}" style="color: #1E3F5B">
                             {{ $blog->created_at }}</a>
-                   
-                            <a href="{{ route('blogs.show', $blog->slug) }}"> <h2 class="homeBlogParagraph">{{ $blog->title }}</h2>    </a>                        
+
+                            <a href="{{ route('blogs.show', $blog->slug) }}"> <h2 class="homeBlogParagraph">{{ $blog->title }}</h2>    </a>
                     </div>
                     <!-- Category Label -->
                     <div class="category-label">
@@ -155,7 +154,7 @@
 
 <!-- end of related blogs -->
 
-</div>               
+</div>
 </div>
 
 <script>
@@ -163,7 +162,7 @@
     const blogId = {{ $blog->id }};
     const likeButton = document.getElementById('like-button');
     const likeCount = document.getElementById('like-count');
-    
+
     alert('Thanks for the like!');
     fetch(`/blogs/${blogId}/like`, {
         method: 'POST',
