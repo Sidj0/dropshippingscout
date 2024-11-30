@@ -2,6 +2,12 @@
 
 @section('title','ebay fees calcaulator')
 
+@section('styles')
+    <link
+        rel="stylesheet"
+        href="{{ asset('public/css/ebay-calculator.css') }}" />
+@endsection
+
 
 @section('content')
 <header class="mt-2">
