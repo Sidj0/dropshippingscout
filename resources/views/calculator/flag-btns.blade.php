@@ -1,4 +1,4 @@
-<a href="{{ route('calculator.index') }}" @if(Route::is("calculator.index")) class="active" @endif>
+<a href="{{ route('calculator.index') }}" @if(Route::is("calculator.index") || Route::is("calculator") || Route::is("ebay-calculator")) class="active" @endif>
     <img src="{{ asset('public/assets/flags/usa.svg') }}" width="16" height="16" alt="USA" />
     <span>USA</span>
 </a>
@@ -16,6 +16,7 @@
     <img src="{{ asset('public/assets/flags/au.svg') }}" width="16" height="16" alt="au" />
     <span>AU</span>
 </a>
+
 <a
     href="{{ route('calculator.ca') }}"
     @if(Route::is("calculator.ca") || Route::is("calculator.ca.search")) class="active" @endif

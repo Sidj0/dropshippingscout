@@ -115,9 +115,9 @@ Route::post('/search-title', [TitleBuilderController::class, 'searchTitle'])->na
 
 
 // Ebay calculator
-Route::get('ebay-calculator', [EbayCalculatorController::class, 'index']);
+Route::get('ebay-calculator', [EbayCalculatorController::class, 'index'])->name('ebay-calculator');
 Route::group(['prefix'=>'calculator'], function() {
-    Route::get('/' , [EbayCalculatorController::class, 'index']);
+    Route::get('/' , [EbayCalculatorController::class, 'index'])->name('calculator');
     Route::get('usa',[EbayCalculatorController::class, 'index'])->name('calculator.index');
     Route::get('uk', [EbayCalculatorController::class, 'uk'])->name('calculator.uk');
     Route::get('au', [EbayCalculatorController::class, 'au'])->name('calculator.au');
