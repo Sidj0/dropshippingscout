@@ -10,7 +10,6 @@
 
 @section('content')
 <header class="mt-2">
-    <h2>Ebay calcaulator</h2>
 </header>
 <div class="container-fluid">
     <h2>{{ $ebay_title }}</h2>
