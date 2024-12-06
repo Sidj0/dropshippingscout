@@ -12,7 +12,7 @@
 <header class="mt-2">
 </header>
 <div class="container-fluid">
-    <h2>{{ $ebay_title }}</h2>
+    <h2 class="text-center">{{ $ebay_title }}</h2>
 
     <div class="container">
         <div class="ebay-calc-container">
