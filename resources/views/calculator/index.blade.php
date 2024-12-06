@@ -21,6 +21,10 @@
                     @include('calculator/flag-btns')
                 </div>
             </div>
+            <!-- Display Result if available -->
+        @isset($result)
+            @include('calculator.result')
+        @endisset
             <div class="form-container">
                 <form method="post" action="{{ route('calculator.calculateFees') }}" id="calculateFeesForm">
                     @csrf

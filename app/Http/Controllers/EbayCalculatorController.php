@@ -9,7 +9,7 @@ class EbayCalculatorController extends Controller
     public function index()
     {
         return view('calculator.index', [
-            'ebay_title'=> 'US eBay Fee Calculator'
+            'ebay_title'=> 'USA eBay Fee Calculator'
         ]);
     }
 
@@ -63,7 +63,7 @@ class EbayCalculatorController extends Controller
        $requestData = (object) $request->all();
        return view('calculator.index', [
             'result' => $result, 'request'=>$request->all(),
-            'ebay_title'=> 'US eBay Fee Calculator'
+            'ebay_title'=> 'USA eBay Fee Calculator'
        ]);
     }
     # ##########################################################
