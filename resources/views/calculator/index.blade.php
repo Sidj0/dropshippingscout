@@ -23,8 +23,8 @@
         <div class="form-container">
             <form method="post" action="{{ route('calculator.calculateFees') }}" id="calculateFeesForm">
                 @csrf
-                <div class="cardx">
-                    <div class="card-bodyx">
+                <div class="mb-4">
+                    <div class="">
                         <div class="row">
                             <!-- Category -->
                             <div class="col-lg-12">
@@ -118,7 +118,7 @@
                             </div>
 
                             <div class="col-12 mb-4">
-                                <span class="badge badge-info">Sales tax</span>
+                                <span class="badge bg-info">Sales tax</span>
                                 <div class="border-bottom"></div>
                             </div>
                             <!-- Sales Tax Calculation Method -->
