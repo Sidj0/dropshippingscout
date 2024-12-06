@@ -153,12 +153,13 @@
                                         </select>
                                     </div>
                                 </div>
+
+
+                            </div>
+                            <div class="card-footer text-right">
+                                <button type="submit" class="btn btn-primary mt-1">Calculate Fees</button>
                             </div>
                         </div>
-                        <div class="card-footer text-right">
-                            <button type="submit" class="btn btn-primary mt-1">Calculate Fees</button>
-                        </div>
-                    </div>
 
                     <!-- Display Result if available -->
                     @isset($result)
@@ -186,6 +187,7 @@
         </div>
     </div>
 
+</div>
 </div>
 @endsection
 
