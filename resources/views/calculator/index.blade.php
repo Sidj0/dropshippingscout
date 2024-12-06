@@ -14,6 +14,7 @@
 <div class="container-fluid">
     <h2>{{ $ebay_title }}</h2>
 
+    <div class="container">
     <div class="ebay-calc-container">
         <div class="flags-container">
             <div class="flags">
@@ -183,6 +184,7 @@
             </form>
         </div>
     </div>
+</div>
 
 </div>
 @endsection
