@@ -9,13 +9,11 @@
 
 
 @section('content')
-<header class="mt-2">
-    <h2>Ebay calcaulator</h2>
-</header>
-<div class="container-fluid">
-    <h2>{{ $ebay_title }}</h2>
+<header class="mt-2"></header>
+<div class="container mb-4">
 
     <div class="ebay-calc-container">
+        <h2 class="text-center mb-2">{{ $ebay_title }}</h2>
         <div class="flags-container">
             <div class="flags">
                 @include('calculator/flag-btns')
