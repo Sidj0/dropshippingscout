@@ -23,8 +23,8 @@
         <div class="form-container">
             <form method="post" action="{{ route('calculator.calculateFees') }}" id="calculateFeesForm">
                 @csrf
-                <div class="card">
-                    <div class="card-body">
+                <div class="cardx">
+                    <div class="card-bodyx">
                         <div class="row">
                             <!-- Category -->
                             <div class="col-lg-12">
