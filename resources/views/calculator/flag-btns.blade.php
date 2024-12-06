@@ -17,6 +17,7 @@
     <span>AU</span>
 </a>
 
+
 <a
     href="{{ route('calculator.ca') }}"
     @if(Route::is("calculator.ca") || Route::is("calculator.ca.search")) class="active" @endif
