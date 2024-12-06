@@ -57,7 +57,7 @@ class EbayCalculatorController extends Controller
         $response = Http::withHeaders([
             'api-key' => '1d95bfb7-b38a-50e4-b5f9-cb348deb4021'
        ])->post("164.90.165.80/shopify-api/public/index.php/api/ebay-calculator/usa?".implode("&",$ar));
-       dd($response);
+       dd($response, $ar);
        $result=  $response->json() ;
 
        // $request->all() to object
