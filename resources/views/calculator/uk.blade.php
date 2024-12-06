@@ -13,7 +13,7 @@
 
 
     <div class="ebay-calc-container">
-        <h2 class="text-center mb-3">{{ $ebay_title }}</h2>
+        <h2 class="text-center mb-2">{{ $ebay_title }}</h2>
         <div class="flags-container">
             <div class="flags">
                 @include('calculator/flag-btns')
