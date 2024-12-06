@@ -82,7 +82,7 @@
     @include('footer')
 
 
-@yield('script')
+
 <script>
 
 function toggleVisibility(event, id) {
@@ -134,5 +134,7 @@ function toggleVisibility(event, id) {
 <script src="{{asset('js/wow.js')}}"></script>
 <!-- Main Custom js file -->
 <script src="{{asset('js/function.js')}}"></script>
+
+@yield('script')
 </body>
 </html>
