@@ -54,13 +54,15 @@ class EbayCalculatorController extends Controller
     public function calculateFees(Request $request)
     {
         $ar=[]; foreach ( $request->all() as $k=>$v ) $ar[]="{$k}={$v}";
+
+        $url="164.90.165.80/shopify-api/public/index.php/api/ebay-calculator/usa?".implode("&",$ar);
+        dd($url);
         $response = Http::withHeaders([
             'api-key' => '1d95bfb7-b38a-50e4-b5f9-cb348deb4021'
-       ])->post("164.90.165.80/shopify-api/public/index.php/api/ebay-calculator/usa?".implode("&",$ar));
+       ])->post($url);
        $result=  $response->json() ;
 
-    //    dd($result);
-       // $request->all() to object
+
        $requestData = (object) $request->all();
        return view('calculator.index', [
             'result' => $result,
