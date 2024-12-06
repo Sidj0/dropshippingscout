@@ -59,7 +59,7 @@ class EbayCalculatorController extends Controller
        ])->post("164.90.165.80/shopify-api/public/index.php/api/ebay-calculator/usa?".implode("&",$ar));
        $result=  $response->json() ;
 
-       dd($result);
+    //    dd($result);
        // $request->all() to object
        $requestData = (object) $request->all();
        return view('calculator.index', [
