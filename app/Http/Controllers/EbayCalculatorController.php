@@ -53,6 +53,7 @@ class EbayCalculatorController extends Controller
     # ##########################################################
     public function calculateFees(Request $request)
     {
+        dd($request->all());
         $ar=[]; foreach ( $request->all() as $k=>$v ) $ar[]="{$k}={$v}";
         $response = Http::withHeaders([
             'api-key' => '1d95bfb7-b38a-50e4-b5f9-cb348deb4021'
