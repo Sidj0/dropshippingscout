@@ -14,7 +14,7 @@
 <div class="container-fluid">
 
     <div class="container">
-        <h2 class="text-center">{{ $ebay_title }}</h2>
+        <h2 class="text-center mb-4">{{ $ebay_title }}</h2>
         <div class="ebay-calc-container">
             <div class="flags-container">
                 <div class="flags">
