@@ -139,4 +139,7 @@ Route::group(['prefix'=>'calculator'], function() {
 
 
 // Dynamic Page Route
+Route::get('/test', function() {
+    return 'test';
+} );
 Route::get('/{slug}', [PagesController::class, 'show'])->name('pages.show');
