@@ -4,6 +4,11 @@
 @section('meta_description', $page->meta_description)
 @section('meta_keywords', $page->meta_keywords)
 @section('meta_author', $page->meta_author)
+
+@section('og_title', $page->title)
+@section('og_description', $page->meta_description)
+ 
+
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 @section('styles')

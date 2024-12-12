@@ -5,6 +5,11 @@
 @section('meta_keywords', $page->meta_keywords)
 @section('meta_author', $page->meta_author)
 
+@section('og_title', $page->title)
+@section('og_description', $page->meta_description)
+@section('og_image', asset('images/feature2.jpeg'))
+
+
 @section('styles')
     <!-- Custom CSS for this view -->
     <link href="{{asset('css/competitor-monitoring.css')}}" rel="stylesheet">
