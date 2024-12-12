@@ -7,7 +7,7 @@
 
 @section('og_title', $page->title)
 @section('og_description', $page->meta_description)
-@section('og_image', asset('images/Banner1-Final0_optimized.png'))
+@section('og_image', asset('images/logo.svg'))
 
 @section('styles')
     <!-- Custom CSS for this view -->
