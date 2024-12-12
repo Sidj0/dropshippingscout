@@ -5,6 +5,10 @@
 @section('meta_keywords', $page->meta_keywords)
 @section('meta_author', $page->meta_author)
 
+@section('og_title', $page->title)
+@section('og_description', $page->meta_description)
+@section('og_image', asset('images/Banner1-Final0_optimized.png'))
+
 @section('styles')
     <!-- Custom CSS for this view -->
     <link href="{{asset('css/index.css')}}" rel="stylesheet">
