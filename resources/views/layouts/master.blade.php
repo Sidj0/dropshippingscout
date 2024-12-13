@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PGTF43WX');</script>
-    <!-- End Google Tag Manager -->
+
     <!-- Meta -->
      <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="@yield('og_title', 'Default OG Title')" />
@@ -134,6 +128,20 @@ function toggleVisibility(event, id) {
 <script src="{{asset('js/wow.js')}}"></script>
 <!-- Main Custom js file -->
 <script src="{{asset('js/function.js')}}"></script>
+
+    <!-- Google Tag Manager -->
+
+<script>
+    window.addEventListener('load', function() {
+        var gtmScript = document.createElement('script');
+        gtmScript.async = true;
+        gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PGTF43WX';
+        document.head.appendChild(gtmScript);
+    });
+</script>
+
+    <!-- End Google Tag Manager -->
+
 
 @yield('script')
 </body>
