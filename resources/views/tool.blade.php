@@ -42,7 +42,7 @@
     </div>
     
     <div class="right-column">
-      <img src="{{ asset('storage/' . $page['image_1']) }}" alt="Example Image">
+      <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_1'] }}" alt="Example Image">
     </div>
   </div>
 @endif
