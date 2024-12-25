@@ -47,7 +47,7 @@
                 <div class="form-group mb-3" id="image-input" style="{{ $blog->video_url ? 'display: none;' : '' }}">
                     <label for="image" class="form-label">Blog Image</label>
                     <input type="file" class="form-control" id="image" name="image">
-                    <img src="{{ asset('images/blogs/' . $blog->image) }}" alt="{{ $blog->title }}" class="img-fluid mt-3">
+                    <img src="{{'images/blogs/' . $blog->image}}" alt="{{ $blog->title }}" class="img-fluid mt-3">
                 </div>
                 
                 <div class="form-group mb-3" id="video-input" style="{{ $blog->video_url ? '' : 'display: none;' }}">
