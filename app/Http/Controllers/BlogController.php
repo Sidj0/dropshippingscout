@@ -27,85 +27,44 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
-        // Validate the incoming request data
-        // $validatedData = $request->validate([
-        //     'title' => 'required|string|max:255',
-        //     'excerpt' => 'required|string',
-        //     'author' => 'required|string|max:255',
-        //     'publish_date' => 'required|date',
-        //     'media_type' => 'required|string|in:image,video',
-        //     'image' => 'nullable|image|max:2048',
-        //     'video_url' => 'nullable',
-        //     'meta_description' => 'nullable',
-        //     'meta_keywords' => 'nullable',
-        //     'meta_author' => 'nullable',
-        //     'slug' => 'required|string|max:60|unique:blogs',
-        //     'category' => 'required|string|max:255',
-        //     'content' => 'required|string',
-        // ]);
-    
-        // if ($validatedData['media_type'] === 'image') {
-        //     // Handle image upload
-        //     if ($request->hasFile('image')) {
-        //         $validatedData['image'] = $request->file('image')->store('images', 'public');
-                
-        //     } else {
-        //         return back()->withErrors(['image' => 'Image is required if media type is set to image.']);
-        //     }
-        //     $validatedData['video_url'] = null; // No video for this blog
-        // } elseif ($validatedData['media_type'] === 'video') {
-        //     // Ensure video URL is present
-        //     if (empty($request->video_url)) {
-        //         return back()->withErrors(['video_url' => 'Video URL is required if media type is set to video.']);
-        //     }
-        //     $validatedData['image'] = null; // No image for this blog
-        //     $validatedData['video_url'] = $request->input('video_url'); // Set the video URL
-        // }
-    
-        // // Create a new blog entry
-        // Blog::create($validatedData);
-        // Validate the incoming request data
-        $request->validate([
+        //Validate the incoming request data
+        $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'excerpt' => 'required|string',
             'author' => 'required|string|max:255',
             'publish_date' => 'required|date',
-            'image' => 'required|image|max:2048',
-            'likes' => 'required|integer|min:0',
-            'slug' => 'required|string|max:60',
+            'media_type' => 'required|string|in:image,video',
+            'image' => 'nullable|image|max:2048',
+            'video_url' => 'nullable',
+            'meta_description' => 'nullable',
+            'meta_keywords' => 'nullable',
+            'meta_author' => 'nullable',
+            'slug' => 'required|string|max:60|unique:blogs',
             'category' => 'required|string|max:255',
-            'content' => 'required|string',  // Updated to handle rich text content
+            'content' => 'required|string',
         ]);
     
-        // Handle image upload
-        // if ($request->hasFile('image')) {
-        //     // Get the original filename with extension
-        //     $originalFileName = $request->file('image')->getClientOriginalName();
-    
-        //     // Generate a unique filename to avoid conflicts
-        //     $filename = pathinfo($originalFileName, PATHINFO_FILENAME);
-        //     $extension = $request->file('image')->getClientOriginalExtension();
-        //     $uniqueFileName = $filename . '_' . time() . '.' . $extension;
-    
-        //     // Store the image in the public storage
-        //     $path = $request->file('image')->storeAs('images', $uniqueFileName, 'public');
-    
-        //     // Save the path or file name in the database
-        //     $validatedData['image'] = $path;
-        // }
-        $input = $request->all();
-        if ($image = $request->file('image')) {
-            $destinationPath = 'images/blogs/';
-            $profileImage = date('YmdHis').".".$image->getClientOriginalExtension();
-            $image->move($destinationPath , $profileImage );
-            $input['image'] = "$profileImage";
-          }else{
-            unset($input['image']);
-          }
+        if ($validatedData['media_type'] === 'image') {
+            // Handle image upload
+            if ($request->hasFile('image')) {
+                $validatedData['image'] = $request->file('image')->store('images', 'public');
+                
+            } else {
+                return back()->withErrors(['image' => 'Image is required if media type is set to image.']);
+            }
+            $validatedData['video_url'] = null; // No video for this blog
+        } elseif ($validatedData['media_type'] === 'video') {
+            // Ensure video URL is present
+            if (empty($request->video_url)) {
+                return back()->withErrors(['video_url' => 'Video URL is required if media type is set to video.']);
+            }
+            $validatedData['image'] = null; // No image for this blog
+            $validatedData['video_url'] = $request->input('video_url'); // Set the video URL
+        }
     
         // Create a new blog entry
-        Blog::create($input);
-    
+        Blog::create($validatedData);
+        
         return redirect()->route('blogs.index')->with('success', 'Blog created successfully.');
     }
     
