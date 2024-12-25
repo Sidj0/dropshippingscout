@@ -7,7 +7,7 @@
 
 @section('og_title', $blog->title)
 @section('og_description', $blog->meta_description)
-@section('og_image', asset('storage/' . $blog->image))
+@section('og_image', 'https://dropshippingscout.com/storage/app/public/' . $blog->image)
 
 
 
@@ -53,7 +53,7 @@
                 <iframe width="100%" height="415" src="https://www.youtube.com/embed/{{ \Str::after($blog->video_url, 'v=') }}" frameborder="0" allowfullscreen></iframe>
             @else
                 <a href="{{ route('blogs.show', $blog->slug) }}">
-                    <img src="{{ asset('storage/' .$blog->image) }}" alt="{{ $blog->title }}">
+                    <img src="{{ 'https://dropshippingscout.com/storage/app/public/' .$blog->image }}" alt="{{ $blog->title }}">
                 </a>
             @endif
 

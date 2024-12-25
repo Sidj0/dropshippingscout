@@ -52,7 +52,7 @@
 @if (!empty($page['image_2']))
   <div class="con-left">
     <div class="right-column">
-      <img src="{{ asset('storage/' . $page['image_2']) }}" alt="Example Image">
+      <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_2'] }}" alt="Example Image">
     </div>
 
     <div class="left-column">
@@ -82,7 +82,7 @@
     </div>
     
     <div class="right-column">
-      <img src="{{ asset('storage/' . $page['image_3']) }}" alt="Example Image">
+      <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_3'] }}" alt="Example Image">
     </div>
   </div>
 @endif
@@ -92,7 +92,7 @@
 @if (!empty($page['image_4']))
   <div class="con-left">
     <div class="right-column">
-      <img src="{{ asset('storage/' . $page['image_4']) }}" alt="Example Image">
+      <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_4'] }}" alt="Example Image">
     </div>
 
     <div class="left-column">
@@ -116,7 +116,7 @@
 <div class="mobile-view">
   @if (!empty($page['image_1']))
     <div class="mobile-section">
-    <img src="{{ asset('storage/' . $page['image_1']) }}" alt="Example Image">
+    <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_1'] }}" alt="Example Image">
       <h2>{{$page->header_1}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_1}}</p>
       <a href="https://app.dropshippingscout.com/pricing">
@@ -126,7 +126,7 @@
   @endif
   @if (!empty($page['image_2']))
     <div class="mobile-section">
-    <img src="{{ asset('storage/' . $page['image_2']) }}" alt="Example Image">
+    <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_2'] }}" alt="Example Image">
       <h2>{{$page->header_2}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_2}}</p>
       <a href="https://app.dropshippingscout.com/pricing">
@@ -136,7 +136,7 @@
   @endif
   @if (!empty($page['image_3']))
     <div class="mobile-section">
-    <img src="{{ asset('storage/' . $page['image_3']) }}" alt="Example Image">
+    <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_3'] }}" alt="Example Image">
       <h2>{{$page->header_3}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
       <a href="https://app.dropshippingscout.com/pricing">
@@ -146,7 +146,7 @@
   @endif
   @if (!empty($page['image_4']))
     <div class="mobile-section">
-    <img src="{{ asset('storage/' . $page['image_4']) }}" alt="Example Image">
+    <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_4'] }}" alt="Example Image">
       <h2>{{$page->header_4}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_4}}</p>
       <a href="https://app.dropshippingscout.com/pricing">
