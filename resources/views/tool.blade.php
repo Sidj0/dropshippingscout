@@ -8,7 +8,7 @@
 
 @section('og_title', $page->content_header)
 @section('og_description', $page->content_subheader)
-@section('og_image', asset('storage/' . $page->image_1))
+@section('og_image', 'https://dropshippingscout.com/storage/app/public/' . $page->image_1)
 
  
 
