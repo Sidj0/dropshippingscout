@@ -85,7 +85,7 @@
                         </div>
                         <!-- Category Label -->
                         <div class="category-label">
-                            {{ $blog->category }} xx
+                            {{ $blog->category=='Tiktook'?'Tiktook Shop':$blog->category }}
                         </div>
                     </div>
                 </div>
