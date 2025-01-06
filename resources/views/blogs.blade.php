@@ -54,7 +54,7 @@
                                 @endif
                             </figure>
                         </div>
-                        
+
                         <div class="post-item-body">
                             <p><a href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->publish_date }}</a></p>
                             <h3><a href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h3>
@@ -85,18 +85,18 @@
                         </div>
                         <!-- Category Label -->
                         <div class="category-label">
-                            {{ $blog->category }}
+                            {{ $blog->category }} xx
                         </div>
                     </div>
                 </div>
             @endforeach
-            
-			</div>		 
+
+			</div>
 		</div>
 	</div>
 	<!-- Latest News Section End -->
 	</div>
-	</div>	
+	</div>
 
 
 
