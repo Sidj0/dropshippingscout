@@ -117,7 +117,6 @@
 
         <div class="row" style="padding-bottom: 50px;">
             @foreach ($relatedBlogs as $blog)
-            @dd($blog)
             <div class="col-lg-4 col-md-6" style="padding-bottom: 20px;">
                 <!-- Blog Item Start -->
                 <div class="blog-item wow fadeInUp" data-wow-delay="0.75s">
