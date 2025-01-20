@@ -89,11 +89,11 @@
 
      <!-- tiktook Section -->
      <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'tiktook-pages')">
-        <img src="{{ asset('images/tiktok_shop.png') }}" alt="tiktook Logo" class="icon">
+        <img src="{{ asset('images/tiktok_shop.png') }}" alt="TikTok Logo" class="icon">
         <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="tiktook-pages">
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'tiktrend-scan-tool']) }}">Tiktook Scanner</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'tiktrend-scan-tool']) }}">TikTok Scanner</a>
     </div>
 
     <!-- Shopify Section -->

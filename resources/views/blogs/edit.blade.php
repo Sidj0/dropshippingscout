@@ -43,19 +43,19 @@
                         <option value="video" {{ $blog->video_url ? 'selected' : '' }}>Video</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group mb-3" id="image-input" style="{{ $blog->video_url ? 'display: none;' : '' }}">
                     <label for="image" class="form-label">Blog Image</label>
                     <input type="file" class="form-control" id="image" name="image">
                     <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $blog->image }}" alt="{{ $blog->title }}" class="img-fluid mt-3">
                 </div>
-                
+
                 <div class="form-group mb-3" id="video-input" style="{{ $blog->video_url ? '' : 'display: none;' }}">
                     <label for="video_url" class="form-label">YouTube Video URL</label>
                     <input type="text" class="form-control" id="video_url" name="video_url" value="{{ $blog->video_url }}">
                 </div>
-                
-             
+
+
                 <!-- Slug -->
                 <div class="form-group mb-3">
                     <label for="slug" class="form-label">Slug</label>
@@ -66,16 +66,16 @@
                     <label for="meta_description">Meta Description</label>
                     <input type="text" class="form-control" id="meta_description" name="meta_description" value="{{ $blog->meta_description }}" required>
                 </div>
-        
+
                 <div class="form-group">
                     <label for="meta_keywords">Meta Keywords</label>
                     <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" value="{{ $blog->meta_keywords }}" required>
                 </div>
-        
+
                 <div class="form-group">
                     <label for="meta_author">Meta Author</label>
                     <input type="text" class="form-control" id="meta_author" name="meta_author" value="{{ $blog->meta_author }}" required>
-             
+
                     <!-- Content Sections (Handled by TinyMCE) -->
                 <div id="content-sections" class="mb-3">
                     <h4>Content Sections</h4>
@@ -93,7 +93,7 @@
                          <option value="Aliexpress" {{ $blog->category == 'Aliexpress' ? 'selected' : '' }}>Aliexpress</option>
                          <option value="Walmart" {{ $blog->category == 'Walmart' ? 'selected' : '' }}>Walmart</option>
                          <option value="Amazon" {{ $blog->category == 'Amazon' ? 'selected' : '' }}>Amazon</option>
-                         <option value="Tiktook" {{ $blog->category == 'Tiktook' ? 'selected' : '' }}>Tiktook</option>
+                         <option value="Tiktook" {{ $blog->category == 'Tiktook' ? 'selected' : '' }}>TikTok</option>
 
                         <!-- Add more categories as needed -->
                     </select>
@@ -116,7 +116,7 @@
         height: 500
     });
 </script>
-  
+
 <script>
     // Same JavaScript as in create view
     document.getElementById('media_type').addEventListener('change', function() {

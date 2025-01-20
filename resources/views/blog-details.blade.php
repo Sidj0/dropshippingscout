@@ -141,7 +141,7 @@
                     </div>
                     <!-- Category Label -->
                     <div class="category-label">
-                        {{ $blog->category=='Tiktook'?'Tiktook Shop':$blog->category }}
+                        {{ $blog->category=='Tiktook'?'TikTok Shop':$blog->category }}
                     </div>
                     <!-- Blog Content End -->
                 </div>

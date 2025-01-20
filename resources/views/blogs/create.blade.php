@@ -36,17 +36,17 @@
                         <option value="video">Video</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group mb-3" id="image-input">
                     <label for="image" class="form-label">Blog Image</label>
                     <input type="file" class="form-control" id="image" name="image">
                 </div>
-                
+
                 <div class="form-group mb-3" id="video-input" style="display: none;">
                     <label for="video_url" class="form-label">YouTube Video URL</label>
                     <input type="text" class="form-control" id="video_url" name="video_url" placeholder="https://www.youtube.com/watch?v=xyz">
                 </div>
-              
+
 
                 <div class="form-group mb-3">
                     <label for="slug" class="form-label">Slug</label>
@@ -57,12 +57,12 @@
                     <label for="meta_description">Meta Description</label>
                     <input type="text" class="form-control" id="meta_description" name="meta_description" required>
                 </div>
-        
+
                 <div class="form-group">
                     <label for="meta_keywords">Meta Keywords</label>
                     <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" required>
                 </div>
-        
+
                 <div class="form-group">
                     <label for="meta_author">Meta Author</label>
                     <input type="text" class="form-control" id="meta_author" name="meta_author" required>
@@ -83,7 +83,7 @@
                         <option value="Aliexpress">Aliexpress</option>
                         <option value="Walmart">Walmart</option>
                         <option value="Amazon">Amazon</option>
-                        <option value="Tiktook">Tiktook</option>
+                        <option value="Tiktook">TikTok</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary" style="background: cadetblue;">Create Blog</button>
@@ -107,7 +107,7 @@
     });
 </script>
 
-  
+
 <script>
     // Toggle between image and video input fields
     document.getElementById('media_type').addEventListener('change', function() {
