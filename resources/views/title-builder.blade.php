@@ -7,7 +7,7 @@
 
 @section('og_title', $page->title)
 @section('og_description', $page->meta_description)
- 
+
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -32,7 +32,7 @@
       <div class="filter-row">
           <!-- First row of filters -->
           <div class="filter-box">
-              <label for="marketplace">MarketPlace 
+              <label for="marketplace">MarketPlace
                   <i class="fas fa-question-circle" title="Select the marketplace for your product."></i>
               </label>
               <select id="marketplace">
@@ -40,20 +40,19 @@
               </select>
           </div>
           <div class="filter-box">
-              <label for="category">Shipping Location 
+              <label for="category">Shipping Location
                   <i class="fas fa-question-circle" title="Select the shipping location."></i>
               </label>
               <select id="country-id">
-    <option value="Worldwide" selected>Worldwide</option>
-    <option value="US">United States</option>
-    <option value="GB">United Kingdom</option>
-</select>
-
+                <option value="Worldwide" selected>Worldwide</option>
+                <option value="US">United States</option>
+                <option value="GB">United Kingdom</option>
+            </select>
           </div>
 
           <!-- New filter box for Sales Data Range -->
           <div class="filter-box">
-              <label for="sales-date-range">Sales Data Range 
+              <label for="sales-date-range">Sales Data Range
                   <i class="fas fa-question-circle" title="Select the date range for sales data."></i>
               </label>
               <select id="sales-date-range" name="sales_date_range">
@@ -66,7 +65,7 @@
           </div>
 
           <div class="filter-box">
-              <label for="item-price">Exclude Phrase 
+              <label for="item-price">Exclude Phrase
                   <i class="fas fa-question-circle" title="Enter phrases you want to exclude from the search."></i>
               </label>
               <input type="text" id="item-price" placeholder="Ex: s1s2s3">
@@ -79,7 +78,7 @@
   <div class="filter-row">
     <!-- First row of filters -->
     <div class="filter-box" style="width: 95%;">
-      <label for="marketplace">Title Combine 
+      <label for="marketplace">Title Combine
         <i class="fas fa-question-circle" title="Select the marketplace for your product."></i>
       </label>
       <div class="input-with-icon">
@@ -89,7 +88,7 @@
     </div>
   </div>
 </div>
- 
+
 
 
     <!-- results section -->
@@ -140,7 +139,7 @@
         </thead>
         <tbody>
           <!-- Sample row data -->
-         
+
           <!-- More rows as needed -->
         </tbody>
       </table>
