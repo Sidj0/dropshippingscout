@@ -158,7 +158,7 @@
                     <!-- Let’s Start Button Start -->
                     <div class="header-btn d-inline-flex">
                         <a href="https://app.dropshippingscout.com/login">Login</a>
-                        <a href="https://app.dropshippingscout.com/pricing" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 8px; color:white !important; text-align:center">Start $1 Trial</a>
+                        <a href="https://app.dropshippingscout.com/pricing?popup=1" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 8px; color:white !important; text-align:center">Start $1 Trial</a>
 
                     </div>
                     <!-- Let’s Start Button End -->
