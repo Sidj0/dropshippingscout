@@ -28,15 +28,15 @@
                 </p>
                 <br>
 
-                <div class="email-container">
-                    <form method="get" action="https://app.dropshippingscout.com/register">
-                        <input type="email" class="email-input" placeholder="Enter your Email" />
+                <form method="get" action="https://app.dropshippingscout.com/register">
+                    <div class="email-container">
+                        <input type="email" name="email" class="email-input" placeholder="Enter your Email" />
                         <button type="submit" class="trial-button">
                         Start for $1 Trial
                         <span class="arrow">➔</span>
                         </button>
-                    </form>
-                  </div>
+                    </div>
+                </form>
 
 
 
