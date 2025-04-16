@@ -29,6 +29,7 @@
                 <br>
 
                 <form method="get" action="https://app.dropshippingscout.com/register">
+                    <input type="hidden" name="popup" value="1">
                     <div class="email-container">
                         <input type="email" name="email" class="email-input" placeholder="Enter your Email" />
                         <button type="submit" class="trial-button">
