@@ -12,7 +12,7 @@
 @section('styles')
     <!-- Custom CSS for this view -->
     <link href="{{asset('css/index.css')}}" rel="stylesheet">
- 
+
 @endsection
 
 @section('content')
@@ -27,15 +27,17 @@
                     earn a whopping 20% for every new subscription sale you bring in.
                 </p>
                 <br>
-               
+
                 <div class="email-container">
-                    <input type="email" class="email-input" placeholder="Enter your Email" />
-                    <button class="trial-button">
-                      Start for $1 Trial
-                      <span class="arrow">➔</span>
-                    </button>
+                    <form method="get" action="https://app.dropshippingscout.com/register">
+                        <input type="email" class="email-input" placeholder="Enter your Email" />
+                        <button type="submit" class="trial-button">
+                        Start for $1 Trial
+                        <span class="arrow">➔</span>
+                        </button>
+                    </form>
                   </div>
-                  
+
 
 
             </div>
@@ -43,9 +45,9 @@
                 <div class="gradient-circle"></div>
                 <img src="{{asset('images/Banner1-Final0_optimized.png')}}" alt="Example Image" class="bannerImg">
             </div>
-            
+
         </div>
-        
+
             <!-- Exclusive Partners Section Start -->
     <div class="exclusive-partners">
         <div class="container">
@@ -59,7 +61,7 @@
                     <!-- Section Title End -->
                 </div>
             </div>
- 
+
             <div class="row">
 
                 <div class="row justify-content-center align-items-center text-center">
@@ -70,7 +72,7 @@
                         </div>
                         <!-- Partners Logo End -->
                     </div>
-                
+
                     <div class="col-lg-2 col-md-3 col-4">
                         <!-- Partners Logo Start -->
                         <div class="partners-logo wow fadeInUp" data-wow-delay="0.4s">
@@ -78,7 +80,7 @@
                         </div>
                         <!-- Partners Logo End -->
                     </div>
-                
+
                     <div class="col-lg-2 col-md-3 col-4">
                         <!-- Partners Logo Start -->
                         <div class="partners-logo wow fadeInUp tiktook-logo" data-wow-delay="0.6s">
@@ -86,7 +88,7 @@
                         </div>
                         <!-- Partners Logo End -->
                     </div>
-                
+
                     <div class="col-lg-2 col-md-3 col-4">
                         <!-- Partners Logo Start -->
                         <div class="partners-logo wow fadeInUp" data-wow-delay="0.6s">
@@ -94,7 +96,7 @@
                         </div>
                         <!-- Partners Logo End -->
                     </div>
-                
+
                     <div class="col-lg-2 col-md-3 col-4">
                         <!-- Partners Logo Start -->
                         <div class="partners-logo wow fadeInUp" data-wow-delay="0.8s">
@@ -102,7 +104,7 @@
                         </div>
                         <!-- Partners Logo End -->
                     </div>
-                
+
                     <div class="col-lg-2 col-md-3 col-4">
                         <!-- Partners Logo Start -->
                         <div class="partners-logo wow fadeInUp" data-wow-delay="1s">
@@ -111,14 +113,14 @@
                         <!-- Partners Logo End -->
                     </div>
                 </div>
-                
+
         </div>
     </div>
     <!-- Exclusive Partners Section End -->
 </div>
 
 
- 
+
     <!-- About Section Start -->
     <div class="about-us">
         <div class="container">
@@ -132,7 +134,7 @@
                     <!-- Section Title End -->
                 </div>
             </div>
-            
+
 
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -233,12 +235,12 @@
 
              <p>Effortlessly connect with reliable suppliers, streamlining your sourcing process and enhancing your dropshipping efficiency.</p>
              <a href="{{ route('pages.show', ['slug' => 'suppliers-scouting']) }}" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 50px; display: block; text-align: center; margin: 0 auto; width: fit-content;">Read More</a>
-   
+
          </div>
     </div>
 </div>
 </div>
-  
+
          <!-- Page Header Start -->
          <div class="page-header">
             <div class="container">
@@ -248,7 +250,7 @@
                         <div class="page-header-box">
                             <h1 class="text-anime-style-3" style="font-family: 'Montserrat-Arabic';font-size: 52px; font-weight:600;margin-top: 60px;">Take a deep dive into our most <br>powerful <span style="color: #3545D6">Store</span>  Tools</h1>
                             <p style="font-family: 'Montserrat-Arabic'; font-size:20px; font-weight: 400;">in virtual space through communication platforms.</p>
-                             
+
                         </div>
                         <!-- Page Header Box End -->
                     </div>
@@ -256,8 +258,8 @@
             </div>
         </div>
         <!-- Page Header End -->
-    
-        
+
+
 <!-- Options Start -->
 <div class="options-wrapper">
     <div class="options-container">
@@ -269,7 +271,7 @@
 
 
 <!-- Options End -->
- 
+
 <!-- Our Services Section Start -->
 <div class="our-services">
     <div class="container">
@@ -344,7 +346,7 @@
                 </div>
             </div>
 
-            
+
 
             <div class="col-lg-4 col-md-6 service-column"  data-category="product-scouting">
                 <div class="service-item wow fadeInUp" data-wow-delay="0.75s">
@@ -528,7 +530,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                
+
                 <!-- Blog Item Start for Product Research -->
                 <div class="blog-item wow fadeInUp" data-wow-delay="0.25s" style="display: block;">
                     <div class="post-featured-image">
@@ -544,7 +546,7 @@
                     </div>
                 </div>
                 <!-- Blog Item End for Product Research -->
-                
+
                 <!-- Blog Item Start for Competitor Research -->
                 <div class="blog-item wow fadeInUp" data-wow-delay="0.25s" style="display: none;">
                     <div class="post-featured-image">
@@ -649,11 +651,11 @@
 
                     <!-- Blog Content Start -->
                     <div class="post-item-body">
-                                                
+
                           <a href="{{ route('blogs.show', $blog->slug) }}" style="color: #1E3F5B">
                             {{ $blog->created_at }}</a>
-                   
-                            <a href="{{ route('blogs.show', $blog->slug) }}"> <h2 class="homeBlogParagraph">{{ $blog->title }}</h2>    </a>                        
+
+                            <a href="{{ route('blogs.show', $blog->slug) }}"> <h2 class="homeBlogParagraph">{{ $blog->title }}</h2>    </a>
                     </div>
                     <!-- Category Label -->
                     <div class="category-label">
