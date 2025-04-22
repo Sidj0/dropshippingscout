@@ -30,14 +30,14 @@
 	<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 	<!-- Main Custom Css -->
 	<link href="{{asset('css/custom.css')}}" rel="stylesheet" media="screen">
- 
+
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
 
 </head>
 <body class="tt-magic-cursor">
 
 
-    
+
         <!-- Preloader Start -->
         <div class="preloader">
             <div class="loading-container">
@@ -46,26 +46,26 @@
             </div>
         </div>
         <!-- Preloader End -->
- 
+
 	 <div class="gredient">
 
- 
+
  <div class="login-page">
         <div class="left-side">
            <img src="{{asset('images/logo.svg')}}" alt="Logo" class="logo">
 
             <h2>Identify <span style="color:#3545D6">Winning</span>  Products Instantly! </h2>
             <img src="{{asset('images/login/backImg.png')}}" alt="Image" class="main-image">
-             
+
         </div>
         <div class="right-side">
                <img src="{{asset('images/logo.svg')}}" alt="Logo" class="mob-logo">
             <div class="top-navigation" >
                 <img src="{{asset('images/Registration/backArrow.svg')}}" alt="Back Icon">
-                <p style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</p>
+                <a href="//dropshippingscout.com" style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</a>
             </div>
             <form action="{{ route('Adminlogin') }}" method="POST">
-                @csrf            
+                @csrf
             <div class="login-form">
     <h3>Login</h3>
     <p>Welcome back! Get started using Scout.</p>
@@ -78,7 +78,7 @@
         </ul>
     </div>
 @endif
-      
+
 <!-- Email -->
 <label for="email">Email</label>
 <div class="input-field">
@@ -127,12 +127,12 @@
         </div>
     </div>
 
-   
 
-     </div> 
 
- 
- 
+     </div>
+
+
+
 
     <!-- Jquery Library File -->
     <script src="{{asset('js/jquery-3.7.1.min.js')}}"></script>

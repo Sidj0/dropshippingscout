@@ -31,13 +31,13 @@
 	<!-- Main Custom Css -->
 	<link href="{{asset('css/custom.css')}}" rel="stylesheet" media="screen">
     <link rel="stylesheet" type="text/css" href="{{asset('css/verify-email.css')}}">
- 
- 
+
+
 </head>
 <body class="tt-magic-cursor">
 
-    
-    
+
+
         <!-- Preloader Start -->
 	<div class="preloader">
 		<div class="loading-container">
@@ -47,52 +47,52 @@
 	</div>
 	<!-- Preloader End -->
 
-    
+
 	<!-- Magic Cursor Start -->
 	<div id="magic-cursor">
 		<div id="ball"></div>
 	</div>
 	<!-- Magic Cursor End -->
 
-  
+
 
 	 <div class="gredient">
 
- 
+
  <div class="login-page">
         <div class="left-side">
            <img src="images/logo.svg" alt="Logo" class="logo">
 
             <h2>Discover <span style="color:#3545D6"> Top-Selling </span>Products in Seconds! </h2>
             <img src="images/login/backImg.png" alt="Image" class="main-image">
-             
+
         </div>
         <div class="right-side">
                <img src="images/logo.svg" alt="Logo" class="mob-logo">
             <div class="top-navigation" >
                 <img src="images/Registration/backArrow.svg" alt="Back Icon">
-                <p style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</p>
+                <a href="//dropshippingscout.com"  style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</a>
             </div>
             <div class="login-form">
     <h3>Verify Email</h3>
     <p>We have sent a password recover instructions to your email at John@gmail.com</p>
- 
+
         <img src="images/Registration/verify-email.svg" alt="Email Icon" class="verify-email">
 
         <button class="get-started">Open Email App</button>
- 
+
     <p style="text-decoration: underline;text-align: center;padding-top: 26px;">Didn’t receive the email? <a href="#">Click to resend </a></p>
 </div>
 
         </div>
     </div>
 
-   
 
-     </div> 
 
- 
- 
+     </div>
+
+
+
 
       <!-- Jquery Library File -->
       <script src="{{asset('js/jquery-3.7.1.min.js')}}"></script>

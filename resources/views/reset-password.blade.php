@@ -31,7 +31,7 @@
 	<!-- Main Custom Css -->
 	<link href="{{asset('css/custom.css')}}" rel="stylesheet" media="screen">
     <link rel="stylesheet" type="text/css" href="{{asset('css/reset-password.css')}}">
- 
+
 
 </head>
 <body class="tt-magic-cursor">
@@ -43,50 +43,50 @@
 	</div>
 	<!-- Magic Cursor End -->
 
-  
+
 
 	 <div class="gredient">
 
- 
+
  <div class="login-page">
         <div class="left-side">
            <img src="images/logo.svg" alt="Logo" class="logo">
 
             <h2>Leverage Real-Time Data <span style="color:#3545D6">Insights!</span></h2>
             <img src="images/login/backImg.png" alt="Image" class="main-image">
-             
+
         </div>
         <div class="right-side">
                <img src="images/logo.svg" alt="Logo" class="mob-logo">
             <div class="top-navigation" >
                 <img src="images/Registration/backArrow.svg" alt="Back Icon">
-                <p style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</p>
+                <a href="//dropshippingscout.com"  style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</a>
             </div>
             <div class="login-form">
     <h3>Reset Password</h3>
     <p>Please enter your email address to request a password reset</p>
-      
+
     <label for="email">Email</label>
     <div class="input-field">
         <img src="images/Registration/email.svg" alt="Email Icon">
         <input type="email" id="email" placeholder="Email@example.com">
     </div>
-    
+
 
     <button class="get-started">Send Reset Link</button>
- 
+
     <p style="text-decoration: underline;text-align: center;padding-top: 26px;">Remember Password? <a href="{{url('login')}}">Log In</a></p>
 </div>
 
         </div>
     </div>
 
-   
 
-     </div> 
 
- 
- 
+     </div>
+
+
+
 
      <!-- Jquery Library File -->
      <script src="{{asset('js/jquery-3.7.1.min.js')}}"></script>

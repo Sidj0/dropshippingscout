@@ -31,12 +31,12 @@
 	<!-- Main Custom Css -->
 	<link href="{{asset('css/custom.css')}}" rel="stylesheet" media="screen">
     <link rel="stylesheet" type="text/css" href="{{asset('css/registration.css')}}">
- 
+
 </head>
 <body class="tt-magic-cursor">
 
 
-    
+
         <!-- Preloader Start -->
         <div class="preloader">
             <div class="loading-container">
@@ -45,14 +45,14 @@
             </div>
         </div>
         <!-- Preloader End -->
-        
+
 	<!-- Magic Cursor Start -->
 	<div id="magic-cursor">
 		<div id="ball"></div>
 	</div>
 	<!-- Magic Cursor End -->
 
-  
+
 
 	 <div class="gredient">
 <form action="{{ url('register') }}" method="POST">
@@ -75,9 +75,9 @@
                <img src="images/logo.svg" alt="Logo" class="mob-logo">
             <div class="top-navigation" >
                 <img src="images/Registration/backArrow.svg" alt="Back Icon">
-                <p style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</p>
+                <a href="//dropshippingscout.com"  style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</a>
             </div>
-            
+
             <div class="login-form">
                 <h3>Create an account</h3>
                 <p>Welcome! Get started using Scout.</p>
@@ -124,7 +124,7 @@
         </div>
     </div>
 </form>
-     </div> 
+     </div>
 
 
      <!-- Jquery Library File -->
