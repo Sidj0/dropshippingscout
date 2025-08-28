@@ -92,7 +92,7 @@
     </div>
 </div>
 
-<script src="https://cdn.tiny.cloud/1/edwduv6xfg4eitjppu8cu3oyy56pofhht2q8rm0xxtny84yo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/p0niww7r5y6397opob90p9fp4h496wn3iihrzp4gnq97y19i/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
 <script>
     tinymce.init({
         selector: '#content',
