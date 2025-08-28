@@ -676,7 +676,7 @@
             <img src="{{asset('images/boost-sales.png')}}" alt="Koala" class="unique-image">
             <div class="unique-text">
                 <h2 class="boostSalesHead">Want to boost sales?</h2>
-                <p>Start Your Dropshipping Journey Today</p>
+                <p>Start Your Stock-Free Journey Today</p>
                 <a href="https://app.dropshippingscout.com/pricing" class="unique-button">Start 1$</a>
             </div>
         </div>
