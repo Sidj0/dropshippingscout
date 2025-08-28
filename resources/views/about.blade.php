@@ -85,9 +85,9 @@
                     <!-- Section Title End -->
                     <!-- Hero Body Start -->
                     <div class="hero-body">
-                        <p class="wow fadeInUp" data-wow-delay="0.5s">Are you looking to revolutionize your dropshipping business and take it to the next level? Look no further! Our cutting-edge dropshipping data analysis tool is here to transform the way you do business and help you achieve unparalleled success in the e-commerce world.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.5s">We envision a future where e-commerce entrepreneurs can run their businesses with ease, clarity, and confidence. By providing powerful data-driven tools, we help online sellers simplify operations, uncover new opportunities, and achieve sustainable growth.</p>
                         <br>
-                        <p>These features make it a valuable asset for companies looking to streamline their dropshipping operations and boost efficiency.</p>
+                        <p>Our mission is to empower businesses with insights that streamline decision-making, boost efficiency, and create a competitive edge in the ever-changing digital marketplace.</p>
                     </div>
                     <!-- Hero Body End -->
                 </div>
