@@ -17,7 +17,7 @@
 @section('content')
     <div class="company">
                         <h1 style="font-size: 60px;">Our company’s journey story</h1>     
-                        <h5 style="margin-top:20px ;">A Deep Dive into Dropshipping scout’s Analytics Tool</h5>
+                        <h5 style="margin-top:20px ;">A Deep Dive into TS Scout’s Analytics Tool</h5>
 
                     </div>
 
@@ -37,9 +37,9 @@
 
                     <!-- Hero Body Start -->
                     <div class="hero-body">
-                        <p class="wow fadeInUp" data-wow-delay="0.5s">The dropshipping analytics tool offers key benefits such as real-time data insights, enabling businesses to make informed decisions quickly.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.5s">At TS Scout, we’re on a mission to simplify e-commerce success. Our advanced analytics tools provide real-time insights, reveal sales trends, and streamline inventory management, giving you the clarity and control you need to grow.</p>
                         <br>
-                        <p>It also provides tracking of sales trends and inventory management, optimizing the supply chain process. Moreover, the tool offers competitive analysis, helping businesses stay ahead in the market.</p>
+                        <p>We go beyond data by offering powerful competitive analysis, helping online entrepreneurs stay ahead of the curve. With smarter decisions and faster adaptation, TS Scout empowers you to unlock new opportunities and scale your business with confidence.</p>
                     </div>
                     <!-- Hero Body End -->
                 </div>
