@@ -130,7 +130,7 @@
                     <!-- Section Title Start -->
                     <div class="section-title d-flex justify-content-center">
                         <h2 class="text-anime-style-3" style="font-size: 30px;">Why <img src="{{asset('images/Scout-Logo%2020x20-03.svg')}}" alt="Scout Logo" style="width: 40px;
-    padding-bottom: 14px;"> Dropshipping Scout?</h2>
+    padding-bottom: 14px;"> TS Scout?</h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -153,11 +153,11 @@
                 <div class="col-lg-6 aboutCol">
                     <!-- About Us Content Start -->
                     <div class="about-content">
-                        <h4 class="wow fadeInUp" data-wow-delay="0.25s" style="padding-bottom: 20px;line-height: inherit;" >Dropshipping Scout is your all-in-one solution for effortless dropshipping</h4>
+                        <h4 class="wow fadeInUp" data-wow-delay="0.25s" style="padding-bottom: 20px;line-height: inherit;" >TS Scout is your all-in-one solution for effortless eCommerce</h4>
 
                         <ul class="wow fadeInUp" data-wow-delay="1s">
                             <li>Track and analyze multiple stores and suppliers in one place.</li>
-                            <li>Gain valuable insights into your dropshipping operations.</li>
+                            <li>Gain valuable insights into your inventory-free business operations.</li>
                             <li>Make data-driven decisions to optimize your business.</li>
                             <li>Stay ahead of the competition with real-time analytics.</li>
                           </ul>
@@ -194,7 +194,7 @@
         </div>
         <div class="post-item-body">
              <h3><a href="#">Product Scouting</a></h3>
-            <p>Maximize your profits by uncovering high-demand products with our advanced tools, tailored for successful dropshipping.
+            <p>Maximize your profits by uncovering high-demand products with our advanced tools, tailored for successful inventory-free selling.
             </p>
             <a href="{{ route('pages.show', ['slug' => 'product-scouting']) }}" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 50px; display: block; text-align: center; margin: 0 auto; width: fit-content;">Read More</a>
 
@@ -234,7 +234,7 @@
         <div class="post-item-body">
              <h3><a href="#"> Supplier Scouting</a></h3>
 
-             <p>Effortlessly connect with reliable suppliers, streamlining your sourcing process and enhancing your dropshipping efficiency.</p>
+             <p>Effortlessly connect with reliable suppliers, streamlining your sourcing process and enhancing your stock-free online stores of efficiency.</p>
              <a href="{{ route('pages.show', ['slug' => 'suppliers-scouting']) }}" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 50px; display: block; text-align: center; margin: 0 auto; width: fit-content;">Read More</a>
 
          </div>
