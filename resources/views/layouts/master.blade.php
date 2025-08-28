@@ -9,7 +9,7 @@
     <meta property="og:image" content="@yield('og_image', asset('images/default-image.jpg'))" />
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="DropShippingScout" />
+    <meta property="og:site_name" content="tsscout" />
 
 
     <meta charset="utf-8">
