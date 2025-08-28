@@ -101,7 +101,7 @@
 <section class="container my-5">
     <!-- Centered Title and Subtitle -->
     <div class="centered-title text-center mb-4">
-        <h1 style="color: #1E3F5B; font-size: 50px; font-weight: bold;padding-bottom:10px">Benefits of selling your products <br> With us</h1>
+        <h1 style="color: #1E3F5B; font-size: 50px; font-weight: bold;padding-bottom:10px">Benefits of Using Our Tool <br> with us</h1>
         <h5 class="section-subtitle">in virtual space through communication platforms.</h5>
     </div>
     
@@ -114,8 +114,8 @@
                     <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Latest trends on eBay</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Latest eBay Trends</h3>
+                    <p class="section-paragraph">Stay ahead of the market by spotting what’s hot on eBay right now.</p>
                 </div>
             </div>
         </div>
@@ -126,8 +126,8 @@
                     <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Popular dropshipping products</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Top-Selling Products</h3>
+                    <p class="section-paragraph">Discover items with proven demand to maximize your sales potential.</p>
                 </div>
             </div>
         </div>
@@ -138,8 +138,8 @@
                   <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">eBay sellers & niches</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Winning Niches</h3>
+                    <p class="section-paragraph">Identify profitable niches with low competition and high growth.</p>
                 </div>
             </div>
         </div>
@@ -153,8 +153,8 @@
                     <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Competitive advantage</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Your Competitive Edge</h3>
+                    <p class="section-paragraph">Gain insights that help you stand out and beat the competition.</p>
                 </div>
             </div>
         </div>
@@ -165,8 +165,8 @@
                     <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Create titles for your products</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Product Titles That Sell</h3>
+                    <p class="section-paragraph">Create keyword-rich titles that boost visibility and attract buyers.</p>
                 </div>
             </div>
         </div>
@@ -177,8 +177,8 @@
                    <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Increase sales listing</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Boost Sales Fast</h3>
+                    <p class="section-paragraph">Use the “Use data-driven strategies to increase traffic and grow your revenue quickly.</p>
                 </div>
             </div>
         </div>
