@@ -478,7 +478,7 @@
                             <h2>Walmart Watch</h2>
                             <a href="{{ route('tools-product.show', ['slug' => 'walmart-watch-tool']) }}"><img src="{{asset('images/arrow.svg')}}" alt=""></a>
                         </div>
-                        <p>Discover Walmart products with pricing, ratings, and reviews, empowering dropshippers to make informed purchasing decisions</p>
+                        <p>Discover Walmart products with pricing, ratings, and reviews, empowering e-commerce sellers to make informed purchasing decisions.</p>
                     </div>
                     <div class="service-image">
                         <figure class="image-anime">
@@ -494,7 +494,7 @@
                             <h2>Express Scan</h2>
                             <a href="{{ route('tools-product.show', ['slug' => 'express-scan-tool']) }}"><img src="{{asset('images/arrow.svg')}}" alt=""></a>
                         </div>
-                        <p>Identify top-selling products, reliable sellers, and competitive prices on AliExpress to enhance your dropshipping success.</p>
+                        <p>Discover top-selling products, reliable suppliers, and competitive prices on AliExpress to maximize your stock-free store success.</p>
                     </div>
                     <div class="service-image">
                         <figure class="image-anime">
