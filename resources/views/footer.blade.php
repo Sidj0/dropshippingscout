@@ -33,7 +33,7 @@
                                 <h2>Company</h2>
                                 <ul>
                                     <li><a href="{{ route('pages.show', ['slug' => 'about']) }}">About Us</a></li>
-                                    <li><a href="https://app.dropshippingscout.com/pricing">Pricing</a></li>
+                                    <li><a href="https://app.tsscout.com/pricing">Pricing</a></li>
                                     <li><a href="{{ route('pages.show', ['slug' => 'affiliate']) }}">Affiliate</a></li>
                                     <li><a href="{{ route('pages.show', ['slug' => 'contact-us']) }}">Contact Us</a></li>
                                 </ul>
@@ -76,7 +76,7 @@
                         <div class="col-lg-6">
                             <!-- Footer Copyright Content Start -->
                             <div class="footer-copyright-text">
-                                <p>Copyright © 2024 DropShippingScout, All rights reserved.</p>
+                                <p>Copyright © 2024 tsscout, All rights reserved.</p>
                             </div>
                             <!-- Footer Copyright Content End -->
                         </div>
