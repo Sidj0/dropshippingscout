@@ -53,7 +53,7 @@
     @yield('styles')
 
      <!-- header css -->
-     <link rel="stylesheet" type="text/css" href="{{asset('css/header.css?d='.time())}}">
+     <link rel="stylesheet" type="text/css" href="{{asset('css/header2.css?d='.time())}}">
      <!-- footer css -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/footer.css')}}">
 <!-- Google Tag Manager -->
