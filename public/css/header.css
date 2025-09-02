@@ -382,6 +382,10 @@ display: none; /* Hides the paragraph element */
     display: none;
 }
 
+.magicButton {
+    display: none;
+}
+
 }
 
 .magicButtons{
