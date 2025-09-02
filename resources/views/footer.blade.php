@@ -15,13 +15,13 @@
                             </div>
                             <div class="social">
                                 <ul>
-                                    <li><a href="https://www.tiktok.com/@dropshipping.scout" target="_blank"><img src="{{ asset('images/Tiktok.svg') }}" alt=""></a></li>
+                                    <li><a href="https://www.tiktok.com/@tsscout" target="_blank"><img src="{{ asset('images/Tiktok.svg') }}" alt=""></a></li>
                                     {{-- <li><a href="#"><img src="{{ asset('images/Whatsapp.svg') }}" alt=""></a></li> --}}
-                                    <li><a href="https://www.linkedin.com/company/dropshipping-scout" target="_blank"><img src="{{ asset('images/Linkedin.svg') }}" alt=""></a></li>
-                                    <li><a href="https://www.instagram.com/dropshipping.scout?igsh=bWQ0cWgwOW4zYzl5" target="_blank"><img src="{{ asset('images/Instagram.svg') }}" alt=""></a></li>
-                                    <li><a href="https://youtube.com/@dropshipping.scout.?feature=shared" target="_blank"><img src="{{ asset('images/YouTube.svg') }}" alt=""></a></li>
+                                    <li><a href="https://www.linkedin.com/company/tsscout/" target="_blank"><img src="{{ asset('images/Linkedin.svg') }}" alt=""></a></li>
+                                    <li><a href="https://www.instagram.com/tsscoutofficial/" target="_blank"><img src="{{ asset('images/Instagram.svg') }}" alt=""></a></li>
+                                    <li><a href="https://youtube.com/@tsscout" target="_blank"><img src="{{ asset('images/YouTube.svg') }}" alt=""></a></li>
                                     {{-- <li><a href="#"><img src="{{ asset('images/X.svg') }}" alt=""></a></li> --}}
-                                    <li><a href="https://www.facebook.com/dropshipping.scout?mibextid=ZbWKwL" target="_blank"><img src="{{ asset('images/facebook.svg') }}" alt=""></a></li>
+                                    <li><a href="https://www.facebook.com/tsscout" target="_blank"><img src="{{ asset('images/facebook.svg') }}" alt=""></a></li>
                                     
                                 </ul>
                             </div>
