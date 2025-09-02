@@ -149,14 +149,8 @@ href="https://app.tsscout.com/pricing">Pricing</a></li>
 
                             <div class="magicButtons">
 
-                            <a 
-href="https://app.tsscout.com/pricing" 
-style="color:white;text-align:center" class="unique-button">Start Now</a>
-                            <a 
-href="https://app.tsscout.com/login" 
-style="color:white;text-align:center" class="unique-button">Login</a>
-
-                           </div>
+                           <a href="https://app.dropshippingscout.com/login" style="color:white;text-align:center" class="unique-button">Login</a>
+                        </div>
 
                         </ul>
                     </div>

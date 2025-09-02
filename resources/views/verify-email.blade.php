@@ -71,7 +71,7 @@
                <img src="images/logo.svg" alt="Logo" class="mob-logo">
             <div class="top-navigation" >
                 <img src="images/Registration/backArrow.svg" alt="Back Icon">
-                <a href="//dropshippingscout.com"  style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</a>
+                <a href="//tsscout.com"  style="text-decoration: underline; font-size:14px;color:#0F1A27;margin-bottom: 0.0em !important;">Back To Home Page</a>
             </div>
             <div class="login-form">
     <h3>Verify Email</h3>

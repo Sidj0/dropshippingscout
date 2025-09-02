@@ -385,7 +385,7 @@ display: none; /* Hides the paragraph element */
 }
 
 .magicButtons{
-    display: none;
+    /* display: none; */
   }
   
   @media (max-width: 768px) {
