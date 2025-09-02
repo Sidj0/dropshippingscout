@@ -382,9 +382,6 @@ display: none; /* Hides the paragraph element */
     display: none;
 }
 
-.magicButton {
-    display: none;
-}
 
 }
 
@@ -419,5 +416,12 @@ header.main-header .header-sticky.hide {
 @media (max-width: 768px) {
 body{
     zoom: 85%;
+}
+}
+
+@media screen and (min-width: 768px) {
+    
+.magicButton {
+    display: none;
 }
 }
