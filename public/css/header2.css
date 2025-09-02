@@ -384,19 +384,18 @@ display: none; /* Hides the paragraph element */
 
 
 }
+.magicButtons {
+    display: none !important;
+}
 
-.magicButtons{
-    /* display: none; */
-  }
-  
-  @media (max-width: 768px) {
-  .magicButtons{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  }
+@media (max-width: 768px) {
+    /* .magicButtons{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    } */
+
+}
   
 
  header.main-header {
@@ -419,8 +418,9 @@ body{
 }
 }
 
-@media (max-width: 768px) {
-    .magicButton {
-        display: none;
+@media (max-width: 990px) {
+    .magicButtons {
+        display: block !important;
     }
 }
+
