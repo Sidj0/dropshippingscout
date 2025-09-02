@@ -149,10 +149,10 @@ href="https://app.tsscout.com/pricing">Pricing</a></li>
 
                             <div class="magicButtons">
 
-                           <a href="https://app.dropshippingscout.com/login" style="color:white;text-align:center" class="unique-button">Login</a>
-                        </div>
+                            <a href="https://app.dropshippingscout.com/login" style="color:white;text-align:center;background-color: #1E3F5B;" class="unique-button">Login</a>
 
-                        </ul>
+                           </div>
+                   </ul>
                     </div>
                     <!-- Let’s Start Button Start -->
                     <div class="header-btn d-inline-flex">
