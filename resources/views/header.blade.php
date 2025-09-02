@@ -143,7 +143,8 @@
                             </li>
                             <!-- Resources Dropdown End -->
 
-                            <li class="nav-item"><a class="nav-link" href="https://app.dropshippingscout.com/pricing">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" 
+href="https://app.tsscout.com/pricing">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'affiliate')->first()->slug]) }}">Affiliate</a></li>
 
                             <div class="magicButtons">
@@ -151,13 +152,15 @@
                             <a href="https://app.dropshippingscout.com/login" style="color:white;text-align:center;background-color: #1E3F5B;" class="unique-button">Login</a>
 
                            </div>
-
-                        </ul>
+                   </ul>
                     </div>
                     <!-- Let’s Start Button Start -->
                     <div class="header-btn d-inline-flex">
-                        <a href="https://app.dropshippingscout.com/login">Login</a>
-                        <a href="https://app.dropshippingscout.com/login?popup=1" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 8px; color:white !important; text-align:center">Start $1 Trial</a>
+                        <a 
+href="https://app.tsscout.com/login">Login</a>
+                        <a 
+href="https://app.tsscout.com/login?popup=1" 
+class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 8px; color:white !important; text-align:center">Start $1 Trial</a>
 
                     </div>
                     <!-- Let’s Start Button End -->
