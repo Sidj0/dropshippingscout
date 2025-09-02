@@ -23,7 +23,9 @@
               <h2>Up to 20% Lifetime Recurring Commission!</h2>
               
               <br>
-              <p style="color: #1E3F5B;">Become a part of our journey toward success. Earn up to 20% lifetime recurring commission by promoting a powerful analytical tool designed specifically for dropshippers. Let's grow together and achieve new heights of success!</p>
+              <p style="color: #1E3F5B;">Become a part of our growth journey and unlock the potential of earning up to 20% lifetime recurring commission. By promoting our powerful analytics platform, you’ll not only generate consistent revenue but also empower online businesses to succeed.</p>
+
+              <p style="color: #1E3F5B;">Let’s grow together and reach new heights of success!</p>
                  <br>
               <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;
               border: 1px solid var(--primary-500);
@@ -79,7 +81,7 @@
               
             </div>
             <div class="button-container">
-                <a href="https://app.dropshippingscout.com/pricing">
+                <a href="https://app.tsscout.com/pricing">
                 <button class="btn-default">Start For 1$</button>
                 </a>
           </div>
@@ -143,7 +145,7 @@
                         </div>
                         <div>
                             <h3 class="section-title">Global Reach</h3>
-                            <p class="section-paragraph">Promote SCOUT's analytical tools to a global audience of dropshippers</p>
+                            <p class="section-paragraph">Promote SCOUT’s analytics platform to online entrepreneurs worldwide</p>
                         </div>
                     </div>
                 </div>

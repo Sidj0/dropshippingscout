@@ -17,7 +17,7 @@
 @section('content')
     <div class="company">
                         <h1 style="font-size: 60px;">Our company’s journey story</h1>     
-                        <h5 style="margin-top:20px ;">A Deep Dive into Dropshipping scout’s Analytics Tool</h5>
+                        <h5 style="margin-top:20px ;">A Deep Dive into TS Scout’s Analytics Tool</h5>
 
                     </div>
 
@@ -37,9 +37,9 @@
 
                     <!-- Hero Body Start -->
                     <div class="hero-body">
-                        <p class="wow fadeInUp" data-wow-delay="0.5s">The dropshipping analytics tool offers key benefits such as real-time data insights, enabling businesses to make informed decisions quickly.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.5s">At TS Scout, we’re on a mission to simplify e-commerce success. Our advanced analytics tools provide real-time insights, reveal sales trends, and streamline inventory management, giving you the clarity and control you need to grow.</p>
                         <br>
-                        <p>It also provides tracking of sales trends and inventory management, optimizing the supply chain process. Moreover, the tool offers competitive analysis, helping businesses stay ahead in the market.</p>
+                        <p>We go beyond data by offering powerful competitive analysis, helping online entrepreneurs stay ahead of the curve. With smarter decisions and faster adaptation, TS Scout empowers you to unlock new opportunities and scale your business with confidence.</p>
                     </div>
                     <!-- Hero Body End -->
                 </div>
@@ -85,9 +85,9 @@
                     <!-- Section Title End -->
                     <!-- Hero Body Start -->
                     <div class="hero-body">
-                        <p class="wow fadeInUp" data-wow-delay="0.5s">Are you looking to revolutionize your dropshipping business and take it to the next level? Look no further! Our cutting-edge dropshipping data analysis tool is here to transform the way you do business and help you achieve unparalleled success in the e-commerce world.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.5s">We envision a future where e-commerce entrepreneurs can run their businesses with ease, clarity, and confidence. By providing powerful data-driven tools, we help online sellers simplify operations, uncover new opportunities, and achieve sustainable growth.</p>
                         <br>
-                        <p>These features make it a valuable asset for companies looking to streamline their dropshipping operations and boost efficiency.</p>
+                        <p>Our mission is to empower businesses with insights that streamline decision-making, boost efficiency, and create a competitive edge in the ever-changing digital marketplace.</p>
                     </div>
                     <!-- Hero Body End -->
                 </div>
@@ -101,7 +101,7 @@
 <section class="container my-5">
     <!-- Centered Title and Subtitle -->
     <div class="centered-title text-center mb-4">
-        <h1 style="color: #1E3F5B; font-size: 50px; font-weight: bold;padding-bottom:10px">Benefits of selling your products <br> With us</h1>
+        <h1 style="color: #1E3F5B; font-size: 50px; font-weight: bold;padding-bottom:10px">Benefits of Using Our Tool <br> with us</h1>
         <h5 class="section-subtitle">in virtual space through communication platforms.</h5>
     </div>
     
@@ -114,8 +114,8 @@
                     <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Latest trends on eBay</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Latest eBay Trends</h3>
+                    <p class="section-paragraph">Stay ahead of the market by spotting what’s hot on eBay right now.</p>
                 </div>
             </div>
         </div>
@@ -126,8 +126,8 @@
                     <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Popular dropshipping products</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Top-Selling Products</h3>
+                    <p class="section-paragraph">Discover items with proven demand to maximize your sales potential.</p>
                 </div>
             </div>
         </div>
@@ -138,8 +138,8 @@
                   <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">eBay sellers & niches</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Winning Niches</h3>
+                    <p class="section-paragraph">Identify profitable niches with low competition and high growth.</p>
                 </div>
             </div>
         </div>
@@ -153,8 +153,8 @@
                     <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Competitive advantage</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Your Competitive Edge</h3>
+                    <p class="section-paragraph">Gain insights that help you stand out and beat the competition.</p>
                 </div>
             </div>
         </div>
@@ -165,8 +165,8 @@
                     <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Create titles for your products</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Product Titles That Sell</h3>
+                    <p class="section-paragraph">Create keyword-rich titles that boost visibility and attract buyers.</p>
                 </div>
             </div>
         </div>
@@ -177,8 +177,8 @@
                    <img src="{{asset('./images/stars.svg')}}" alt="">
                 </div>
                 <div>
-                    <h3 class="section-title">Increase sales listing</h3>
-                    <p class="section-paragraph">Use the “Dropshippers Only” filter to find your fellow competitors, identify the unique selling proposition of your product</p>
+                    <h3 class="section-title">Boost Sales Fast</h3>
+                    <p class="section-paragraph">Use the “Use data-driven strategies to increase traffic and grow your revenue quickly.</p>
                 </div>
             </div>
         </div>
