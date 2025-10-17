@@ -230,40 +230,9 @@ class BlogController extends Controller
        // Get all blogs
        $blogs = Blog::orderBy('updated_at', 'desc')->get();
 
-       // Create XML content
-       $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-       $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-
-       // Add blogs index page
-       $xml .= '  <url>' . "\n";
-       $xml .= '    <loc>' . url('/blogs') . '</loc>' . "\n";
-       $xml .= '    <changefreq>daily</changefreq>' . "\n";
-       $xml .= '    <priority>0.8</priority>' . "\n";
-       $xml .= '  </url>' . "\n";
-
-       // Add tutorial page
-       $xml .= '  <url>' . "\n";
-       $xml .= '    <loc>' . url('/tutorial') . '</loc>' . "\n";
-       $xml .= '    <changefreq>daily</changefreq>' . "\n";
-       $xml .= '    <priority>0.8</priority>' . "\n";
-       $xml .= '  </url>' . "\n";
-
-       // Add individual blog posts
-       foreach ($blogs as $blog) {
-           $xml .= '  <url>' . "\n";
-           $xml .= '    <loc>' . url('/blogs/' . $blog->slug) . '</loc>' . "\n";
-           $xml .= '    <lastmod>' . $blog->updated_at->format('Y-m-d\TH:i:s\Z') . '</lastmod>' . "\n";
-           $xml .= '    <changefreq>weekly</changefreq>' . "\n";
-           $xml .= '    <priority>0.6</priority>' . "\n";
-           $xml .= '  </url>' . "\n";
-       }
-
-       $xml .= '</urlset>';
-
-       return response($xml, 200, [
-           'Content-Type' => 'application/xml',
-           'Cache-Control' => 'public, max-age=3600'
-       ]);
+       return response()->view('sitemaps.blog-sitemap', compact('blogs'))
+           ->header('Content-Type', 'application/xml')
+           ->header('Cache-Control', 'public, max-age=3600');
    }
 
 
