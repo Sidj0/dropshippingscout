@@ -13,6 +13,11 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>{{ url('/blogs') }}</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
 
     {{-- Add individual blog posts --}}
     @foreach ($blogs as $blog)
