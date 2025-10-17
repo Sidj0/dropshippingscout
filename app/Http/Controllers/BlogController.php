@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
-    
+
     private function isAdmin()
     {
         return Auth::check() && Auth::user()->is_admin; // Ensure user is authenticated and is an admin
@@ -17,12 +17,12 @@ class BlogController extends Controller
     public function create()
     {
         if (!$this->isAdmin()) {
-            return redirect()->route('Adminlogin')->with('error', 'Access denied.'); 
+            return redirect()->route('Adminlogin')->with('error', 'Access denied.');
         }
-        
+
         return view('blogs.create');
-        
-        
+
+
     }
 
     public function store(Request $request)
@@ -43,12 +43,12 @@ class BlogController extends Controller
             'category' => 'required|string|max:255',
             'content' => 'required|string',
         ]);
-    
+
         if ($validatedData['media_type'] === 'image') {
             // Handle image upload
             if ($request->hasFile('image')) {
                 $validatedData['image'] = $request->file('image')->store('images', 'public');
-                
+
             } else {
                 return back()->withErrors(['image' => 'Image is required if media type is set to image.']);
             }
@@ -61,20 +61,20 @@ class BlogController extends Controller
             $validatedData['image'] = null; // No image for this blog
             $validatedData['video_url'] = $request->input('video_url'); // Set the video URL
         }
-    
+
         // Create a new blog entry
         Blog::create($validatedData);
-        
+
         return redirect()->route('blogs.index')->with('success', 'Blog created successfully.');
     }
-    
-    
-    
+
+
+
 
     public function index()
     {
         if (!$this->isAdmin()) {
-            return redirect()->route('Adminlogin')->with('error', 'Access denied.'); 
+            return redirect()->route('Adminlogin')->with('error', 'Access denied.');
         }
 
         // Retrieve all blogs for display
@@ -85,7 +85,7 @@ class BlogController extends Controller
     public function edit(Blog $blog)
     {
         if (!$this->isAdmin()) {
-            return redirect()->route('Adminlogin')->with('error', 'Access denied.'); 
+            return redirect()->route('Adminlogin')->with('error', 'Access denied.');
         }
         // Return the edit view with the blog data
         return view('blogs.edit', compact('blog'));
@@ -93,9 +93,9 @@ class BlogController extends Controller
 
     public function update(Request $request, $id)
     {
- 
+
         $blog = Blog::findOrFail($id);
-    
+
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'excerpt' => 'required|string',
@@ -111,7 +111,7 @@ class BlogController extends Controller
             'category' => 'required|string|max:255',
             'content' => 'required|string',
         ]);
-    
+
         if ($validatedData['media_type'] === 'image') {
             if ($request->hasFile('image')) {
                 $validatedData['image'] = $request->file('image')->store('images', 'public');
@@ -122,15 +122,15 @@ class BlogController extends Controller
             $validatedData['video_url'] = $request->input('video_url'); // Set the video URL
         }
 
- 
-    
+
+
         // Update the blog entry with the validated data
         $blog->update($validatedData);
-    
+
         return redirect()->route('blogs.show', $blog->slug)->with('success', 'Blog updated successfully.');
     }
-    
-    
+
+
     public function like($id)
     {
        $blog = Blog::findOrFail($id);
@@ -138,7 +138,7 @@ class BlogController extends Controller
        return response()->json(['likes' => $blog->likes]); // Return the updated likes count
      }
 
-    
+
 
     public function destroy(Blog $blog)
     {
@@ -153,15 +153,15 @@ class BlogController extends Controller
         $blogs = Blog::whereNotNull('image')
                  ->whereNull('video_url')->orderBy('created_at', 'desc')
                  ->get();
-        
+
         // Retrieve the page data where 'view_name' equals 'blogs'
         $page = Page::where('view_name', 'blogs')->first();
-    
+
         // Check if the page data exists to avoid errors
         if (!$page) {
             return response()->view('404', [], 404);
         }
-    
+
         // Pass both blogs and page data to the view
         return view('blogs', compact('blogs', 'page'));
     }
@@ -174,28 +174,28 @@ class BlogController extends Controller
                  ->get();
     // Retrieve the page data where 'view_name' equals 'blogs'
     $page = Page::where('view_name', 'blogs')->first();
-                 
+
     // Pass both blogs and page data to the view
     return view('blogs', compact('blogs', 'page'));
    }
 
-    
+
 
    public function show($slug)
    {
        // Find the blog by slug
        $blog = Blog::where('slug', $slug)->first();
-   
+
        // If the blog does not exist, return the custom 404 view
        if (!$blog) {
            return response()->view('404', [], 404);
        }
-   
+
        // Extract headings from the content (as in your original code)
        $dom = new \DOMDocument();
        @$dom->loadHTML($blog->content); // Suppress warnings with @
        $headings = [];
-   
+
        for ($i = 1; $i <= 6; $i++) {
            $tags = $dom->getElementsByTagName('h' . $i);
            foreach ($tags as $tag) {
@@ -206,27 +206,68 @@ class BlogController extends Controller
                ];
            }
        }
-   
+
        $blog->content = $dom->saveHTML();
-   
+
        // Retrieve the page data
        $page = Page::where('view_name', 'blogs')->first();
-   
+
        if (!$page) {
            return response()->view('404', [], 404);
        }
-   
+
        // Related blogs
        $relatedBlogs = Blog::where('category', $blog->category)
                            ->where('id', '!=', $blog->id)
                            ->take(3)
                            ->get();
-   
+
        return view('blog-details', compact('blog', 'headings', 'page', 'relatedBlogs'));
    }
-   
-   
+
+   public function sitemap()
+   {
+       // Get all blogs
+       $blogs = Blog::orderBy('updated_at', 'desc')->get();
+
+       // Create XML content
+       $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+       $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+       // Add blogs index page
+       $xml .= '  <url>' . "\n";
+       $xml .= '    <loc>' . url('/blogs') . '</loc>' . "\n";
+       $xml .= '    <changefreq>daily</changefreq>' . "\n";
+       $xml .= '    <priority>0.8</priority>' . "\n";
+       $xml .= '  </url>' . "\n";
+
+       // Add tutorial page
+       $xml .= '  <url>' . "\n";
+       $xml .= '    <loc>' . url('/tutorial') . '</loc>' . "\n";
+       $xml .= '    <changefreq>daily</changefreq>' . "\n";
+       $xml .= '    <priority>0.8</priority>' . "\n";
+       $xml .= '  </url>' . "\n";
+
+       // Add individual blog posts
+       foreach ($blogs as $blog) {
+           $xml .= '  <url>' . "\n";
+           $xml .= '    <loc>' . url('/blogs/' . $blog->slug) . '</loc>' . "\n";
+           $xml .= '    <lastmod>' . $blog->updated_at->format('Y-m-d\TH:i:s\Z') . '</lastmod>' . "\n";
+           $xml .= '    <changefreq>weekly</changefreq>' . "\n";
+           $xml .= '    <priority>0.6</priority>' . "\n";
+           $xml .= '  </url>' . "\n";
+       }
+
+       $xml .= '</urlset>';
+
+       return response($xml, 200, [
+           'Content-Type' => 'application/xml',
+           'Cache-Control' => 'public, max-age=3600'
+       ]);
+   }
 
 
-    
+
+
+
 }
