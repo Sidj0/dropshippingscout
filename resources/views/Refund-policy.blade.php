@@ -19,12 +19,16 @@
     <div class="container">
         <div class="content">
             <h5 class="privacy1">Refund Policy</h5>
-            <p>
-                At Tsscout, your satisfaction is our priority. You may request a full refund within 14 days of your initial subscription payment by contacting us at <a href="mailto:support-team@tsscout.com">support-team@tsscout.com</a>. After 14 days, payments are non-refundable, but you can cancel anytime to stop future billing. Refunds apply only to the initial subscription and do not cover subsequent billing cycles. <br /> <br />
+            <div class="refund-policy-content">
+                <p class="refund-main-text">
+                    At Tsscout, your satisfaction is our priority. You may request a full refund within <span class="refund-period">14 days</span> of your initial subscription payment by contacting us at <a href="mailto:support-team@tsscout.com" class="refund-email-link">support-team@tsscout.com</a>. After 14 days, payments are non-refundable, but you can cancel anytime to stop future billing. Refunds apply only to the initial subscription and do not cover subsequent billing cycles.
+                </p>
 
-For questions about billing or refunds, please reach out:
-<a href="mailto:support-team@tsscout.com">support-team@tsscout.com</a>
-            </p>
+                <div class="refund-contact-section">
+                    <p class="refund-contact-text">For questions about billing or refunds, please reach out:</p>
+                    <a href="mailto:support-team@tsscout.com" class="refund-contact-email">support-team@tsscout.com</a>
+                </div>
+            </div>
         </div>
     </div>
 
