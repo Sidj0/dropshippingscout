@@ -22,7 +22,7 @@
                                     <li><a href="https://youtube.com/@tsscout" target="_blank"><img src="{{ asset('images/YouTube.svg') }}" alt=""></a></li>
                                     {{-- <li><a href="#"><img src="{{ asset('images/X.svg') }}" alt=""></a></li> --}}
                                     <li><a href="https://www.facebook.com/tsscout" target="_blank"><img src="{{ asset('images/facebook.svg') }}" alt=""></a></li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -84,13 +84,14 @@
                             <!-- Footer Policy Links Start -->
                             <div class="footer-policy-links">
                                 <ul>
+                                    <li><a href="{{ route('pages.show', ['slug' => 'refund-policy']) }}">Refund Policy</a></li>
                                     <li><a href="{{ route('pages.show', ['slug' => 'privacy-policy']) }}">Privacy Policy</a></li>
                                     <li><a href="{{ route('pages.show', ['slug' => 'terms-conditions']) }}">Terms & Conditions</a></li>
                                 </ul>
                             </div>
                             <!-- Footer Policy Links End -->
                         </div>
-                    </div>						
+                    </div>
                 </div>
                 <!-- Copyright Footer End -->
             </div>
