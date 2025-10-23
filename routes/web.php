@@ -31,7 +31,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 // sitemap
 Route::group(['prefix' => 'sitemap'], function () {
-    Route::get('pages-sitemap.xml', [BlogController::class, 'sitemap'])->name('pages.sitemap'); // Pages sitemap
+    Route::get('blog-sitemap.xml', [BlogController::class, 'sitemap'])->name('pages.sitemap'); // Pages sitemap
     Route::get('/sitemap.xml', function() {
     return Response::file(public_path('sitemap.xml'), [
         'Content-Type' => 'application/xml'
