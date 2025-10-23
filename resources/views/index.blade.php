@@ -232,7 +232,7 @@
             </figure>
         </div>
         <div class="post-item-body">
-             <h3><a href="#"> Supplier Scouting</a></h3>
+             <h3><a href="#"> SourceFinder</a></h3>
 
              <p>Effortlessly connect with reliable suppliers, streamlining your sourcing process and enhancing your stock-free online stores of efficiency.</p>
              <a href="{{ route('pages.show', ['slug' => 'suppliers-scouting']) }}" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 50px; display: block; text-align: center; margin: 0 auto; width: fit-content;">Read More</a>
@@ -266,7 +266,7 @@
     <div class="options-container">
         <div class="option selected active" data-option="product-scouting">Product Scouting</div>
         <div class="option" data-option="competitor-monitoring">Competitor Monitoring</div>
-        <div class="option" data-option="supplier-scouting">Supplier Scouting</div>
+        <div class="option" data-option="supplier-scouting">SourceFinder</div>
     </div>
 </div>
 
@@ -419,7 +419,7 @@
                 </div>
             </div>
 
-            <!-- Supplier Scouting Services (Initially Hidden) -->
+            <!-- SourceFinder Services (Initially Hidden) -->
             <div class="col-lg-4 col-md-6 service-column"  data-category="supplier-scouting" style="display:none;">
                 <div class="service-item wow fadeInUp" data-wow-delay="0.25s">
                     <div class="service-content">
@@ -580,21 +580,21 @@
                 </div>
                 <!-- Blog Item End for segment insight -->
 
-                <!-- Blog Item Start for Title Builder -->
+                <!-- Blog Item Start for SmartInsght -->
                 <div class="blog-item wow fadeInUp" data-wow-delay="0.25s" style="display: none;">
                     <div class="post-featured-image">
                         <figure class="image-anime">
-                            <a href="#"><img src="{{asset('./images/P S.jpg')}}" alt="Title Builder"></a>
+                            <a href="#"><img src="{{asset('./images/P S.jpg')}}" alt="SmartInsght"></a>
                         </figure>
                     </div>
                     <div class="post-item-body">
-                        <h2><a href="#">Create Powerful Titles with Our Title Builder</a></h2>
-                        <p>Increase your product's visibility with optimized titles. Our Title Builder tool helps you create compelling titles that attract clicks and boost sales.</p>
+                        <h2><a href="#">Create Powerful Titles with Our SmartInsght</a></h2>
+                        <p>Increase your product's visibility with optimized titles. Our SmartInsght tool helps you create compelling titles that attract clicks and boost sales.</p>
                         <p>Learn the best practices for title optimization, including the use of keywords, formatting, and length to maximize your listing's performance.</p>
                         <a href="#" class="btn-default wow fadeInUp" data-wow-delay="1.25s">Start for $1</a>
                     </div>
                 </div>
-                <!-- Blog Item End for Title Builder -->
+                <!-- Blog Item End for SmartInsght -->
 
                 <!-- Blog Item Start for Best Items -->
                 <div class="blog-item wow fadeInUp" data-wow-delay="0.25s" style="display: none;">

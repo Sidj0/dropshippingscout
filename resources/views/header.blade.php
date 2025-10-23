@@ -38,7 +38,7 @@
 
                                 <h6 style="color: #A5A7AA; font-size: 11px;">Free Tools</h6>
                                 <a href="{{url('ebay-calculator')}}"><h6>Ebay Calculator</h6></a>
-                                <a href="{{url('title-builder')}}"><h6>Title Builder</h6></a>
+                                <a href="{{url('title-builder')}}"><h6>SmartInsght</h6></a>
 
                                     </li>
 <!-- Right Section -->
@@ -143,7 +143,7 @@
                             </li>
                             <!-- Resources Dropdown End -->
 
-                            <li class="nav-item"><a class="nav-link" 
+                            <li class="nav-item"><a class="nav-link"
 href="https://app.tsscout.com/pricing">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('pages.show', ['slug' => $pages->where('view_name', 'affiliate')->first()->slug]) }}">Affiliate</a></li>
 
@@ -157,10 +157,10 @@ border-top-right-radius: 0;border-top-left-radius: 0;" class="unique-button">Log
                     </div>
                     <!-- Let’s Start Button Start -->
                     <div class="header-btn d-inline-flex">
-                        <a 
+                        <a
 href="https://app.tsscout.com/login">Login</a>
-                        <a 
-href="https://app.tsscout.com/login?popup=1" 
+                        <a
+href="https://app.tsscout.com/login?popup=1"
 class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 8px; color:white !important; text-align:center">Start $1 Trial</a>
 
                     </div>

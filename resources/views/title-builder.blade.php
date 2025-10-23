@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-    <div class="header">eBay Title Builder Tool</div>
+    <div class="header">eBay SmartInsght Tool</div>
     <p style="text-align: center;">Delve into the flexibility and customization our services offer to help your product succeed.</p>
 
     <div class="search-container">

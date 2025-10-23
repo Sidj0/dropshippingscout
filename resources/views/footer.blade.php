@@ -48,7 +48,7 @@
                                 <ul>
                                     <li><a href="{{ route('pages.show', ['slug' => 'product-scouting']) }}">Product Scouting</a></li>
                                     <li><a href="{{ route('pages.show', ['slug' => 'competitor-monitoring']) }}">Competitor Monitoring</a></li>
-                                    <li><a href="{{ route('pages.show', ['slug' => 'suppliers-scouting']) }}">Supplier Scouting</a></li>
+                                    <li><a href="{{ route('pages.show', ['slug' => 'suppliers-scouting']) }}">SourceFinder</a></li>
                                  </ul>
                             </div>
                             <!-- Footer Links End -->

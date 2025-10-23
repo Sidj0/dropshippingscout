@@ -15,7 +15,7 @@
     <!-- Custom CSS for this view -->
     <link href="{{asset('css/product-scouting.css')}}" rel="stylesheet">
 @endsection
- 
+
 @section('content')
 
     <div class="container">
@@ -23,11 +23,11 @@
         <h5  class="title" style="margin-top:20px ; font-size: 20px; color: #1E3F5B; font-weight: 550;  ">Actively searching for new and innovative products that have the potential to disrupt the market.</h5>
         <br>
 
-       
+
           <div class="con-left">
             <div class="left-column">
               <h2>Dashboard</h2>
-              
+
               <br>
               <h5 style="color: #1E3F5B; font-size: 16px; font-weight: 550;line-height: 1.6em;">By analyzing search volume, sales data, and social media mentions, <br>
                 these tools can pinpoint products that are <br>
@@ -37,12 +37,12 @@
                   <button class="btn-default" style="background: var(--primary-500) 0% 0% no-repeat padding-box;border: 1px solid var(--primary-500);color: #1E3F5B;background: #AFB9FA 0% 0% no-repeat padding-box;border: 1px solid #AFB9FA; border-radius: 8px; opacity: 1;"   >Read More</button>
                  </a>
             </div>
-            
+
             <div class="right-column">
               <img src="{{asset('./images/P S.jpg')}}" alt="Example Image">
             </div>
           </div>
-        
+
           <section class="unique-section">
             <div class="unique-title-container">
                 <h2 class="unique-title" style="font-size: 52px; font-weight: bold;">Product Research</h2>
@@ -63,14 +63,14 @@
                 <div class="unique-column">
                     <div class="unique-rectangle">
                          <img src="{{asset('images/ProductScouting-Shopify.jpeg')}}" alt="Main Image" class="unique-main-image">
-                        <p class="unique-text">scouting efforts can lead to increased revenue 
+                        <p class="unique-text">scouting efforts can lead to increased revenue
                           streams and business growth.</p>
                           <a href="{{ route('tools-product.show', ['slug' => 'shopify-insight']) }}">
                              <button class="unique-read-more">Read More</button>
                           </a>
                     </div>
                 </div>
-             
+
             </div>
         </section>
 
@@ -86,7 +86,7 @@
             </a>
           </div>
         </div>
-        
+
    <!-- Latest News Section Start -->
 <div class="latest-news" style="max-width: 100%; margin: 40px auto;">
     <div>
@@ -123,12 +123,12 @@
 <!-- Category Research END -->
 
 
-<!-- Title Builder -->
+<!-- SmartInsght -->
 <h2 class="title" style="margin-top:0px;">TitleMaster</h2>
 <h5 class="title" style="margin-top:20px; font-size: 20px; color: #1E3F5B; font-weight: 550;">Craft compelling product titles that attract more customers and boost your sales.</h5>
 <br>
 <div class="con-left">
-  <div class="left-column">              
+  <div class="left-column">
     <br>
     <h5 style="color: #1E3F5B; font-size: 16px; font-weight: 550; line-height: 1.6em;">
       Maximize Your Reach and Revenue with SEO-Friendly Titles
@@ -142,7 +142,7 @@
     <img src="{{asset('./images/title-builder.jpg')}}" alt="Example Image">
   </div>
 </div>
- 
+
 
     </div>
  </div>

@@ -111,7 +111,7 @@ Route::delete('/admin/tools/{tool}', [toolsController::class, 'destroy'])->name(
 
 // ebay calculator
 Route::post('/calculate-fees', [EbayCalculatorController::class, 'calculate']);
-// title builder
+// SmartInsght
 Route::post('/search-title', [TitleBuilderController::class, 'searchTitle'])->name('search-title');
 
 
