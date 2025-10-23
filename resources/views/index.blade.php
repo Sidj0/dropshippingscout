@@ -564,21 +564,21 @@
                 </div>
                 <!-- Blog Item End for Competitor Research -->
 
-                <!-- Blog Item Start for Category Research -->
+                <!-- Blog Item Start for segment insight -->
                 <div class="blog-item wow fadeInUp" data-wow-delay="0.25s" style="display: none;">
                     <div class="post-featured-image">
                         <figure class="image-anime">
-                            <a href="#"><img src="{{asset('./images/P S.jpg')}}" alt="Category Research"></a>
+                            <a href="#"><img src="{{asset('./images/P S.jpg')}}" alt="segment insight"></a>
                         </figure>
                     </div>
                     <div class="post-item-body">
-                        <h2><a href="#">Master Category Research for Better Product Placement</a></h2>
+                        <h2><a href="#">Master segment insight for Better Product Placement</a></h2>
                         <p>Identify the most profitable categories for your products. Our tools help you uncover hidden gems within various categories, ensuring your products are placed where they'll perform best.</p>
                         <p>Analyze category trends and discover niches with high demand and low competition to maximize your sales.</p>
                         <a href="#" class="btn-default wow fadeInUp" data-wow-delay="1.25s">Start for $1</a>
                     </div>
                 </div>
-                <!-- Blog Item End for Category Research -->
+                <!-- Blog Item End for segment insight -->
 
                 <!-- Blog Item Start for Title Builder -->
                 <div class="blog-item wow fadeInUp" data-wow-delay="0.25s" style="display: none;">
