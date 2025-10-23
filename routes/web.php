@@ -30,10 +30,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 // sitemap
-Route::get('/sitemap.xml', function() {
+Route::group(['prefix' => 'sitemap'], function () {
+    Route::get('pages-sitemap.xml', [BlogController::class, 'sitemap'])->name('pages.sitemap'); // Pages sitemap
+    Route::get('/sitemap.xml', function() {
     return Response::file(public_path('sitemap.xml'), [
         'Content-Type' => 'application/xml'
     ]);
+});
+
 });
 
 
@@ -60,7 +64,6 @@ Route::get('/pricing', function () {
 
 // Blog Routes
 // User routes
-Route::get('blog-sitemap.xml', [BlogController::class, 'sitemap'])->name('blogs.sitemap'); // Blog sitemap
 Route::get('/blogs', [BlogController::class, 'userIndex'])->name('blogs.userIndex'); // Show all blogs
 Route::get('/tutorial', [BlogController::class, 'userTutorial'])->name('blogs.userTutorial'); // Show all blogs
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
