@@ -580,21 +580,21 @@
                 </div>
                 <!-- Blog Item End for segment insight -->
 
-                <!-- Blog Item Start for SmartInsght -->
+                <!-- Blog Item Start for SmartTitles -->
                 <div class="blog-item wow fadeInUp" data-wow-delay="0.25s" style="display: none;">
                     <div class="post-featured-image">
                         <figure class="image-anime">
-                            <a href="#"><img src="{{asset('./images/P S.jpg')}}" alt="SmartInsght"></a>
+                            <a href="#"><img src="{{asset('./images/P S.jpg')}}" alt="SmartTitles"></a>
                         </figure>
                     </div>
                     <div class="post-item-body">
-                        <h2><a href="#">Create Powerful Titles with Our SmartInsght</a></h2>
-                        <p>Increase your product's visibility with optimized titles. Our SmartInsght tool helps you create compelling titles that attract clicks and boost sales.</p>
+                        <h2><a href="#">Create Powerful Titles with Our SmartTitles</a></h2>
+                        <p>Increase your product's visibility with optimized titles. Our SmartTitles tool helps you create compelling titles that attract clicks and boost sales.</p>
                         <p>Learn the best practices for title optimization, including the use of keywords, formatting, and length to maximize your listing's performance.</p>
                         <a href="#" class="btn-default wow fadeInUp" data-wow-delay="1.25s">Start for $1</a>
                     </div>
                 </div>
-                <!-- Blog Item End for SmartInsght -->
+                <!-- Blog Item End for SmartTitles -->
 
                 <!-- Blog Item Start for Best Items -->
                 <div class="blog-item wow fadeInUp" data-wow-delay="0.25s" style="display: none;">

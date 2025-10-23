@@ -38,7 +38,7 @@
 
                                 <h6 style="color: #A5A7AA; font-size: 11px;">Free Tools</h6>
                                 <a href="{{url('ebay-calculator')}}"><h6>Ebay Calculator</h6></a>
-                                <a href="{{url('title-builder')}}"><h6>SmartInsght</h6></a>
+                                <a href="{{url('title-builder')}}"><h6>SmartTitles</h6></a>
 
                                     </li>
 <!-- Right Section -->
