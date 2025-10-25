@@ -35,8 +35,9 @@
                                     <span class="fa fa-eye"></span>
                                     {{ $tool->title }}
                                 </a>
-                                <br>
-                                <span class="text-muted">Slug:</span> {{ $tool->slug }}
+                                <div class="text-end">
+                                    <span class="text-muted">Slug:</span> {{ $tool->slug }}
+                                </div>
                             </td>
                             <td>{{ $tool->created_at->format('Y-m-d') }}</td>
                             <td>
