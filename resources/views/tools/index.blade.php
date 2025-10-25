@@ -17,7 +17,6 @@
                     <tr>
                         <th>#</th>
                         <th>Title</th>
-                        <th>Slug</th>
                         <th>Created At</th>
                         <th>Actions</th>
                     </tr>
@@ -36,8 +35,9 @@
                                     <span class="fa fa-eye"></span>
                                     {{ $tool->title }}
                                 </a>
+                                <br>
+                                <span class="text-muted">Slug:</span> {{ $tool->slug }}
                             </td>
-                            <td>{{ $tool->slug }}</td>
                             <td>{{ $tool->created_at->format('Y-m-d') }}</td>
                             <td>
                                 <!-- Button to edit the tool -->
