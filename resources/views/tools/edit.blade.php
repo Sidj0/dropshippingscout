@@ -68,6 +68,13 @@
             <label for="image_{{ $i }}" class="form-label">Image {{ $i }}:</label>
             <input type="file" name="image_{{ $i }}" id="image_{{ $i }}" class="form-control-file">
             @if ($tool['image_'.$i])
+                <div class="row">
+                    <div class="col-lg-2 col-md-3">
+                        <a href="{{ asset('storage/'.$tool['image_'.$i]) }}" target="_blank">
+                            <img src="{{ asset('storage/'.$tool['image_'.$i]) }}" class="img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
                 <small class="text-muted">Current Image: {{ $tool['image_'.$i] }}</small>
             @endif
         </div>
