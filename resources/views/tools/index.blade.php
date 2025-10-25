@@ -26,17 +26,17 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>
-                                <a href="{{ url("product-scouting/{$tool->slug}") }}"
-                                    class="btn btn-sm btn-secondary mr-2"
-                                    target="_blank">
-                                    <span class="fa fa-link"></span>
-                                </a>
                                 <a href="#" data-toggle="modal" data-target="#toolModal{{ $tool->id }}">
                                     <span class="fa fa-eye"></span>
                                     {{ $tool->title }}
                                 </a>
                                 <div class="text-right">
-                                    <span class="text-muted">Slug:</span> {{ $tool->slug }}
+                                    <a href="{{ url("product-scouting/{$tool->slug}") }}"
+                                        class="btn btn-sm btn-secondary mr-2"
+                                        target="_blank">
+                                        <span class="fa fa-link"></span>
+                                        {{ $tool->slug }}
+                                    </a>
                                 </div>
                             </td>
                             <td>{{ $tool->created_at->format('Y-m-d') }}</td>
@@ -44,13 +44,13 @@
                                 <!-- Button to edit the tool -->
 
                                 <div class="btn-group">
-                                    <a href="{{ route('tools.edit', $tool->id) }}" class="btn btn-warning">
+                                    <a href="{{ route('tools.edit', $tool->id) }}" class="btn btn-warning btn-sm">
                                         <span class="fa fa-edit"></span>
                                         Edit
                                     </a>
 
 
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModal{{ $tool->id }}">
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delModal{{ $tool->id }}">
                                         <span class="fa fa-trash"></span>
                                         Delete
                                     </button>
