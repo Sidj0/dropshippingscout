@@ -27,6 +27,11 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>
+                                <a href="{{ url($tool->slug) }}"
+                                    class="btn btn-sm btn-secondary mr-2"
+                                    target="_blank">
+                                    <span class="fa fa-link"></span>
+                                </a>
                                 <a href="#" data-toggle="modal" data-target="#toolModal{{ $tool->id }}">
                                     <span class="fa fa-eye"></span>
                                     {{ $tool->title }}
