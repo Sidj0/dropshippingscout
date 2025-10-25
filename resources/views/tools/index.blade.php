@@ -27,7 +27,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>
-                                <a href="{{ url($tool->slug) }}"
+                                <a href="{{ url("product-scouting/{$tool->slug}") }}"
                                     class="btn btn-sm btn-secondary mr-2"
                                     target="_blank">
                                     <span class="fa fa-link"></span>
