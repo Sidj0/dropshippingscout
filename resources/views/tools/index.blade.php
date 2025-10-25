@@ -35,20 +35,23 @@
                                     <span class="fa fa-eye"></span>
                                     {{ $tool->title }}
                                 </a>
-                                <div class="text-end">
+                                <div class="text-right">
                                     <span class="text-muted">Slug:</span> {{ $tool->slug }}
                                 </div>
                             </td>
                             <td>{{ $tool->created_at->format('Y-m-d') }}</td>
                             <td>
                                 <!-- Button to edit the tool -->
-                                <a href="{{ route('tools.edit', $tool->id) }}" class="btn btn-warning">Edit</a>
+
+                                <div class="btn-group">
+                                    <a href="{{ route('tools.edit', $tool->id) }}" class="btn btn-warning">Edit</a>
 
 
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModal{{ $tool->id }}">
-                                    <span class="fa fa-trash"></span>
-                                    Delete
-                                </button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModal{{ $tool->id }}">
+                                        <span class="fa fa-trash"></span>
+                                        Delete
+                                    </button>
+                                </div>
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="toolModal{{ $tool->id }}" tabindex="-1" role="dialog" aria-labelledby="toolModalLabel{{ $tool->id }}" aria-hidden="true">
