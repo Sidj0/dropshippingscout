@@ -8,7 +8,7 @@
 
 @section('og_title', $page->content_header)
 @section('og_description', $page->content_subheader)
-@section('og_image', 'https://dropshippingscout.com/storage/app/public/' . $page->image_1)
+@section('og_image', 'https://tsscout.com/storage/app/public/' . $page->image_1)
 
 
 
@@ -32,7 +32,7 @@
       <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_1}}</p>
       <br>
-      <a href="{{ url("/") }}/pricing">
+      <a href="https://app.dropshippingscout.com/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
       <p style="color: #1E3F5B; font-size: 13px; font-weight: 550; padding-top: 10px; width: max-content;">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="right-column">
-      <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_1'] }}" alt="Example Image">
+      <img src="{{ 'https://tsscout.com/storage/app/public/' . $page['image_1'] }}" alt="Example Image">
     </div>
   </div>
 @endif
@@ -52,7 +52,7 @@
 @if (!empty($page['image_2']))
   <div class="con-left">
     <div class="right-column">
-      <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_2'] }}" alt="Example Image">
+      <img src="{{ 'https://tsscout.com/storage/app/public/' . $page['image_2'] }}" alt="Example Image">
     </div>
 
     <div class="left-column">
@@ -62,7 +62,7 @@
         {{$page->paragraph_2}}
       </p>
       <br>
-      <a href="{{ url("/") }}/pricing">
+      <a href="https://app.dropshippingscout.com/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
@@ -76,13 +76,13 @@
       <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
       <br>
-      <a href="{{ url("/") }}/pricing">
+      <a href="https://app.dropshippingscout.com/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
 
     <div class="right-column">
-      <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_3'] }}" alt="Example Image">
+      <img src="{{ 'https://tsscout.com/storage/app/public/' . $page['image_3'] }}" alt="Example Image">
     </div>
   </div>
 @endif
@@ -92,7 +92,7 @@
 @if (!empty($page['image_4']))
   <div class="con-left">
     <div class="right-column">
-      <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_4'] }}" alt="Example Image">
+      <img src="{{ 'https://tsscout.com/storage/app/public/' . $page['image_4'] }}" alt="Example Image">
     </div>
 
     <div class="left-column">
@@ -102,7 +102,7 @@
         {{$page->paragraph_4}}
       </p>
       <br>
-      <a href="{{ url("/") }}/pricing">
+      <a href="https://app.dropshippingscout.com/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
@@ -116,40 +116,40 @@
 <div class="mobile-view">
   @if (!empty($page['image_1']))
     <div class="mobile-section">
-    <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_1'] }}" alt="Example Image">
+    <img src="{{ 'https://tsscout.com/storage/app/public/' . $page['image_1'] }}" alt="Example Image">
       <h2>{{$page->header_1}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_1}}</p>
-      <a href="{{ url("/") }}/pricing">
+      <a href="https://app.dropshippingscout.com/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
   @endif
   @if (!empty($page['image_2']))
     <div class="mobile-section">
-    <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_2'] }}" alt="Example Image">
+    <img src="{{ 'https://tsscout.com/storage/app/public/' . $page['image_2'] }}" alt="Example Image">
       <h2>{{$page->header_2}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_2}}</p>
-      <a href="{{ url("/") }}/pricing">
+      <a href="https://app.dropshippingscout.com/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
   @endif
   @if (!empty($page['image_3']))
     <div class="mobile-section">
-    <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_3'] }}" alt="Example Image">
+    <img src="{{ 'https://tsscout.com/storage/app/public/' . $page['image_3'] }}" alt="Example Image">
       <h2>{{$page->header_3}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
-      <a href="{{ url("/") }}/pricing">
+      <a href="https://app.dropshippingscout.com/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
   @endif
   @if (!empty($page['image_4']))
     <div class="mobile-section">
-    <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_4'] }}" alt="Example Image">
+    <img src="{{ 'https://tsscout.com/storage/app/public/' . $page['image_4'] }}" alt="Example Image">
       <h2>{{$page->header_4}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_4}}</p>
-      <a href="{{ url("/") }}/pricing">
+      <a href="https://app.dropshippingscout.com/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
@@ -212,7 +212,7 @@
         their offerings and pricing.</h2>
   </div>
   <div class="button-container">
-    <a href="{{ url("/") }}/pricing">
+    <a href="https://app.dropshippingscout.com/pricing">
       <button class="btn-default">Start for $1 Trial</button>
     </a>
 </div>

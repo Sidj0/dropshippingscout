@@ -40,7 +40,7 @@
     background-color: #f7f9fc;
     color: #1e3f5b;
 }
-        
+
         .container {
             width: 80%;
             margin: auto;
@@ -91,7 +91,7 @@
             text-align: center;
             border-radius: 8%;
         }
-       
+
 
         /* Responsive Design */
         @media (max-width: 1024px) {
@@ -194,11 +194,11 @@
             <div>
                 <div><strong>Affiliate Status:</strong> <span class="active-status">Active</span></div>
                 <div><strong>Affiliate ID:</strong> 4326789272</div>
-                <div><strong>Referral Link:</strong> <a href="https://dropshippingscout.com/Registration?referrerid=52605" target="_blank">https://dropshippingscout.com/Registration?referrerid=52605</a></div>
+                <div><strong>Referral Link:</strong> <a href="https://tsscout.com/Registration?referrerid=52605" target="_blank">https://tsscout.com/Registration?referrerid=52605</a></div>
             </div>
-            
+
         </div>
-        
+
         <div class="tabs">
             <div class="tab active" onclick="showSection('earnings')">Earnings</div>
             <div class="tab" onclick="showSection('referrals-analytics')">Referrals Analytics</div>
@@ -255,7 +255,7 @@
                     <p>50%</p>
                 </div>
             </div>
- 
+
         </div>
 
     <div class="content marketing-materials hidden">
@@ -346,15 +346,15 @@
             document.querySelectorAll('.content').forEach(section => {
                 section.classList.add('hidden');
             });
-    
+
             // Show the selected section
             document.querySelector(`.${sectionClass}`).classList.remove('hidden');
-    
+
             // Remove 'active' class from all tabs
             document.querySelectorAll('.tab').forEach(tab => {
                 tab.classList.remove('active');
             });
-    
+
             // Add 'active' class to the selected tab
             document.querySelector(`.tab[onclick="showSection('${sectionClass}')"]`).classList.add('active');
         }

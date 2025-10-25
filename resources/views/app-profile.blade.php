@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
- 
+
 <!-- Contact Us Section -->
 <div class="contact-us">
     <div class="container">
@@ -32,8 +32,8 @@
                         </div>
                     </div>
                 </div>
-                
-            
+
+
                 <div class="contact-section">
                     <div class="contact-item">
                         <span class="contact-label">Email:</span>
@@ -44,14 +44,14 @@
                         <span class="contact-value">+1 234 567 8901</span>
                     </div>
                 </div>
-                
+
             </div>
-            
+
             <div class="col-lg-12">
 
                 <div class="contact-form-box col-lg-12 ">
 
-                    
+
 
 
    <!-- tabs -->
@@ -69,7 +69,7 @@
                     <div class="contact-form col-lg-5 tab-content active"  id="profile" >
                         <form id="contactForm" action="#" method="POST" data-toggle="validator">
                             <div class="row">
- 
+
 <!-- Full Name -->
 <div class="form-group col-md-12 mb-4 position-relative">
     <label>Full Name</label>
@@ -125,11 +125,11 @@
                                 </div>
                             </div>
 
-                            
+
                         </form>
 
-                        
-                       
+
+
                     </div>
                     <!-- Contact Form End -->
 
@@ -143,7 +143,7 @@
                                     <button id="yearly-btn" class="toggle-btn-option">Yearly</button>
                                 </div>
                             </div>
-                            
+
                             <div class="plans">
                                 <div class="plan-option">
                                     <div class="left-side">
@@ -158,8 +158,8 @@
                                         <span class="price">$24.99</span>
                                     </div>
                                 </div>
-                                
-                                
+
+
                                 <div class="plan-option">
                                     <div class="left-side">
                                         <input type="radio" name="plan" id="basic-plan">
@@ -187,16 +187,16 @@
                                         <span class="price">$74.99</span>
                                     </div>
                                 </div>
-                                
-                                
+
+
                                 <div class="unsubscribe-container">
                                     <p>To unsubscribe from all plans</p>
                                     <button class="unsubscribe-button">Unsubscribe</button>
                                 </div>
-                                
+
                             </div>
                         </div>
-                    
+
                         <!-- Payment Method Section -->
                         <div class="payment-method-section">
                             <div class="title-row">
@@ -206,7 +206,7 @@
                                     <button id="paypal-btn" class="toggle-btn-option">Paypal</button>
                                 </div>
                             </div>
-                    
+
                             <div class="payment-options">
                                 <div class="payment-option">
                                     <div class="left-side">
@@ -215,7 +215,7 @@
                                     </div>
                                     <img src="{{asset('images/visa.png')}}" style="width: 50px"/>
                                 </div>
-                                
+
                                 <div class="payment-option">
                                     <div class="left-side">
                                         <input type="radio" name="payment-method" id="visa-option">
@@ -223,7 +223,7 @@
                                     </div>
                                     <img src="{{asset('images/master-card.png')}}" style="width: 50px" />
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -273,16 +273,16 @@
                 <button type="submit" class="new-card-save-btn">Save Changes</button>
             </div>
         </div>
-        
-        
+
+
     </div>
 </div>
 
 
                     </div>
-                    
+
                 <!-- Security Settings -->
-                 
+
                 <div class="contact-form col-lg-5 security-settings tab-content" id="security"  >
                     <form id="contactForm" action="#" method="POST" data-toggle="validator">
                         <div class="row">
@@ -309,8 +309,8 @@
     </div>
     <div class="help-block with-errors"></div>
     </div>
- 
- 
+
+
                             <!-- Submit Button -->
                             <div class="col-md-12">
                                 <button type="submit" class="btn-default">Create Password</button>
@@ -325,7 +325,7 @@
                 <!-- Support & Resources -->
                 <div class="contact-form col-lg-6 support-resources tab-content" id="support"  >
                     <form id="contactForm" action="#" method="POST" data-toggle="validator">
-                        <div class="row">                  
+                        <div class="row">
                 <!-- Email -->
 <div class="form-group col-md-12 mb-4 position-relative">
     <p style="font-size: 12px;
@@ -360,18 +360,18 @@
                                     <div id="msgSubmit" class="h3 text-left hidden"></div>
                                 </div>
                                 <div class="col-md-12 FAQ mt-4" >
-                                    <img src="{{asset('images/question-mark.png')}}"  alt="FAQ Icon" style="width:38px" /> You will find all the answers by visiting the  
-                                    <a href="https://dropshippingscout.com/faqs"> FAQ</a> or watch 
-                                    <a href="https://dropshippingscout.com/tutorial"> Tutorials</a>
+                                    <img src="{{asset('images/question-mark.png')}}"  alt="FAQ Icon" style="width:38px" /> You will find all the answers by visiting the
+                                    <a href="https://tsscout.com/faqs"> FAQ</a> or watch
+                                    <a href="https://tsscout.com/tutorial"> Tutorials</a>
                                 </div>
                         </div>
                     </form>
-                </div>               
+                </div>
 
                 <!-- End of support & resources -->
-                
 
-                </div>             
+
+                </div>
 </div>
 </div>
 </div>
@@ -391,10 +391,10 @@
                 tabs.forEach(t => t.classList.remove('active'));
                 // Add active class to the clicked tab
                 tab.classList.add('active');
-                
+
                 // Hide all tab contents
                 tabContents.forEach(content => content.classList.remove('active'));
-                
+
                 // Show the corresponding tab content
                 const target = document.querySelector(tab.getAttribute('data-target'));
                 if (target) {
@@ -450,6 +450,6 @@ paypalBtn.addEventListener('click', function() {
         }
     });
 </script>
- 
+
     <!-- clients testimonials Section End -->
 @endsection

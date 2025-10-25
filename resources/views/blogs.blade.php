@@ -49,7 +49,7 @@
                                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{ \Str::after($blog->video_url, 'v=') }}" frameborder="0" allowfullscreen></iframe>
                                 @else
                                     <a href="{{ route('blogs.show', $blog->slug) }}">
-                                        <img src="{{ 'https://dropshippingscout.com/storage/app/public/' .$blog->image }}" alt="{{ $blog->title }}">
+                                        <img src="{{ 'https://tsscout.com/storage/app/public/' .$blog->image }}" alt="{{ $blog->title }}">
                                     </a>
                                 @endif
                             </figure>
