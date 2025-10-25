@@ -101,7 +101,12 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                <button type="button" class="btn btn-danger" onclick="event.preventDefault(); this.closest('form').submit();">Delete</button>
+                                                 <!-- Optionally, you can add a delete button as well -->
+                                                <form action="{{ route('tools.destroy', $tool->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
