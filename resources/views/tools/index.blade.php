@@ -15,7 +15,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th style="width:1em" class="text-center">#</th>
                         <th>Title</th>
                         <th>Created At</th>
                         <th>Actions</th>
@@ -30,7 +30,7 @@
                                     <span class="fa fa-eye"></span>
                                     {{ $tool->title }}
                                 </a>
-                                <div class="text-right">
+                                <div class="float-right">
                                     <a href="{{ url("product-scouting/{$tool->slug}") }}"
                                         class="btn btn-sm btn-secondary mr-2"
                                         target="_blank">
