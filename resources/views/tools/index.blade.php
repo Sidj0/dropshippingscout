@@ -33,7 +33,6 @@
                                 <!-- Button to edit the tool -->
                                 <a href="{{ route('tools.edit', $tool->id) }}" class="btn btn-warning">Edit</a>
 
-                                <a href="{{ route('tools.show', $tool->id) }}" class="btn btn-info">View</a>
                                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#toolModal{{ $tool->id }}">
                                     View Modal
                                 </button>
