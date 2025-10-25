@@ -71,7 +71,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-3">
                         <a href="{{ asset('storage/'.$tool['image_'.$i]) }}" target="_blank">
-                            <img src="{{ asset('storage/'.$tool['image_'.$i]) }}" class="img-fluid" alt="">
+                            <img src="{{ asset('storage/'.$tool['image_'.$i]) }}" class="mt-3 img-fluid img-thumbnail" alt="">
                         </a>
                     </div>
                 </div>
