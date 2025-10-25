@@ -44,7 +44,10 @@
                                 <!-- Button to edit the tool -->
 
                                 <div class="btn-group">
-                                    <a href="{{ route('tools.edit', $tool->id) }}" class="btn btn-warning">Edit</a>
+                                    <a href="{{ route('tools.edit', $tool->id) }}" class="btn btn-warning">
+                                        <span class="fa fa-edit"></span>
+                                        Edit
+                                    </a>
 
 
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModal{{ $tool->id }}">
