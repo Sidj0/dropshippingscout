@@ -26,20 +26,22 @@
                     @foreach ($tools as $tool)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $tool->title }}</td>
+                            <td>
+                                <a href="#" data-toggle="modal" data-target="#toolModal{{ $tool->id }}">
+                                    <span class="fa fa-eye"></span>
+                                    {{ $tool->title }}
+                                </a>
+                            </td>
                             <td>{{ $tool->slug }}</td>
                             <td>{{ $tool->created_at->format('Y-m-d') }}</td>
                             <td>
                                 <!-- Button to edit the tool -->
                                 <a href="{{ route('tools.edit', $tool->id) }}" class="btn btn-warning">Edit</a>
 
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#toolModal{{ $tool->id }}">
-                                    View Modal
-                                </button>
 
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModal{{ $tool->id }}">
                                     <span class="fa fa-trash"></span>
-                                    Delete Modal
+                                    Delete
                                 </button>
 
                                 <!-- Modal -->
@@ -112,12 +114,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Optionally, you can add a delete button as well -->
-                                <form action="{{ route('tools.destroy', $tool->id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
+
                             </td>
                         </tr>
                     @endforeach
