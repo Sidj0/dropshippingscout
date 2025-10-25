@@ -10,7 +10,7 @@
 @section('og_description', $page->content_subheader)
 @section('og_image', 'https://dropshippingscout.com/storage/app/public/' . $page->image_1)
 
- 
+
 
 @section('styles')
     <!-- Custom CSS for this view -->
@@ -32,7 +32,7 @@
       <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_1}}</p>
       <br>
-      <a href="https://app.dropshippingscout.com/pricing">
+      <a href="{{ url("/") }}/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
       <p style="color: #1E3F5B; font-size: 13px; font-weight: 550; padding-top: 10px; width: max-content;">
@@ -40,7 +40,7 @@
         Trusted by 200.000 entrepreneurs like you
       </p>
     </div>
-    
+
     <div class="right-column">
       <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_1'] }}" alt="Example Image">
     </div>
@@ -62,7 +62,7 @@
         {{$page->paragraph_2}}
       </p>
       <br>
-      <a href="https://app.dropshippingscout.com/pricing">
+      <a href="{{ url("/") }}/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
@@ -76,11 +76,11 @@
       <br>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
       <br>
-      <a href="https://app.dropshippingscout.com/pricing">
+      <a href="{{ url("/") }}/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
-    
+
     <div class="right-column">
       <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_3'] }}" alt="Example Image">
     </div>
@@ -102,7 +102,7 @@
         {{$page->paragraph_4}}
       </p>
       <br>
-      <a href="https://app.dropshippingscout.com/pricing">
+      <a href="{{ url("/") }}/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
@@ -119,7 +119,7 @@
     <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_1'] }}" alt="Example Image">
       <h2>{{$page->header_1}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_1}}</p>
-      <a href="https://app.dropshippingscout.com/pricing">
+      <a href="{{ url("/") }}/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
@@ -129,7 +129,7 @@
     <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_2'] }}" alt="Example Image">
       <h2>{{$page->header_2}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_2}}</p>
-      <a href="https://app.dropshippingscout.com/pricing">
+      <a href="{{ url("/") }}/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
@@ -139,7 +139,7 @@
     <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_3'] }}" alt="Example Image">
       <h2>{{$page->header_3}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_3}}</p>
-      <a href="https://app.dropshippingscout.com/pricing">
+      <a href="{{ url("/") }}/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
@@ -149,7 +149,7 @@
     <img src="{{ 'https://dropshippingscout.com/storage/app/public/' . $page['image_4'] }}" alt="Example Image">
       <h2>{{$page->header_4}}</h2>
       <p style="color: #1E3F5B; font-size: 16px; font-weight: 400;">{{$page->paragraph_4}}</p>
-      <a href="https://app.dropshippingscout.com/pricing">
+      <a href="{{ url("/") }}/pricing">
         <button class="btn-default">start for $1 Trial</button>
       </a>
     </div>
@@ -164,7 +164,7 @@
           <span style="color:#3545D6;">F</span>AQ
       </h2>
       <p style="color: #1E3F5B;">Helpful resource for users to find quick answers</p>
-  
+
   </div>
 
 <!-- FAQs Page Start -->
@@ -204,7 +204,7 @@
 </div>
     </div>
 
- 
+
  <!-- Latest News Section Start -->
  <div class="latest-news" style="max-width: 1200px;; margin: 40px auto;">
   <div>
@@ -212,7 +212,7 @@
         their offerings and pricing.</h2>
   </div>
   <div class="button-container">
-    <a href="https://app.dropshippingscout.com/pricing">
+    <a href="{{ url("/") }}/pricing">
       <button class="btn-default">Start for $1 Trial</button>
     </a>
 </div>
