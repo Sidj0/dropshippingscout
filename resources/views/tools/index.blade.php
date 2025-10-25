@@ -37,6 +37,11 @@
                                     View Modal
                                 </button>
 
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delModal{{ $tool->id }}">
+                                    <span class="fa fa-trash"></span>
+                                    Delete Modal
+                                </button>
+
                                 <!-- Modal -->
                                 <div class="modal fade" id="toolModal{{ $tool->id }}" tabindex="-1" role="dialog" aria-labelledby="toolModalLabel{{ $tool->id }}" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
@@ -76,6 +81,27 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Delete Modal -->
+                                <div class="modal fade" id="delModal{{ $tool->id }}" tabindex="-1" role="dialog" aria-labelledby="delModalLabel{{ $tool->id }}" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="delModalLabel{{ $tool->id }}">Confirm Deletion</h5>
+                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Are you sure you want to delete this tool?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-danger" onclick="event.preventDefault(); this.closest('form').submit();">Delete</button>
                                             </div>
                                         </div>
                                     </div>
