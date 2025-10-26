@@ -200,8 +200,7 @@ Our subscription-based analytics tool helps online sellers on Amazon, eBay, Walm
         </div>
         <div class="post-item-body">
              <h3><a href="#">Product Scouting</a></h3>
-            <p>Maximize your profits by uncovering high-demand products with our advanced tools, tailored for successful inventory-free selling.
-            </p>
+            <p>Maximize your profits by uncovering high-demand products with our advanced tools, tailored for successful inventory-free selling.</p>
             <a href="{{ route('pages.show', ['slug' => 'product-scouting']) }}" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 50px; display: block; text-align: center; margin: 0 auto; width: fit-content;">Read More</a>
 
         </div>
@@ -220,8 +219,7 @@ Our subscription-based analytics tool helps online sellers on Amazon, eBay, Walm
         <div class="post-item-body">
              <h3><a href="#">Competitor monitoring</a></h3>
 
-            <p>Gain valuable insights into competitor strategies, allowing you to make informed decisions and stay ahead in the market.
-            </p>
+            <p>Gain valuable insights into competitor strategies, allowing you to make informed decisions and stay ahead in the market.</p>
             <a href="{{ route('pages.show', ['slug' => 'competitor-monitoring']) }}" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 50px; display: block; text-align: center; margin: 0 auto; width: fit-content;">Read More</a>
 
         </div>
@@ -238,7 +236,7 @@ Our subscription-based analytics tool helps online sellers on Amazon, eBay, Walm
             </figure>
         </div>
         <div class="post-item-body">
-             <h3><a href="#"> SourceFinder</a></h3>
+             <h3><a href="#">Supplier Scouting</a></h3>
 
              <p>Effortlessly connect with reliable suppliers, streamlining your sourcing process and enhancing your stock-free online stores of efficiency.</p>
              <a href="{{ route('pages.show', ['slug' => 'suppliers-scouting']) }}" class="btn-default" style="background: #3545D6; border: 1px solid #3545D6; border-radius: 50px; display: block; text-align: center; margin: 0 auto; width: fit-content;">Read More</a>
