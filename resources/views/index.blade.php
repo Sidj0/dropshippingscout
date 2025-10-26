@@ -28,7 +28,7 @@
                 <p style="color: #1E3F5B;">
                     We are excited to announce an exclusive offer that allows you to
 earn a whopping 20% for every new subscription sale you bring in. <br>
-
+<br>
 Our subscription-based analytics tool helps online sellers on Amazon, eBay, Walmart, Shopify,  TikTok Shop, and AliExpress make data-driven decisions to stay ahead of the competition.
 
                 </p>
