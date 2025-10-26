@@ -41,10 +41,10 @@
                         </p>
                         <br>
                         <p>We go beyond data by offering powerful competitive analysis, helping online entrepreneurs stay ahead of the curve. With smarter decisions and faster adaptation, TS Scout empowers you to unlock new opportunities and scale your business with confidence.</p>
-
+                        <br />
                         <h2>Empowering E-Commerce with Data</h2>
                         <p>At TS Scout, we believe that online sellers deserve the right tools to make smarter decisions and grow with confidence. That’s why we built a subscription-based SaaS platform that transforms complex e-commerce data into clear, actionable insights.</p>
-
+                        <br />
                         <h2>Our Story</h2>
                         <p>We started TS Scout with one goal: to solve the challenges sellers face in the fast-moving world of e-commerce. From finding the right products to understanding competitors and suppliers, we saw how overwhelming and time-consuming this process can be. Our solution makes it easier, turning data into opportunity.</p>
                     </div>
