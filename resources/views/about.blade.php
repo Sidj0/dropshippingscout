@@ -16,7 +16,7 @@
 
 @section('content')
     <div class="company">
-                        <h1 style="font-size: 60px;">Our company’s journey story</h1>
+                        <h1 style="font-size: 60px;" class="mt-4">Our company’s journey story</h1>
                         <h5 style="margin-top:20px ;">A Deep Dive into TS Scout’s Analytics Tool</h5>
 
                     </div>
@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row align-items-center">
             <!-- "Empowering E-Commerce with Data" Section: Content on the Left, Image on the Right -->
-            <div class="col-lg-8 order-lg-1 order-2">
+            <div class="col-lg-7 order-lg-1 order-2">
                 <!-- Hero Content Start -->
                 <div class="hero-content">
                     <!-- Section Title Start -->
@@ -46,7 +46,7 @@
                 <!-- Hero Content End -->
             </div>
 
-            <div class="col-lg-4 order-lg-2 order-1">
+            <div class="col-lg-5 order-lg-2 order-1">
                 <!-- Hero Image Start -->
                 <div class="hero-image">
                     <figure class="image-anime reveal">
