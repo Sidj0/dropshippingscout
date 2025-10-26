@@ -25,7 +25,7 @@
 <div class="hero">
     <div class="container">
         <div class="row align-items-center">
-            <!-- "Our Company" Section: Content on the Left, Image on the Right -->
+            <!-- "Empowering E-Commerce with Data" Section: Content on the Left, Image on the Right -->
             <div class="col-lg-6 order-lg-1 order-2"> 
                 <!-- Hero Content Start -->
                 <div class="hero-content">
