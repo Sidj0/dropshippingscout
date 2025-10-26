@@ -162,8 +162,10 @@
 </section>
 
 <section class="container my-5 pb-4">
-    <h2 class="mb-4" style="color: #1E3F5B; font-size: 50px; font-weight: bold;">Why Choose TS Scout?</h2>
-    <p>Because we combine advanced technology with a clear vision: <strong>making e-commerce smarter, simpler, and more profitable for everyone.</strong></p>
+    <div class="hero-content">
+        <h2 class="mb-4" style="color: #1E3F5B; font-size: 50px; font-weight: bold;">Why Choose TS Scout?</h2>
+        <p>Because we combine advanced technology with a clear vision: <strong>making e-commerce smarter, simpler, and more profitable for everyone.</strong></p>
+    </div>
 </section>
 
 {{-- <section class="container my-5">
@@ -256,13 +258,4 @@
 
 </div>
 
-@endsection
-
-@section('styles')
-<style>
-    dd {
-        margin-bottom: 15px !important;
-        margin-left: 45px !important;
-    }
-</style>
 @endsection
