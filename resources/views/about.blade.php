@@ -160,7 +160,7 @@
 </section>
 
 <section class="container my-5">
-    <h2 class="text-center mb-4" style="color: #1E3F5B; font-size: 50px; font-weight: bold;">Why Choose TS Scout?</h2>
+    <h2 class="mb-4" style="color: #1E3F5B; font-size: 50px; font-weight: bold;">Why Choose TS Scout?</h2>
     <p>Because we combine advanced technology with a clear vision: <strong>making e-commerce smarter, simpler, and more profitable for everyone.</strong></p>
 </section>
 
