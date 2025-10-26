@@ -166,7 +166,7 @@
     <p>Because we combine advanced technology with a clear vision: <strong>making e-commerce smarter, simpler, and more profitable for everyone.</strong></p>
 </section>
 
-<section class="container my-5">
+{{-- <section class="container my-5">
     <!-- Centered Title and Subtitle -->
     <div class="centered-title text-center mb-4">
         <h1 style="color: #1E3F5B; font-size: 50px; font-weight: bold;padding-bottom:10px">Benefits of Using Our Tool <br> with us</h1>
@@ -252,7 +252,7 @@
         </div>
     </div>
 
-</section>
+</section> --}}
 
 </div>
 
