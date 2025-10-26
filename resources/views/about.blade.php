@@ -50,7 +50,7 @@
                 <!-- Hero Image Start -->
                 <div class="hero-image">
                     <figure class="image-anime reveal">
-                        <img src="{{asset('images/hero-img.jpg')}}" alt="">
+                        <img src="{{asset('images/hero-img.jpg')}}" alt="Our company’s journey story">
                     </figure>
                 </div>
                 <!-- Hero Image End -->
