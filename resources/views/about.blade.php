@@ -24,7 +24,7 @@
 <!-- Hero Section Start -->
 <div class="hero">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center mt-4">
             <!-- "Empowering E-Commerce with Data" Section: Content on the Left, Image on the Right -->
             <div class="col-lg-7 order-lg-1 order-2">
                 <!-- Hero Content Start -->
