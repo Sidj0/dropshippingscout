@@ -257,3 +257,12 @@
 </div>
 
 @endsection
+
+@push('styles')
+<style type="text/css">
+    dd {
+        margin-bottom: 15px;
+        margin-left: 45px;
+    }
+</style>
+@endpush
