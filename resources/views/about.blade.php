@@ -259,10 +259,10 @@
 @endsection
 
 @section('styles')
-<style type="text/css">
+<style>
     dd {
-        margin-bottom: 15px;
-        margin-left: 45px;
+        margin-bottom: 15px !important;
+        margin-left: 45px !important;
     }
 </style>
 @endsection
