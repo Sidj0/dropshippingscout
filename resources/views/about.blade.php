@@ -115,7 +115,7 @@
         <div class="row align-items-center">
 
 
-            <div class="col-lg-7 order-lg-2 order-2">
+            <div class="col-lg-7 order-lg-2 order-1">
                 <!-- Hero Content Start -->
                 <div class="hero-content">
                     <!-- Section Title Start -->
@@ -143,7 +143,7 @@
             </div>
 
             <!-- "Our Vision" Section: Image on the Left, Content on the Right -->
-            <div class="col-lg-5 order-lg-1 order-1">
+            <div class="col-lg-5 order-lg-1 order-2">
                 <!-- Hero Image Start -->
                 <div class="hero-image">
                     <figure class="image-anime reveal">
