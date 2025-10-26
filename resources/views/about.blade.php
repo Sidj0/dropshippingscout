@@ -17,7 +17,7 @@
 @section('content')
     <div class="company">
                         <h1 style="font-size: 60px;" class="mt-4">Our company’s journey story</h1>
-                        <h2 class="display-2" style="margin-top:20px ;">A Deep Dive into TS Scout’s Analytics Tool</h2>
+                        <h2 class="display-4" style="margin-top:20px ;">A Deep Dive into TS Scout’s Analytics Tool</h2>
 
                     </div>
 
