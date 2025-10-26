@@ -113,18 +113,9 @@
 <div class="hero">
     <div class="container">
         <div class="row align-items-center">
-            <!-- "Our Vision" Section: Image on the Left, Content on the Right -->
-            <div class="col-lg-5 order-lg-1 order-2">
-                <!-- Hero Image Start -->
-                <div class="hero-image">
-                    <figure class="image-anime reveal">
-                        <img src="{{asset('images/vision.jpg')}}" alt="">
-                    </figure>
-                </div>
-                <!-- Hero Image End -->
-            </div>
 
-            <div class="col-lg-7 order-lg-2 order-1">
+
+            <div class="col-lg-7 order-lg-2 order-2">
                 <!-- Hero Content Start -->
                 <div class="hero-content">
                     <!-- Section Title Start -->
@@ -149,6 +140,17 @@
                     <!-- Hero Body End -->
                 </div>
                 <!-- Hero Content End -->
+            </div>
+
+            <!-- "Our Vision" Section: Image on the Left, Content on the Right -->
+            <div class="col-lg-5 order-lg-1 order-1">
+                <!-- Hero Image Start -->
+                <div class="hero-image">
+                    <figure class="image-anime reveal">
+                        <img src="{{asset('images/vision.jpg')}}" alt="">
+                    </figure>
+                </div>
+                <!-- Hero Image End -->
             </div>
         </div>
     </div>
