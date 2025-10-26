@@ -159,7 +159,7 @@ Our subscription-based analytics tool helps online sellers on Amazon, eBay, Walm
                 <div class="col-lg-6 aboutCol">
                     <!-- About Us Content Start -->
                     <div class="about-content">
-                        <h4 class="wow fadeInUp" data-wow-delay="0.25s" style="padding-bottom: 20px;line-height: inherit;" >TS Scout is your all-in-one solution for effortless eCommerce</h4>
+                        <h4 class="wow fadeInUp" data-wow-delay="0.25s" style="padding-bottom: 20px;line-height: inherit;" ><strong>TS S</strong>cout is your all-in-one solution for effortless eCommerce</h4>
 
                         <ul class="wow fadeInUp" data-wow-delay="1s">
                             <li>Track and analyze multiple stores and suppliers in one place.</li>
