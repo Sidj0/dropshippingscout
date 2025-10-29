@@ -11,6 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (Schema::hasColumn('pages', 'view_name')) {
+            return;
+        }
         Schema::table('pages', function (Blueprint $table) {
             $table->string('view_name')->nullable()->after('slug');
         });
