@@ -14,6 +14,19 @@ class CreateUsersTable extends Migration
 
      public function up()
      {
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->default('');
+            $table->string('email')->unique()->default('');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password')->default('');
+            $table->unsignedBigInteger('career_id')->nullable();
+            $table->unsignedBigInteger('career_level')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
+
+
+        });
          Schema::table('users', function (Blueprint $table) {
              // Rename password_hash to password
             //  $table->renameColumn('password_hash', 'password');
@@ -29,7 +42,7 @@ class CreateUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             // Rename password back to password_hash
-            $table->renameColumn('password', 'password_hash');
+            // $table->renameColumn('password', 'password_hash');
         });
     }
 }
