@@ -10,6 +10,7 @@ use App\Http\Controllers\toolsController;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\EbayCalculatorController;
 use App\Http\Controllers\PageBackupController;
+use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\TitleBuilderController;
 
 
@@ -33,6 +34,21 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('pages-backup/{view_name}', [PageBackupController::class,'index'])->name('pages.backup.index');
     Route::get('pages-backup/{view_name}/preview/{id}/{base}', [PageBackupController::class,'preview'])->name('pages.backup.preview')->whereIn('base',['from','to','side-by-side']);
     Route::post('pages-backup/{view_name}/restore/{id}/{base}', [PageBackupController::class,'restore'])->name('pages.backup.restore')->whereIn('base',['from','to']);
+
+    Route::prefix('themes')->name('themes.')->group(function () {
+        Route::get('/', [ThemeController::class, 'index'])->name('index');
+        Route::get('{file}/edit', [ThemeController::class, 'edit'])->name('edit');
+        Route::post('{file}/store', [ThemeController::class, 'store'])->name('store');
+        Route::get('{file}/history', [ThemeController::class, 'history'])->name('history');
+        Route::get('{file}/show', [ThemeController::class, 'show'])->name('show');
+        Route::post('{file}/restore/{id}', [ThemeController::class, 'restore'])->name('restore');
+
+        Route::get('header/history', [ThemeController::class, 'history'])->name('header.history');
+        Route::get('header/edit', [ThemeController::class, 'editHeader'])->name('header.edit');
+        Route::get('footer/history', [ThemeController::class, 'history'])->name('footer.history');
+        Route::get('footer/edit', [ThemeController::class, 'editFooter'])->name('footer.edit');
+    });
+
 });
 
 // sitemap

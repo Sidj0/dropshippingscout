@@ -82,6 +82,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.pages.index') }}">Slugs</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.themes.index') }}">Themes</a>
+                </li>
             </ul>
         </div>
     </nav>
