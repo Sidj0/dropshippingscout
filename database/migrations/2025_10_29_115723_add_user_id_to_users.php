@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if (Schema::whenTableDoesntHaveColumn('users', 'user_id')) {
+        if( Schema::whenTableDoesntHaveColumn('users','user_id', function() {
             Schema::table('users', function (Blueprint $table) {
                 $table->unsignedBigInteger('user_id');
                 $table->string('username');
             });
-        }
+        }));
 
         Schema::table('blogs', function(Blueprint $table) {
             $table->longText('content')->change();
