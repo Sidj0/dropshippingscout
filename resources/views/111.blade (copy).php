@@ -11,7 +11,7 @@
                 </div>
                 <div class="error-page-content">
                     <div class="error-page-content-heading">
-                        <h2 class="text-anime-style-3">Page Not Found!</h2>
+                        <h2 class="text-anime-style-3">Page Found!</h2>
                         <p class="wow fadeInUp" data-wow-delay="0.5s">We're sorry, the page you requested could not be found.</p>
                     </div>
                     <a class="btn-default wow fadeInUp" data-wow-delay="0.75s" href="{{url('/')}}">Back To Home</a>

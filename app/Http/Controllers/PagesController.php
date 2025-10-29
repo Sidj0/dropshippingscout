@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\Blog;
 use App\Models\Faq;
+use App\Models\PageBackup;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,29 @@ class PagesController extends Controller
         }
 
         $pages = Page::all();
+
         return view('pages.index', compact('pages'));
+    }
+
+    function editHtml(Request $request, $id) {
+        $page= Page::findOrFail($id);
+        $view= $page?->view_name??'';
+        $content= file_get_contents( base_path("resources/views/{$view}.blade.php"));
+        return view('pages.edit-html', compact('page','view','content'));
+    }
+
+    function storeHtml(Request $request, $id) {
+        $page= Page::findOrFail($id);
+        $view= $page?->view_name??'';
+        $from_content= file_get_contents( base_path("resources/views/{$view}.blade.php"));
+        $to_content= htmlspecialchars_decode($request->content);
+        PageBackup::create([
+            'view_name'=> $view,
+            'from_content'=> $from_content,
+            'to_content'=> $to_content
+        ]);
+        file_put_contents(base_path("resources/views/{$view}.blade.php"), $to_content);
+        return redirect()->route('admin.pages.backup.index', $view)->with('success', 'Page saved and backup created');
     }
 
     public function create()
@@ -87,18 +110,18 @@ class PagesController extends Controller
     public function show($identifier)
     {
         $page = $this->getPageByIdentifier($identifier);
-        
+
         // Fetching the FAQs conditionally for specific pages
         if (in_array($identifier, ['ebay-calculator', 'title-builder'])) {
             $faqs = $this->getFaqsByPageName($identifier);
         } else {
             $faqs = $this->getPricingFaqs();
         }
-    
+
         if ($page) {
             return $this->handlePageView($page, $faqs);
         }
-    
+
         return $this->handleBlogView($identifier);
     }
 
@@ -149,8 +172,7 @@ private function getFaqsByPageName($pageName)
         return view('index', ['page' => $page, 'blogs' => $blogs]);
     }
 
-    private function handleBlogView($identifier)
-    {
+    private function handleBlogView($identifier){
         $blog = Blog::where('slug', $identifier)->first();
 
         if ($blog) {

@@ -14,6 +14,7 @@
                     <p class="mb-1">{{ $blog->excerpt }}</p>
                     <p class="text-muted mb-1">{{ $blog->publish_date }} by {{ $blog->author }}</p>
                     <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
                     <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST" class="d-inline-block">
                         @csrf

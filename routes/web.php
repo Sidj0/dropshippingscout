@@ -9,6 +9,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\toolsController;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\EbayCalculatorController;
+use App\Http\Controllers\PageBackupController;
 use App\Http\Controllers\TitleBuilderController;
 
 
@@ -26,7 +27,12 @@ Route::get('/index', function () {
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('edit-html/{id}', [PagesController::class, 'editHtml'])->name('pages.edit-html');
+    Route::post('edit-html/{id}', [PagesController::class, 'storeHtml'])->name('pages.store-html');
     Route::resource('pages', PagesController::class);
+    Route::get('pages-backup/{view_name}', [PageBackupController::class,'index'])->name('pages.backup.index');
+    Route::get('pages-backup/{view_name}/preview/{id}/{base}', [PageBackupController::class,'preview'])->name('pages.backup.preview')->whereIn('base',['from','to','side-by-side']);
+    Route::post('pages-backup/{view_name}/restore/{id}/{base}', [PageBackupController::class,'restore'])->name('pages.backup.restore')->whereIn('base',['from','to']);
 });
 
 // sitemap

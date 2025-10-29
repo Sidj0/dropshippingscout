@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 
 @section('title', $page->title)
@@ -14,7 +13,7 @@
 @section('content')
     <div class="container">
         <h1 class="title" style="margin-top:0px;">Unlock Unlimited Earning Potential <br> with SCOUT Affiliate Program.</h1>
-        <h5  class="title" style="margin-top:20px ; font-size: 20px; color: #1E3F5B; font-weight: 400;">Join the SCOUT Affiliate Program and turn your network into a revenue stream! <br> Partner with us and start making money effortlessly!</h5>
+        <h5 class="title" style="margin-top:20px ; font-size: 20px; color: #1E3F5B; font-weight: 400;">Join the SCOUT Affiliate Program and turn your network into a revenue stream! <br> Partner with us and start making money effortlessly!</h5>
         <br>
 
        
@@ -214,13 +213,11 @@
                         <!-- FAQ Item start -->
                         <div class="accordion-item wow fadeInUp" data-wow-delay="0.25s">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     What is the Difference Between Frontend and Backend Development?
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordion">
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>Frontend development focuses on creating the user interface and user experience of a software application, typically using languages such as HTML, CSS, and JavaScript. Backend development involves working on the server-side of the application, managing databases, and handling server logic using languages like Python, Java, PHP, or Node.js.</p>
                                 </div>
@@ -231,13 +228,11 @@
                         <!-- FAQ Item Start -->
                         <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
                             <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     What are APIs and How are They Used in Software Development?
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#accordion">
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>APIs (Application Programming Interfaces) are sets of rules and protocols that allow different software applications to communicate with each other. They are used in software development to enable integration between different systems, access external services, and build modular and scalable applications.</p>
                                 </div>
@@ -248,13 +243,11 @@
                         <!-- FAQ Item Start -->
                         <div class="accordion-item wow fadeInUp" data-wow-delay="0.75s">
                             <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     How Can I Improve my Software Development Skills?
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordion">
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 </div>
@@ -265,13 +258,11 @@
                         <!-- FAQ Item Start -->
                         <div class="accordion-item wow fadeInUp" data-wow-delay="1s">
                             <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     What are the Ethical Considerations in AI Development for Software Companies?
                                 </button>
                             </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#accordion">
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>Ethical considerations in AI development for software companies include issues related to fairness, transparency, accountability, privacy, and bias. It's essential for companies to prioritize ethical AI practices AI systems.</p>
                                 </div>
@@ -282,13 +273,11 @@
                         <!-- FAQ Item Start -->
                         <div class="accordion-item wow fadeInUp" data-wow-delay="1.25s">
                             <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                     What Are the Different Engagement Models Offered by Software Companies?
                                 </button>
                             </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                data-bs-parent="#accordion">
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>Software companies typically offer various engagement models to cater to the diverse needs of their clients. These models may include fixed-price projects, time and material (hourly) billing, dedicated development teams, staff augmentation, and hybrid models combining elements of different approaches</p>
                                 </div>
@@ -299,13 +288,11 @@
                         <!-- FAQ Item Start -->
                         <div class="accordion-item wow fadeInUp" data-wow-delay="1.5s">
                             <h2 class="accordion-header" id="headingSix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                     What Are Some Emerging Trends and Technologies in the Software Industry?
                                 </button>
                             </h2>
-                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                                data-bs-parent="#accordion">
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordion">
                                 <div class="accordion-body">
                                     <p>Emerging trends and technologies in the software industry include cloud computing, artificial intelligence and machine learning, Internet of Things (IoT), blockchain, edge computing, low-code/no-code development platforms, containerization and microservices architecture, and cybersecurity advancements</p>
                                 </div>
@@ -319,6 +306,6 @@
     </div>
     <!-- FAQs Page Ends -->
 
-   </div> 
+    
 
    @endsection

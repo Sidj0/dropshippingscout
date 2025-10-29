@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 
 @section('title', $page->title)
@@ -352,7 +351,4 @@
 
 
 
- @endsection 
-
-
- 
+ @endsection
