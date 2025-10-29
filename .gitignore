@@ -21,3 +21,4 @@ yarn-error.log
 
 dashboard_1234dc/
 ddd/
+database/seeders/all_tables.sql
