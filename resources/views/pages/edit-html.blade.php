@@ -36,12 +36,21 @@
                 toolbar: [
                     ['style', ['style']],
                     ['font', ['bold', 'underline', 'clear']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
                     ['table', ['table']],
                     ['insert', ['link', 'picture']],
                     ['view', ['fullscreen', 'codeview', 'help']]
                 ],
+                fontNames: [
+                    'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
+                    'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande',
+                    'Tahoma', 'Times New Roman', 'Verdana', 'Georgia', 'Roboto',
+                    'Open Sans', 'Lato', 'Montserrat', 'Poppins', 'Inter'
+                ],
+                fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '32', '36', '48', '64', '72'],
                 callbacks: {
                     onInit: function() {
                         console.log('Summernote initialized successfully');
