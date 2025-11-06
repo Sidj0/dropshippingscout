@@ -23,6 +23,10 @@
     .note-editor.note-frame .dropdown-toggle::after {
         display: none !important;
     }
+    .note-editor.note-airframe.fullscreen,
+    .note-editor.note-frame.fullscreen {
+        background-color: #fff;
+    }
 </style>
 @endsection
 
