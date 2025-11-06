@@ -18,6 +18,13 @@
 </div>
 @endsection
 
+@section('styles')
+<style>
+    .note-editor.note-frame .dropdown-toggle::after {
+        display: none !important;
+    }
+</style>
+@endsection
 
 @section('script')
 <!-- Summernote CSS -->
