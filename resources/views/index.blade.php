@@ -622,7 +622,7 @@ Our subscription-based analytics tool helps online sellers on Amazon, eBay, Walm
 </div>
 <!-- Latest News Section End -->
 
-   <!-- Latest News Section Start -->
+   {{-- <!-- Latest News Section Start -->
    <div class="latest-news">
     <div class="container homeBlogContainer">
         <div class="row section-row align-items-center">
@@ -671,7 +671,7 @@ Our subscription-based analytics tool helps online sellers on Amazon, eBay, Walm
                 <!-- Blog Item End -->
             </div>
         @endforeach
-        </div>
+        </div> --}}
 
 <!-- Latest News Section End -->
 <div class="unique-outer-container">

@@ -32,10 +32,19 @@
 	<link href="{{asset('css/custom.css')}}" rel="stylesheet" media="screen">
     <link rel="stylesheet" type="text/css" href="{{asset('css/reset-password.css')}}">
 
-
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KV3N43LJ');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body class="tt-magic-cursor">
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV3N43LJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 	<!-- Magic Cursor Start -->
 	<div id="magic-cursor">

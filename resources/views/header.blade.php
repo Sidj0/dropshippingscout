@@ -1,4 +1,4 @@
- <!-- Preloader Start -->
+<!-- Preloader Start -->
 <div class="preloader">
     <div class="loading-container">
         <div class="loading"></div>
@@ -48,20 +48,20 @@
     <!-- eBay Section -->
     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'ebay-pages')">
         <img src="{{ asset('images/Registration/ebay.svg') }}" alt="eBay Logo" class="icon">
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+        <span class="tools-arrow">▶</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="ebay-pages">
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-product-insight']) }}">Product Insight</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'topbay-picks']) }}">TopBay Picks</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-product-research-tool']) }}">Product Research</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-rivalview-tool']) }}">Competitors Research</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'topbay-picks']) }}">Best Items</a>
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-niche-finder-tool']) }}">NicheFinder</a>
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-title-master']) }}">Title Master</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'ebay-rivalview-tool']) }}">RivalView</a>
     </div>
 
         <!-- Amazon Section -->
     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'Amazon-pages')">
         <img src="{{ asset('images/Registration/amazon.svg') }}" alt="Amazon Logo" class="icon">
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+        <span class="tools-arrow">▶</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="Amazon-pages">
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'amazon-scanner']) }}">Amazon Scanner</a>
@@ -70,7 +70,7 @@
      <!-- Walmart Section -->
      <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'Walmart-pages')">
         <img src="{{ asset('images/Registration/walMart.svg') }}" alt="Walmart Logo" class="icon">
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+        <span class="tools-arrow">▶</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="Walmart-pages">
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'walmart-watch-tool']) }}">Walmart Watch</a>
@@ -79,18 +79,18 @@
      <!-- AliExpress Section -->
      <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'AliExpress-pages')">
         <img src="{{ asset('images/Registration/aliExpress.svg') }}" alt="AliExpress Logo" class="icon">
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+        <span class="tools-arrow">▶</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="AliExpress-pages">
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-finder-tool']) }}">Express Finder</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-scan-tool']) }}">Express Scan</a>
-        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-supplier-scout-tool']) }}">Supplier Scout</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-scan-tool']) }}">Express Scanner</a>
+        <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'express-source-finder-tool']) }}">Source Finder</a>
     </div>
 
      <!-- tiktook Section -->
      <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'tiktook-pages')">
         <img src="{{ asset('images/tiktok_shop.png') }}" alt="TikTok Logo" class="icon">
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+        <span class="tools-arrow">▶</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="tiktook-pages">
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'tiktrend-scan-tool']) }}">TikTok Scanner</a>
@@ -99,7 +99,7 @@
     <!-- Shopify Section -->
     <a href="#" class="dropdown-link toggle-section" onclick="toggleVisibility(event, 'shopify-pages')">
         <img src="{{ asset('images/Registration/shopify.svg') }}" alt="Shopify Logo" class="icon">
-        <span class="tools-arrow">&#9654;</span> <!-- Right-pointing arrow -->
+        <span class="tools-arrow">▶</span> <!-- Right-pointing arrow -->
     </a>
     <div class="pages-list" style="display: none;" id="shopify-pages">
         <a class="dropdown-link" href="{{ route('tools-product.show', ['slug' => 'shopify-insight']) }}">Shopify Insight</a>
@@ -116,8 +116,8 @@
                             <!-- Resources Dropdown Start -->
                             <li class="nav-item submenu"><a class="nav-link" href="#">Resources</a>
                                 <ul class="dropdown">
-                                    <li class="dropdown-section">
-                                        <a href="{{ url('blogs')}}" class="resource-link">
+                                   <li class="dropdown-section">
+                                         {{-- <a href="{{ url('blogs')}}" class="resource-link">
                                             <div class="resource-item">
                                                 <img src="{{ asset('images/header icons/blog.svg') }}" alt="Blog Icon" class="resource-icon">
                                                 <div>
@@ -125,7 +125,7 @@
                                                     <p>Find insights and updates on our blog.<br>Stay informed with the latest trends.</p>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </a> --}}
 
 
                                         <a href="{{ url('faqs') }}" class="resource-link">
@@ -149,7 +149,8 @@ href="https://app.tsscout.com/pricing">Pricing</a></li>
 
                             <div class="magicButtons">
 
-                            <a href="https://app.dropshippingscout.com/login" style="color:white;text-align:center;background-color: #1E3F5B;width: 100%;
+                            <a href="https://app.tsscout.com/login" 
+style="color:white;text-align:center;background-color: #1E3F5B;width: 100%;
 border-top-right-radius: 0;border-top-left-radius: 0;" class="unique-button">Login</a>
 
                            </div>
