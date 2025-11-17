@@ -301,10 +301,7 @@ z-index: 999;
     <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <!-- SVG Logo -->
-        <div class="h-10 w-10 rounded-xl bg-brand-blue shadow-glow grid place-content-center">
-         <img src="public/images/logo.svg" alt="">
-        </div>
-  
+          <img src="public/images/logo.svg" alt="">
       </div>
       <div class="flex items-center gap-3">
         <!-- Back to AI tool page -->
