@@ -296,23 +296,29 @@ z-index: 999;
   </div>
 
   <!-- Top Nav -->
-  <header class="sticky top-0 z-40">
-    <div class="glass shadow-soft">
-      <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="h-10 w-10 rounded-xl bg-brand-blue shadow-glow grid place-content-center text-white font-bold">S</div>
-          <div class="text-xl font-bold tracking-tight"><span class="text-brand-navy">SCOUT</span><span class="text-brand-navy">ER</span> <span class="text-brand-lime">PRO</span></div>
+<header class="sticky top-0 z-40">
+  <div class="glass shadow-soft">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- SVG Logo -->
+        <div class="h-10 w-10 rounded-xl bg-brand-blue shadow-glow grid place-content-center">
+         <img src="public/images/logo.svg" alt="">
         </div>
-        <div class="flex items-center gap-3">
-          <!-- Back to AI tool page -->
-          <a href="/ai-tool" class="group relative inline-flex items-center gap-2 rounded-xl bg-brand-navy text-white px-4 py-2 shadow-soft hover:shadow-glow transition-all">
-            <svg class="w-4 h-4 opacity-80 group-hover:-translate-x-0.5 transition" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Back to AI Tool</span>
-          </a>
-        </div>
+  
+      </div>
+      <div class="flex items-center gap-3">
+        <!-- Back to AI tool page -->
+        <a href="/ai-tool" class="group relative inline-flex items-center gap-2 rounded-xl bg-brand-navy text-white px-4 py-2 shadow-soft hover:shadow-glow transition-all">
+          <svg class="w-4 h-4 opacity-80 group-hover:-translate-x-0.5 transition" viewBox="0 0 24 24" fill="none">
+            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="hidden sm:inline">Back to AI Tool</span>
+          <span class="sm:hidden">AI Tool</span>
+        </a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Search Section -->
   <section class="max-w-7xl mx-auto px-5 mt-8">
